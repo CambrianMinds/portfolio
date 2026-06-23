@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Kidnapped the President — Justin Bogner</title>
+  <meta name="description" content="A Constitutional Reckoning from Someone Who Was Trying Very Hard Not to Pay Attention. By Justin Bogner, 2026.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://political-reluctance.cambrianminds.com/pieces/we-kidnapped-the-president/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="article">
+  <meta property="og:url"         content="https://political-reluctance.cambrianminds.com/pieces/we-kidnapped-the-president/">
+  <meta property="og:site_name"   content="Political Reluctance">
+  <meta property="og:title"       content="We Kidnapped the President">
+  <meta property="og:description" content="A Constitutional Reckoning from Someone Who Was Trying Very Hard Not to Pay Attention. By Justin Bogner.">
+  <meta property="article:author" content="Justin Bogner">
+  <meta property="article:published_time" content="2026-02-01">
+  <meta property="article:section" content="Constitutional Law">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="We Kidnapped the President">
+  <meta name="twitter:description" content="A Constitutional Reckoning from Someone Who Was Trying Very Hard Not to Pay Attention. By Justin Bogner.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Kidnapped the President",
+    "alternativeHeadline": "A Constitutional Reckoning from Someone Who Was Trying Very Hard Not to Pay Attention",
+    "description": "An essay on unauthorized executive force and constitutional accountability, written for readers who were trying, like the author, to look away.",
+    "author": {
+      "@type": "Person",
+      "name": "Justin Bogner",
+      "url": "https://political-reluctance.cambrianminds.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Political Reluctance",
+      "url": "https://political-reluctance.cambrianminds.com/"
+    },
+    "datePublished": "2026-02-01",
+    "url": "https://political-reluctance.cambrianminds.com/pieces/we-kidnapped-the-president/",
+    "mainEntityOfPage": "https://political-reluctance.cambrianminds.com/pieces/we-kidnapped-the-president/",
+    "keywords": ["constitutional law", "executive power", "political essay", "accountability", "unauthorized military force"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Custom Properties ─────────────────────────────── */
+    :root {
+      --cream:       #f2ece0;
+      --page-bg:     #e2d9cc;
+      --ink:         #1b1917;
+      --ink-mid:     #46403a;
+      --mid:         #8a8078;
+      --crimson:     #8c1414;
+      --crimson-dk:  #6b0e0e;
+      --rule:        #c8bfb0;
+      --serif:       'EB Garamond', Georgia, 'Times New Roman', serif;
+      --display:     'Playfair Display', Georgia, serif;
+    }
+
+    /* ─── Reset ─────────────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ─── Body ───────────────────────────────────────────── */
+    body {
+      background-color: var(--page-bg);
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, #d8cfc2 0%, transparent 70%);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── Reading Progress Bar ───────────────────────────── */
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--crimson);
+      z-index: 1000;
+      transition: width 80ms linear;
+    }
+
+    /* ─── Page Document Shell ────────────────────────────── */
+    .page {
+      position: relative;
+      background: var(--cream);
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 4rem 3.5rem 4.5rem;
+      overflow: hidden;
+      box-shadow:
+        0 1px 2px  rgba(0,0,0,0.05),
+        0 4px 16px rgba(0,0,0,0.06),
+        0 16px 60px rgba(0,0,0,0.06);
+    }
+
+    /* subtle paper grain */
+    .page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.028;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* everything inside stacks above grain */
+    .page > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── Running Head ───────────────────────────────────── */
+    .running-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.65rem;
+      margin-bottom: 2.2rem;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+      color: var(--crimson);
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--crimson);
+      padding: 0.2em 0.55em;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .pdf-link:hover {
+      background: var(--crimson);
+      color: var(--cream);
+    }
+
+    /* ─── Title Block ────────────────────────────────────── */
+    .title-block {
+      text-align: center;
+      margin-bottom: 3rem;
+      animation: fadeUp 0.65s ease both;
+    }
+
+    .rule-thick {
+      height: 3px;
+      background: var(--crimson);
+      margin-bottom: 1.9rem;
+    }
+
+    .rule-thin {
+      height: 1px;
+      background: var(--crimson);
+      margin-top: 1.6rem;
+    }
+
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.04;
+      letter-spacing: 0.015em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+
+    .subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-mid);
+      line-height: 1.45;
+      margin-bottom: 1.1rem;
+    }
+
+    .byline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.07em;
+      font-variant: small-caps;
+      color: var(--mid);
+    }
+
+    .byline-sep {
+      display: inline-block;
+      width: 1px;
+      height: 1em;
+      background: var(--crimson);
+      vertical-align: middle;
+    }
+
+    /* ─── Essay Body ─────────────────────────────────────── */
+    .essay-body {
+      column-count: 2;
+      column-gap: 2.9rem;
+      column-rule: 1px solid var(--rule);
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 0;
+      animation: fadeUp 0.65s 0.12s ease both;
+    }
+
+    p {
+      text-indent: 1.3em;
+      margin-bottom: 0;
+    }
+
+    /* No indent on first paragraph and after section breaks */
+    .essay-body > p:first-child,
+    .section-break + p {
+      text-indent: 0;
+    }
+
+    /* ─── Drop Cap ───────────────────────────────────────── */
+    .essay-body > p:first-child::first-letter {
+      font-family: var(--display);
+      font-size: 4.1em;
+      font-weight: 700;
+      color: var(--crimson);
+      float: left;
+      line-height: 0.78;
+      margin-right: 0.05em;
+      margin-top: 0.07em;
+      padding-bottom: 0.03em;
+    }
+
+    /* ─── Section Break ──────────────────────────────────── */
+    .section-break {
+      column-span: all;
+      text-align: center;
+      margin: 1.6rem 0;
+      color: var(--crimson);
+      font-size: 0.82rem;
+      letter-spacing: 0.3em;
+      user-select: none;
+      opacity: 0.85;
+    }
+
+    /* ─── Citations ──────────────────────────────────────── */
+    .citations-wrapper {
+      margin-top: 2.6rem;
+      animation: fadeUp 0.65s 0.22s ease both;
+    }
+
+    .cit-rule {
+      height: 1px;
+      background: var(--crimson);
+    }
+
+    .citations {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--ink-mid);
+      line-height: 1.72;
+      padding: 0.7rem 0;
+    }
+
+    .citations .label {
+      font-style: normal;
+      font-variant: small-caps;
+      letter-spacing: 0.05em;
+      color: var(--ink);
+    }
+
+    /* ─── Back to Top ────────────────────────────────────── */
+    #btt {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 40px;
+      height: 40px;
+      background: var(--crimson);
+      color: var(--cream);
+      border: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.3s, transform 0.3s, background 0.15s;
+      z-index: 500;
+    }
+
+    #btt.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #btt:hover {
+      background: var(--crimson-dk);
+    }
+
+    /* ─── Animations ─────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0);    }
+    }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 700px) {
+      .page {
+        margin: 0;
+        padding: 2.5rem 1.6rem 3.5rem;
+      }
+
+      .essay-body {
+        column-count: 1;
+      }
+
+      h1 {
+        font-size: 1.85rem;
+      }
+
+      .running-head {
+        font-size: 0.7rem;
+      }
+
+      #btt {
+        bottom: 1.2rem;
+        right: 1.2rem;
+      }
+    }
+
+    /* ─── Print ──────────────────────────────────────────── */
+    @media print {
+      body { background: white; }
+      .page {
+        margin: 0;
+        padding: 1.5cm 2cm;
+        box-shadow: none;
+        max-width: none;
+      }
+      #progress, #btt { display: none; }
+      .essay-body { column-count: 2; }
+    }
+  </style>
+  <link rel="stylesheet" href="../global-nav.css">
+</head>
+<body>
+
+<div id="progress" role="progressbar" aria-hidden="true"></div>
+
+<div class="page">
+
+  <!-- Running head -->
+  <div class="running-head">
+    <span aria-hidden="true">Political Reluctance</span>
+    <div style="display:flex;align-items:center;gap:1.2rem;">
+      <span aria-hidden="true">Justin Bogner &nbsp;·&nbsp; 2026</span>
+      <a class="pdf-link" href="we-kidnapped-the-president.pdf" download aria-label="Download PDF version">↓ PDF</a>
+    </div>
+  </div>
+
+  <!-- Title block -->
+  <header class="title-block">
+    <div class="rule-thick"></div>
+    <h1>We Kidnapped the President</h1>
+    <p class="subtitle">
+      A Constitutional Reckoning from Someone<br>
+      Who Was Trying Very Hard Not to Pay Attention
+    </p>
+    <div class="byline">
+      <span>Justin Bogner</span>
+      <span class="byline-sep" aria-hidden="true"></span>
+      <span>2026</span>
+    </div>
+    <div class="rule-thin"></div>
+  </header>
+
+  <!-- Essay body -->
+  <article class="essay-body">
+
+    <p>I don't follow politics. This is a choice. I've had roughly the same quality of life under every administration I've been alive for and I decided a long time ago that my conclusion was that most of what gets called politics is a performance designed to feel like high-stakes-running-live while the actual machinery runs underneath, largely indifferent to the people who think they are calling the shots. Two teams. One game. But the game they're playing isn't even the one that matters.</p>
+
+    <p>I don't think my best friend watches the news either. I'm not sure what source he pulled this gem from—the Amazon break room, probably. Facebook, possibly—anyway, he comes home and tells me, with the casual delivery he generally reserves for asking what I want to do for dinner, that we had kidnapped the president of Venezuela.</p>
+
+    <p>Let me be clear, I respect this dude's opinion. He's not often wrong, but he has a gift for compression that occasionally sacrifices precision. "Kidnapped" sounded like hyperbole for some kind of sanctions action, or maybe a diplomatic expulsion, or—I don't know. Something that made sense.</p>
+
+    <p>I assumed… I'm not sure what I assumed, but I do know that I didn't think that we had actually, literally, legally, kidnapped the Venezuelan President—and apparently his wife as well.</p>
+
+    <p>I continued reading.</p>
+
+    <p>I could not argue my way out of it.</p>
+
+    <p>We sent 150 aircraft from 20 bases across the Western Hemisphere. We flew Delta Force helicopters at 100 feet above the water to avoid radar. We disabled Venezuela's power grid—Trump said "the lights of Caracas were largely turned off due to a certain expertise that we have," without elaborating, which is a sentence I have now read many times and it remains completely insane each time. We landed at the military compound—their home—where Nicolás Maduro and his wife were sleeping, put them in handcuffs, flew them to a carrier, then to New York, then perp-walked them through the DEA headquarters on a special carpet that said "DEA NYD" while someone filmed it and then they posted it to social media with the caption: "Perp walked." What…? This is performance art.</p>
+
+    <p>Venezuela's interior minister claimed more than 100 people died. 32 of them were Cuban soldiers there on treaty obligations to a sovereign ally. Seven American service members were wounded.</p>
+
+    <p>There was no declaration of war. There was no congressional authorization. There was no extradition treaty with Venezuela. Secretary of State Rubio, asked at the press conference why Congress hadn't been notified beforehand, said it was "not the kind of mission you can do congressional notification on. It was a trigger-based mission." Trump was more direct: "Congress will leak, and we don't want leakers."</p>
+
+    <p>My friend was right. We kidnapped the president.</p>
+
+    <div class="section-break" role="separator" aria-hidden="true">— ★ —</div>
+
+    <p>Venezuela was not where this started. Five months earlier, seven B-2 bombers flew 18 hours from Missouri to drop fourteen 30,000-pound bunker-busters on nuclear facilities in Iran—a country that had not attacked the United States. More than two dozen cruise missiles, approximately two million dollars each, were fired in support. Congress was notified after the planes were already in the air. No declaration of war. No Authorization for Use of Military Force. The administration announced the operation on social media while the bombs were still falling.</p>
+
+    <p>The pattern is: act, then explain. Move the military, then generate the legal argument. Venezuela followed the same template, with more cameras and a perp walk carpet.</p>
+
+    <p>Here is the thing about being someone who treats politics as theater: the theater works right up until it doesn't. The performance holds as long as the performance is the point—as long as the thing being staged is the usual show about the economy and the culture war and the debt ceiling and whatever else, the conflict that runs in the background of actual life without actually touching it. I have genuinely, sincerely believed that most of what happens in that arena is noise, and I still believe that for most of it.</p>
+
+    <p>But this is not noise. This is 150 aircraft and 100 bodies and a handcuffed foreign head of state on a carrier deck, and when the break-room intelligence network has the accurate read and I'm the one who assumed exaggeration, something has left the normal register.</p>
+
+    <div class="section-break" role="separator" aria-hidden="true">— ★ —</div>
+
+    <p>The part I couldn't rationalize away wasn't even the operations themselves. It was the legal argument they offered afterward.</p>
+
+    <p>The DOJ released a memo—written in December, before the Venezuela operation launched, which means they knew they needed to justify it before they did it—arguing that because the mission was framed as "law enforcement," it didn't cross the constitutional threshold that requires congressional authorization. It wasn't war. It was a narcotics warrant. The president has "inherent constitutional authority" to execute arrests. Therefore Article I never engaged. Therefore Congress had no role. Therefore: legal.</p>
+
+    <p>This is the architecture of the move, and it's worth understanding precisely. The administration is not arguing that the president can wage war without congressional authorization. They're arguing that this wasn't war—it was policing. The label transforms the action. "Law enforcement operation" is the key that opens a door the war powers framework keeps locked. Once you're in the law enforcement lane, you inherit its authorities and shed its constraints simultaneously: you get the operational flexibility of executive power without the congressional tripwire.</p>
+
+    <p>The problem is that the law enforcement frame doesn't open a door. It opens a different cell.</p>
+
+    <p>A federal arrest warrant does not grant jurisdiction over foreign sovereign territory. Extraterritorial enforcement requires an extradition treaty. There is no extradition treaty between the United States and Venezuela. If this was a law enforcement operation—if they're sticking with that—then it was an illegal law enforcement operation. The classification doesn't launder the conduct. Choose your violation.</p>
+
+    <p>The Iran operation had no law enforcement frame at all. That one was argued under the president's Article II authority as commander-in-chief, with a side argument that the nuclear facilities constituted an imminent threat. The "imminent threat" argument requires evidence that was not presented publicly, to a Congress that was not consulted, for a strike on a country with no active conflict with the United States. These are not two different legal theories producing two different outcomes. They are two versions of the same theory: the president can use military force when the president decides to use military force, and the constitutional apparatus for checking that decision is, in practice, optional.</p>
+
+    <p>And then there's the money. Every aircraft burning fuel. Every cruise missile, approximately two million dollars each. Every B-2 sortie from Missouri. The Anti-Deficiency Act prohibits obligating federal funds for purposes Congress hasn't authorized. Every dollar spent on both operations was an illegal expenditure under 31&nbsp;U.S.C.&nbsp;§&nbsp;1341. That's not a constitutional argument. That's a statutory spending argument with a paper trail and a Comptroller General with a 15-year term who doesn't answer to the President.</p>
+
+    <div class="section-break" role="separator" aria-hidden="true">— ★ —</div>
+
+    <p>Then the Senate tried to do something about Venezuela. A War Powers Resolution—direct the President to remove forces from unauthorized hostilities. Five Republicans broke ranks. The procedural vote advanced 52–47. Genuine bipartisan rebuke. Briefly.</p>
+
+    <p>Trump posted that those senators "should never be elected to office again." The administration ran what Tim Kaine described as "a full-court press unlike any I've seen in 13 years." Rubio wrote a letter to one of the Republican yes votes. Phone calls were made. Two senators—Hawley and Young—changed their votes. The final tally: 50–50.</p>
+
+    <p>Vice President Vance drove to the Capitol and cast the tiebreaker. Resolution dead.</p>
+
+    <p>I want to sit with the specific mechanics of this for a moment, because I think they get lost in the noise of the outcome. The Executive branch conducted an unauthorized military operation. Congress attempted to exercise its constitutional authority to check that operation. The Executive applied documented pressure to flip two votes and manufacture a tie. The Executive then used the Vice President's procedural role to break that manufactured tie and kill the check.</p>
+
+    <p>This is not obstruction in the informal sense. This is not norm violation. This is the Executive branch reaching into the Legislative branch, engineering the conditions for a tiebreaker, and then casting it. The remedy was strangled with the oversight mechanism's own rope. And the sad thing is, it's not even unconstitutional in and of itself. But a record needs to be made of it, showing what it is. And how it could be done again in the future with precedent.</p>
+
+    <p>Kaine said: "If they were that righteous about the justness of this cause or the validity of their legal rationale, they wouldn't be afraid of public debate."</p>
+
+    <div class="section-break" role="separator" aria-hidden="true">— ★ —</div>
+
+    <p>I am going to tell you what I think actually happens now, and I want to be clear that this is not optimism. It is math.</p>
+
+    <p>The DOJ will not act. Treat this as a constant, not a variable, and build around it. What doesn't require the DOJ: the Comptroller General's independent audit authority under the Anti-Deficiency Act. The state attorneys general who can file civil suits for concrete economic harm—Virginia has defense contracts at Norfolk that were disrupted, Florida has disaster preparedness assets diverted from SOUTHCOM, Texas has quantifiable oil market impact from the Venezuela operation. The False Claims Act's qui tam provisions, which allow private enforcement independent of DOJ discretion—Congress put those in there specifically because they knew there would be moments when the DOJ couldn't be trusted to act. The seven wounded service members, who were deployed into unauthorized hostilities and have legal standing so clean it barely needs argument. Their wound is the lawsuit.</p>
+
+    <p>And here is the piece that the administration is hoping everyone overlooks: the federal statute of limitations for most felonies is five years. Presidential immunity is a timing problem, not a permanent shield. Every secretary who signed an operational order, every chairman who authorized an expenditure, every commander who executed the deployment—none of them have presidential immunity. The criminal exposure is present, documented, and running.</p>
+
+    <p>The legal architecture being built right now—the ADA filings, the state suits, the GAO investigations, the congressional subpoenas and the refusals that generate their own records—is not only a present-tense accountability mechanism. It is a prosecution brief. It will exist, in permanent federal filing systems, on the morning this administration ends.</p>
+
+    <p>They built a replica of Maduro's compound and rehearsed for months. The accountability architecture is built the same way: in advance, methodically, so that it's ready when the moment arrives.</p>
+
+    <div class="section-break" role="separator" aria-hidden="true">— ★ —</div>
+
+    <p>I did not want to be writing this. I was doing fine contemplating dinner, paint colors, the physics of consciousness, and having a principled policy of minimal political engagement. My friend dragged me back in with six words and a casual delivery, and I spent two weeks reading and arguing with myself and arriving, with real reluctance, at the conclusion that he was correct.</p>
+
+    <p>We kidnapped the president of Venezuela. We bombed Iran without a declaration of war. We used the Vice President's tiebreaker to kill the constitutional remedy, and we manufactured the tie first. The legal framework to pursue accountability exists in granular statutory detail and does not require a cooperative DOJ or a prosecutable sitting president.</p>
+
+    <p>The theater turned out to be capable of this. That's the thing I couldn't argue my way out of. Not the operations themselves—the fact that even my carefully maintained detachment couldn't make them into noise.</p>
+
+  </article>
+
+  <!-- Citations -->
+  <div class="citations-wrapper">
+    <div class="cit-rule"></div>
+    <p class="citations">
+      <span class="label">Primary Legal Citations:</span>
+      U.S. Const. Art. I §§ 8, 9;&thinsp; Art. VI cl. 2
+      &nbsp;·&nbsp;
+      War Powers Resolution, 50 U.S.C. §§ 1541–1548
+      &nbsp;·&nbsp;
+      Anti-Deficiency Act, 31 U.S.C. §§ 1341, 1350, 1351
+      &nbsp;·&nbsp;
+      False Claims Act, 31 U.S.C. § 3729
+      &nbsp;·&nbsp;
+      18 U.S.C. §§ 371, 641, 1201, 3282
+      &nbsp;·&nbsp;
+      <em>Zivotofsky v. Clinton</em>, 566 U.S. 189 (2012)
+      &nbsp;·&nbsp;
+      <em>Clinton v. Jones</em>, 520 U.S. 681 (1997)
+      &nbsp;·&nbsp;
+      <em>Trump v. United States</em>, 603 U.S. ___ (2024)
+      &nbsp;·&nbsp;
+      UN Charter Arts. 2(4), 51
+      &nbsp;·&nbsp;
+      Operation Absolute Resolve, January 3, 2026
+      &nbsp;·&nbsp;
+      Operation Midnight Hammer, June 21–22, 2025
+      &nbsp;·&nbsp;
+      S.J.Res. 98, procedural advance 52–47 (January 8, 2026),
+      final vote 50–50, VP Vance tiebreaker (January 14, 2026)
+    </p>
+    <div class="cit-rule"></div>
+  </div>
+
+</div><!-- /.page -->
+
+<!-- Back to top -->
+<button id="btt" aria-label="Back to top">↑</button>
+
+<script>
+  const bar = document.getElementById('progress');
+  const btt = document.getElementById('btt');
+
+  window.addEventListener('scroll', () => {
+    const scrolled  = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = Math.min((scrolled / docHeight) * 100, 100) + '%';
+    btt.classList.toggle('visible', scrolled > 500);
+  }, { passive: true });
+
+  btt.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+  <script src="../global-nav.js"></script>
+</body>
+</html>

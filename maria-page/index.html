@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria</title>
+    <meta name="description" content="Maria Marcia Carlotta Gonzales-Garcia and the Pearls that Knew Too Much — a fable about a museum, a mongoose, and the politics of who gets the spotlight. By Justin Bogner.">
+    <meta property="og:title" content="Maria — by Justin Bogner">
+    <meta property="og:description" content="A fable about a museum, a mongoose, and the politics of who gets the spotlight.">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --dark: #2C3E50;
+            --light: #F7F9F9;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, var(--light) 0%, #e0eafc 100%);
+            color: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin: 1rem auto;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            flex-grow: 1;
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toolbar {
+            background: var(--dark);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.4);
+        }
+
+        .btn.primary {
+            background: var(--primary);
+        }
+
+        .btn.primary:hover {
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            flex-grow: 1;
+            min-height: 600px;
+            border: none;
+            background: #eee;
+        }
+
+        /* Fun background shapes */
+        .shape {
+            position: fixed;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--secondary);
+            filter: blur(80px);
+            top: -100px;
+            left: -100px;
+        }
+
+        .blob {
+            width: 400px;
+            height: 400px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            background: var(--primary);
+            filter: blur(80px);
+            bottom: -150px;
+            right: -100px;
+            animation: morph 8s ease-in-out infinite alternate;
+        }
+
+        @keyframes morph {
+            0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(30px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .toolbar { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+    <link rel="stylesheet" href="../global-nav.css">
+</head>
+<body>
+    <div class="shape circle"></div>
+    <div class="shape blob"></div>
+
+    <header>
+        <h1>Maria</h1>
+        <p class="subtitle">A fable about a museum, a mongoose, and the politics of who gets the spotlight. Read below or download the book to keep.</p>
+    </header>
+
+    <div class="container">
+        <div class="toolbar">
+            <span style="color: white; font-weight: 500;">📖 Reading: maria.pdf</span>
+            <div style="display: flex; gap: 10px;">
+                <a href="../" class="btn">← Back to Hub</a>
+                <a href="maria.pdf" download class="btn primary">Download PDF</a>
+            </div>
+        </div>
+        <!-- Embed the PDF -->
+        <embed src="maria.pdf" type="application/pdf" class="pdf-viewer" />
+    </div>
+    <script src="../global-nav.js"></script>
+</body>
+</html>

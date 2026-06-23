@@ -1,0 +1,103 @@
+/* global-nav.css */
+:root {
+  --jb-nav-bg: rgba(15, 23, 42, 0.95);
+  --jb-nav-border: rgba(255, 255, 255, 0.1);
+  --jb-nav-text: #e2e8f0;
+  --jb-nav-hover: #ffffff;
+  --jb-nav-accent: #3b82f6;
+  --jb-nav-z: 999999;
+}
+
+#jb-global-nav {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: var(--jb-nav-z);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#jb-global-nav-btn {
+  background: var(--jb-nav-bg);
+  border: 1px solid var(--jb-nav-border);
+  color: var(--jb-nav-text);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#jb-global-nav-btn:hover {
+  transform: scale(1.05);
+  color: var(--jb-nav-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+#jb-global-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#jb-global-nav-menu {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  background: var(--jb-nav-bg);
+  border: 1px solid var(--jb-nav-border);
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 220px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#jb-global-nav.active #jb-global-nav-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#jb-global-nav-menu a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--jb-nav-text);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+  text-align: left;
+  border-left: 2px solid transparent;
+}
+
+#jb-global-nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--jb-nav-hover);
+  border-left-color: var(--jb-nav-accent);
+}
+
+#jb-global-nav-menu .jb-nav-header {
+  padding: 8px 20px 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 4px;
+}

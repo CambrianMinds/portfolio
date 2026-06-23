@@ -1,0 +1,3012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notable Disappearances</title>
+  <meta name="description" content="Contains scientist disappearances, legal FOIA shields, contractor involvement, and consciousness correlations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-header: #0f172a;
+      --border-color: #cbd5e1;
+      --border-light: #e2e8f0;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --text-light: #f8fafc;
+      --accent-navy: #0f172a;
+      --accent-blue: #1e3a8a;
+      --accent-alert: #991b1b;
+      --bg-alert: #fef2f2;
+      --border-alert: #fee2e2;
+      --accent-novel: #b45309;
+      --bg-novel: #fffbeb;
+      --border-novel: #fef3c7;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      --font-serif: 'Cinzel', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+
+    [data-theme="dark"] {
+      --bg-primary: #0f172a;
+      --bg-card: #1e293b;
+      --bg-header: #020617;
+      --border-color: #334155;
+      --border-light: #475569;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-light: #f8fafc;
+      --accent-navy: #93c5fd;
+      --accent-blue: #3b82f6;
+      --accent-alert: #ef4444;
+      --bg-alert: #450a0a;
+      --border-alert: #7f1d1d;
+      --accent-novel: #fbbf24;
+      --bg-novel: #422006;
+      --border-novel: #78350f;
+    }
+
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent-blue);
+      z-index: 1000;
+      width: 0%;
+      transition: width 0.1s;
+    }
+
+    /* Article Styles */
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      box-shadow: var(--shadow-sm);
+    }
+    .article-container h1, .article-container h2, .article-container h3 {
+      font-family: var(--font-serif);
+      color: var(--accent-navy);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .article-container h1 { font-size: 2rem; border-bottom: 2px solid var(--accent-navy); padding-bottom: 0.5rem; text-align: center; }
+    .article-container h2 { font-size: 1.5rem; color: #8c281e; font-style: italic; text-align: center; margin-top: 0.5rem; }
+    .article-container h3 { font-size: 1.25rem; text-transform: uppercase; border-bottom: 1px solid var(--border-light); padding-bottom: 0.25rem; }
+    [data-theme="dark"] .article-container h2 { color: #f87171; }
+    .article-container p { margin-bottom: 1.2rem; font-size: 1.05rem; line-height: 1.7; }
+    .article-container ul { margin-bottom: 1.2rem; padding-left: 2rem; }
+    .article-container li { margin-bottom: 0.5rem; }
+    .article-container .author-info { text-align: center; margin-bottom: 2rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); }
+    .article-link { color: var(--accent-blue); text-decoration: underline; cursor: pointer; }
+    .article-link:hover { color: var(--accent-navy); }
+    
+    /* Stats Dashboard */
+    .stats-dashboard {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stats-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .stats-card-value { font-size: 2rem; font-family: var(--font-serif); font-weight: 700; color: var(--accent-navy); }
+    .stats-card-label { font-size: 0.75rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase; }
+    
+    /* Category Header */
+    .category-header {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 2rem 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-navy);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .category-header:hover { color: var(--accent-navy); }
+    
+    /* Keyboard Modal */
+    #keyboard-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--bg-card);
+      border: 2px solid var(--accent-navy);
+      padding: 2rem;
+      border-radius: 8px;
+      z-index: 2000;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    #keyboard-modal.active { display: block; }
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1999;
+    }
+    .modal-backdrop.active { display: block; }
+    .key-bind {
+      display: inline-block;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      margin-right: 0.5rem;
+      color: var(--accent-navy);
+    }
+    .key-row { margin-bottom: 0.75rem; display: flex; align-items: center; }
+
+    /* Official Classification Header Banner */
+    .classification-banner {
+      background-color: var(--accent-alert);
+      color: #ffffff;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      padding: 0.25rem 1rem;
+      text-transform: uppercase;
+      user-select: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* Page Header */
+    .app-header {
+      background-color: var(--bg-header);
+      color: var(--text-light);
+      padding: 1.5rem 2rem;
+      border-bottom: 3px double var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .header-title-container h1 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .header-title-container p {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    .header-stats {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .stat-box {
+      border-left: 2px solid var(--border-color);
+      padding-left: 0.75rem;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .stat-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: var(--font-serif);
+      color: #ffffff;
+    }
+
+    /* Main Grid Layout */
+    .main-container {
+      display: flex;
+      flex: 1;
+      position: relative;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 320px;
+      border-right: 1px solid var(--border-color);
+      background-color: var(--bg-card);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      overflow-y: auto;
+      height: calc(100vh - 110px);
+      position: sticky;
+      top: 60px;
+    }
+
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sidebar-title {
+      font-family: var(--font-serif);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent-navy);
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 0.4rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid var(--border-color);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-navy);
+    }
+
+    /* Categories Menu */
+    .category-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .category-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 0.5rem 0.75rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-main);
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-btn:hover {
+      background-color: var(--bg-primary);
+      color: var(--accent-blue);
+    }
+
+    .category-btn.active {
+      background-color: var(--accent-navy);
+      color: #ffffff;
+    }
+
+    .category-count {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      background-color: var(--border-light);
+      color: var(--text-muted);
+      padding: 0.1rem 0.4rem;
+      border-radius: 10px;
+    }
+
+    .category-btn.active .category-count {
+      background-color: rgba(255,255,255,0.2);
+      color: #ffffff;
+    }
+
+    /* Action Buttons */
+    .action-btn {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.6rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      width: 100%;
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .action-btn:hover {
+      background-color: var(--accent-navy);
+      color: #ffffff;
+      border-color: var(--accent-navy);
+    }
+
+    .action-btn.primary {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+    }
+
+    .action-btn.primary:hover {
+      background-color: #172554;
+    }
+
+    /* Main Content Area */
+    .content-area {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Tab Layout & Controls */
+    .tab-bar {
+      display: flex;
+      border-bottom: 2px solid var(--accent-navy);
+      margin-bottom: 2rem;
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: 1px solid transparent;
+      border-bottom: none;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      position: relative;
+      top: 2px;
+      transition: all 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tab-btn:hover {
+      color: var(--accent-navy);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-navy);
+      background-color: var(--bg-primary);
+      border-color: var(--accent-navy) var(--accent-navy) var(--bg-primary);
+      border-radius: 4px 4px 0 0;
+    }
+
+    /* Panel States */
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* Case Study / Record Cards */
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--accent-navy);
+      margin-bottom: 1.5rem;
+      border-bottom: 2px double var(--border-color);
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .record-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      border-radius: 4px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .record-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .record-header {
+      padding: 1.25rem 1.5rem;
+      background-color: #f8fafc;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .record-title-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .record-id {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid var(--accent-navy);
+      color: var(--accent-navy);
+      background-color: #ffffff;
+      border-radius: 2px;
+    }
+
+    .record-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-navy);
+    }
+
+    .record-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 0.15rem 0.4rem;
+      background-color: var(--border-light);
+      color: var(--text-main);
+      border-radius: 2px;
+      text-transform: uppercase;
+    }
+
+    .meta-badge.novel {
+      background-color: var(--bg-novel);
+      color: var(--accent-novel);
+      border: 1px solid var(--border-novel);
+      font-weight: 600;
+    }
+
+    .record-body {
+      padding: 1.5rem;
+    }
+
+    .record-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .record-item {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .record-item::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    .record-item.novel-bullet {
+      background-color: var(--bg-novel);
+      border-left: 3px solid var(--accent-novel);
+      padding: 0.5rem 0.75rem 0.5rem 1.25rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .record-item.novel-bullet::before {
+      left: 0.4rem;
+      color: var(--accent-novel);
+    }
+
+    .record-sources {
+      margin-top: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border-light);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .record-sources span {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* Notes Workspace Section */
+    .record-notes-section {
+      background-color: #fafaf9;
+      border-top: 1px solid var(--border-light);
+      padding: 1rem 1.5rem;
+    }
+
+    .notes-label {
+      font-family: var(--font-serif);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .notes-status {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: normal;
+    }
+
+    .notes-textarea {
+      width: 100%;
+      height: 80px;
+      padding: 0.6rem;
+      border: 1px solid var(--border-color);
+      border-radius: 2px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      resize: vertical;
+      background-color: #ffffff;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .notes-textarea:focus {
+      border-color: var(--accent-navy);
+      box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.05);
+    }
+
+    /* Chronological Timeline Panel */
+    .timeline-container {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid var(--border-color);
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline-node {
+      position: relative;
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: calc(-2rem - 6px);
+      top: 0.25rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--accent-blue);
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--border-color);
+    }
+
+    .timeline-node.novel .timeline-marker {
+      background-color: var(--accent-novel);
+      box-shadow: 0 0 0 2px var(--border-novel);
+    }
+
+    .timeline-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-node.novel .timeline-date {
+      color: var(--accent-novel);
+    }
+
+    .timeline-card {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1rem;
+    }
+
+    .timeline-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--accent-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-card p {
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    /* Novel Connections Checklist View */
+    .novel-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .novel-connection-card {
+      background-color: var(--bg-novel);
+      border: 1px solid var(--border-novel);
+      border-radius: 4px;
+      padding: 1.25rem;
+    }
+
+    .novel-connection-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: var(--accent-novel);
+      font-size: 1.05rem;
+    }
+
+    .novel-connection-body {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    /* Interactive Connections Matrix UI */
+    .matrix-view {
+      display: grid;
+      grid-template-columns: 1.2fr 1.8fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .matrix-view {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matrix-graph-container {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+    }
+
+    .svg-node {
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .svg-node:hover circle {
+      r: 16px;
+    }
+
+    .svg-node.active circle {
+      stroke: var(--accent-navy);
+      stroke-width: 3px;
+      r: 16px;
+    }
+
+    .svg-link {
+      stroke: #cbd5e1;
+      stroke-width: 1.5px;
+      stroke-dasharray: 4;
+      transition: all 0.3s;
+    }
+
+    .svg-link.active {
+      stroke: var(--accent-navy);
+      stroke-width: 2.5px;
+      stroke-dasharray: 0;
+    }
+
+    .svg-node-text {
+      font-family: var(--font-serif);
+      font-size: 10px;
+      font-weight: 700;
+      fill: var(--text-main);
+      text-anchor: middle;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .matrix-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .matrix-node {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-serif);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .matrix-node:hover, .matrix-node.active {
+      border-color: var(--accent-blue);
+      background-color: var(--bg-primary);
+      color: var(--accent-blue);
+    }
+
+    .matrix-details-panel {
+      background-color: #ffffff;
+      border: 2px solid var(--accent-navy);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+
+    .matrix-details-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-navy);
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .matrix-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .matrix-link-item {
+      border-left: 3px solid var(--accent-novel);
+      padding-left: 0.75rem;
+    }
+
+    .matrix-link-target {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-novel);
+      margin-bottom: 0.25rem;
+    }
+
+    .matrix-link-desc {
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    /* Print styling rules */
+    @media print {
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 10pt;
+      }
+
+      .classification-banner {
+        display: none !important;
+      }
+
+      .app-header {
+        background-color: #ffffff;
+        color: #000000;
+        border-bottom: 2px solid #000000;
+        padding: 1rem 0;
+      }
+
+      .header-stats, .sidebar, .tab-bar, .action-btn, .notes-status, #export-section {
+        display: none !important;
+      }
+
+      .main-container {
+        display: block;
+      }
+
+      .content-area {
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .tab-panel {
+        display: block !important; /* Force print all contents */
+      }
+
+      .record-card {
+        page-break-inside: avoid;
+        border: 1px solid #000000;
+        box-shadow: none !important;
+        margin-bottom: 2rem;
+      }
+
+      .record-header {
+        background-color: #f1f5f9 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        border-bottom: 1px solid #000000;
+      }
+
+      .record-id {
+        border-color: #000000;
+        color: #000000;
+      }
+
+      .meta-badge {
+        border: 1px solid #000000;
+        background: none !important;
+        color: #000000 !important;
+      }
+
+      .record-item.novel-bullet {
+        background: none !important;
+        border-left: 2px solid #000000;
+      }
+
+      /* Write-in spaces for notes */
+      .record-notes-section {
+        background: none !important;
+        border-top: 1px solid #000000;
+        padding: 1rem 0 0 0;
+      }
+
+      .notes-textarea {
+        display: none !important;
+      }
+
+      .print-note-container {
+        display: block !important;
+        min-height: 80px;
+        margin-top: 0.5rem;
+      }
+
+      /* Lined paper effect for handwritten assessments if empty, or structured text box if filled */
+      .print-note-empty {
+        border-bottom: 1px dotted #94a3b8;
+        height: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .print-note-filled {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        padding: 0.5rem;
+        border: 1px dashed #000000;
+        white-space: pre-wrap;
+      }
+    }
+
+    /* Geographic Map Marker animations */
+    @keyframes geo-pulse {
+      0%   { opacity: 0.8; transform: scale(1); }
+      70%  { opacity: 0;   transform: scale(2.2); }
+      100% { opacity: 0;   transform: scale(2.2); }
+    }
+
+    .map-marker circle:first-child {
+      animation: geo-pulse 2s ease-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    .map-marker:hover circle:last-of-type {
+      stroke-width: 3px !important;
+      r: 6px;
+    }
+
+    /* Collapsible card header */
+    .record-header:hover {
+      background-color: #f1f5f9 !important;
+    }
+
+    /* Annotated badge style override */
+    .meta-badge.annotated {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #bbf7d0;
+    }
+  </style>
+    <link rel="stylesheet" href="../global-nav.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <header class="app-header">
+    <div class="header-title-container">
+      <h1>The Dissapeared</h1>
+      <p>RESEARCH DATABASE</p>
+    </div>
+    <div class="header-stats">
+      <div class="stat-box" style="cursor:pointer;" onclick="toggleDarkMode()" title="Toggle Dark Mode">
+        <div class="stat-label">Theme</div>
+        <div class="stat-value" id="theme-icon">☾</div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-label">Compiled</div>
+        <div class="stat-value">May 25, 2026</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Source Records</div>
+        <div class="stat-value">46 Entries</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-label">Assessments</div>
+        <div class="stat-value" id="notes-progress-stat">0 / 46</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Categories</div>
+        <ul class="category-list" id="category-filters">
+          <li>
+            <button class="category-btn active" data-category="all">
+              <span>All Records</span>
+              <span class="category-count" id="count-all">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="deaths">
+              <span>Scientist Cases</span>
+              <span class="category-count" id="count-deaths">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="legal">
+              <span>Legal & FOIA</span>
+              <span class="category-count" id="count-legal">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="contractors">
+              <span>Contractors</span>
+              <span class="category-count" id="count-contractors">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="digital">
+              <span>Digital Ghost</span>
+              <span class="category-count" id="count-digital">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="legislative">
+              <span>Legislative / Gov</span>
+              <span class="category-count" id="count-legislative">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="consciousness">
+              <span>Consciousness</span>
+              <span class="category-count" id="count-consciousness">0</span>
+            </button>
+          </li>
+          <li>
+            <button class="category-btn" data-category="institutional">
+              <span>Institutions</span>
+              <span class="category-count" id="count-institutional">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-title">Filters</div>
+        <button class="action-btn" id="filter-novel-btn">Show Only Novel Connections ★</button>
+        <button class="action-btn" id="filter-notes-btn" style="margin-top:0.35rem">Show Only Annotated Records</button>
+        <div style="position:relative; margin-top:0.35rem;">
+          <input type="text" id="search-bar" class="search-input" placeholder="Search… (Esc to clear)">
+          <button id="search-clear-btn" onclick="clearSearch()" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--text-muted);font-size:1rem;line-height:1;" title="Clear search">✕</button>
+        </div>
+        <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);margin-top:0.25rem;">/ to focus · Esc to clear</div>
+      </div>
+
+      <div class="sidebar-section" id="export-section">
+        <div class="sidebar-title">Collaborator Workspace</div>
+        <button class="action-btn primary" onclick="window.print()">Export to PDF / Print</button>
+        <button class="action-btn" onclick="exportTextReport()">Export Text Report (.txt)</button>
+        <button class="action-btn" onclick="exportNotes()">Backup Notes (JSON)</button>
+        <button class="action-btn" onclick="document.getElementById('import-file').click()">Load Notes File</button>
+        <input type="file" id="import-file" style="display:none" onchange="importNotes(event)">
+        <button class="action-btn" style="color:var(--accent-alert); border-color:#fca5a5" onclick="clearAllNotes()">Clear Notes</button>
+      </div>
+    </aside>
+
+    <main class="content-area">
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="records">Document Browser</button>
+        <button class="tab-btn" data-tab="matrix">Nexus Matrix</button>
+        <button class="tab-btn" data-tab="timeline">Chronology</button>
+        <button class="tab-btn" data-tab="novel">Correlations ★</button>
+        <button class="tab-btn" data-tab="map">Geographic Map</button>
+        <button class="tab-btn" data-tab="article">Article</button>
+      </div>
+
+      <!-- TAB 1: RECORDS BROWSER -->
+      <div class="tab-panel active" id="panel-records">
+        
+        <div class="stats-dashboard" id="stats-dashboard">
+          <div class="stats-card">
+            <div class="stats-card-value" id="stat-total-records">0</div>
+            <div class="stats-card-label">Total Records</div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-card-value" id="stat-novel-records" style="color: var(--accent-novel);">0</div>
+            <div class="stats-card-label">Novel Connections ★</div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-card-value" id="stat-annotated-records" style="color: #10b981;">0</div>
+            <div class="stats-card-label">Annotated Records</div>
+          </div>
+        </div>
+
+          <div id="records-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- TAB 2: NEXUS MATRIX -->
+      <div class="tab-panel" id="panel-matrix">
+        <div class="section-title">Critical Intersections & Links</div>
+        <div class="matrix-view">
+          <div class="matrix-graph-container">
+            <svg id="matrix-svg" width="100%" height="320" viewBox="0 0 400 300" style="border: 1px solid var(--border-light); border-radius: 4px; background-color: #fafaf9; margin-bottom: 0.5rem;">
+              <!-- Connections Lines (Links) -->
+              <line x1="200" y1="150" x2="100" y2="80" class="svg-link" id="link-m-1" />
+              <line x1="200" y1="150" x2="300" y2="80" class="svg-link" id="link-m-2" />
+              <line x1="200" y1="150" x2="100" y2="220" class="svg-link" id="link-m-3" />
+              <line x1="200" y1="150" x2="300" y2="220" class="svg-link" id="link-m-4" />
+              
+              <!-- Cross-link lines between nodes -->
+              <line x1="100" y1="80" x2="300" y2="80" class="svg-link" style="stroke-dasharray: 2;" />
+              <line x1="100" y1="220" x2="300" y2="220" class="svg-link" style="stroke-dasharray: 2;" />
+              
+              <!-- Central Vector Node -->
+              <g class="svg-node" onclick="selectMatrixNode('all')">
+                <circle cx="200" cy="150" r="22" fill="#0f172a" stroke="#fff" stroke-width="2" />
+                <text x="200" y="153" text-anchor="middle" fill="#fff" style="font-size: 8px; font-weight: bold; font-family: var(--font-sans); pointer-events:none;">THE VECTOR</text>
+              </g>
+
+              <!-- Node 1: AFRL Mondaloy -->
+              <g class="svg-node" id="node-m-1" onclick="selectMatrixNode('m-1')">
+                <circle cx="100" cy="80" r="14" fill="#1e3a8a" stroke="#fff" stroke-width="2" />
+                <text x="100" y="112" class="svg-node-text">Mondaloy Nexus</text>
+              </g>
+
+              <!-- Node 2: Albuquerque NM -->
+              <g class="svg-node" id="node-m-2" onclick="selectMatrixNode('m-2')">
+                <circle cx="300" cy="80" r="14" fill="#b45309" stroke="#fff" stroke-width="2" />
+                <text x="300" y="112" class="svg-node-text">Albuquerque Nexus</text>
+              </g>
+
+              <!-- Node 3: Directed Energy -->
+              <g class="svg-node" id="node-m-3" onclick="selectMatrixNode('m-3')">
+                <circle cx="100" cy="220" r="14" fill="#991b1b" stroke="#fff" stroke-width="2" />
+                <text x="100" y="248" class="svg-node-text">Directed Energy</text>
+              </g>
+
+              <!-- Node 4: Basal Ganglia -->
+              <g class="svg-node" id="node-m-4" onclick="selectMatrixNode('m-4')">
+                <circle cx="300" cy="220" r="14" fill="#0d9488" stroke="#fff" stroke-width="2" />
+                <text x="300" y="248" class="svg-node-text">Basal Ganglia</text>
+              </g>
+            </svg>
+            <div class="matrix-list" id="matrix-nodes-list">
+              <!-- Populated dynamically as textual backup below graph -->
+            </div>
+          </div>
+          <div class="matrix-details-panel" id="matrix-details-panel">
+            <h3 class="matrix-details-title" id="matrix-details-title">Select an intersection point to view detailed intelligence linking patterns.</h3>
+            <div class="matrix-link-list" id="matrix-details-content">
+              <p style="color: var(--text-muted);">Links show cross-referenced files, professional pathways, and geographical overlaps uncovered during this investigation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: TIMELINE -->
+      <div class="tab-panel" id="panel-timeline">
+        <div class="section-title">Timeline of Major Events & Actions</div>
+        <div class="timeline-container" id="timeline-flow">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- TAB 4: NOVEL CORRELATIONS -->
+      <div class="tab-panel" id="panel-novel">
+        <div class="section-title">Special Analytical Correlations & Observations</div>
+        <div class="novel-checklist" id="novel-correlations-container">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      
+      <!-- TAB 6: ARTICLE -->
+      <div class="tab-panel" id="panel-article">
+        <div class="article-container">
+          <h1>THE VECTOR</h1>
+          <h2>How the Military-Industrial Cartel Launders Reality<br>(And Offs the Scientists Who Figure It Out)</h2>
+          <div class="author-info">By Justin Todd Bogner | justintbogner.com | CambrianMinds.com</div>
+          <p>Let's get one thing absolutely, unambiguously straight: The truth is not ``classified'' anymore. That word implies a bureaucratic process, a rational system, a government that at least had the institutional decency to stamp ``TOP SECRET'' on a folder and file it in a vault somewhere. No. The truth has been <i>privatized</i>, <i>corporatized</i>, and <i>laundered</i> through a labyrinth of defense contractors, proprietary IP law, and Supreme Court precedent so Byzantine that the Founding Fathers would have burned the Constitution in protest and started over. It is enforced by the kind of state-sanctioned, extrajudicial violence that makes the Cosa Nostra look like a neighborhood watch program. And if you haven't been paying attention to the epistemological avalanche burying the mainstream narrative&mdash;the congressional hearings, the presidential initiatives, the bodies piling up in the desert&mdash;then frankly, what the hell have you been looking at?</p>
+          <p>You probably caught Congressman Tim Burchett on <i>The Joe Rogan Experience</i> (Episode #2495, May 7, 2026). Burchett, a sitting U.S. Representative and the tip of the legislative spear for the UAP Caucus, sat across from Rogan and didn't just dismantle the polite veneer of the military-industrial complex&mdash;he took a blowtorch to it. He didn't dance around ``interagency miscommunications'' or ``over-classification.'' He called the Pentagon brass what they are: ``war pimps.'' His exact words: ``I always throw out the `war pimps' &mdash; my daddy fought for this country... that's their business is war and their business is very good.'' He laid out the mob analogy with surgical precision: the cartel doesn't need to take out the kingpin. They ``rough up the busboys'' to make sure every single person in the restaurant knows the cost of opening their mouth. He referenced scientists being ``allowed to commit suicide'' with the kind of acid sarcasm that only a man who has seen the classified briefings and knows exactly how grotesque the official cover stories are could muster.</p>
+          <p>This is not some guy in a basement with a tinfoil hat and a YouTube channel. This is a federal legislator, on the record, on a platform with tens of millions of listeners, confirming the exact operational parameters of a structural cover-up that has claimed the lives and freedom of our brightest minds. And the machine just keeps grinding.</p>
+          <h3>The Body Count: A Statistical Impossibility</h3>
+          <p>Let's look at the board. Not the sanitized, ``tragic coincidence'' version that legacy media is trying to sell you. The actual board.</p>
+          <p>Since 2022, we have documented at least <strong>twelve</strong> top-tier U.S. scientists, researchers, and military officials&mdash;people working on nuclear fusion, aerospace metallurgy, directed-energy systems, gravity modification, and advanced propulsion&mdash;who have vanished, been shot, or died under circumstances so suspicious that even the White House had to stop pretending it wasn't happening. In mid-April 2026, President Trump himself acknowledged the situation as ``pretty serious stuff'' and ordered a holistic review involving the FBI, DOE, DOD, and local law enforcement to determine whether the cases are connected. The FBI confirmed it is ``spearheading the effort to look for connections.''</p>
+          <p>Let me say that again, slowly, for the people in the back: <i>The President of the United States ordered a federal investigation into whether someone is systematically killing America's top scientists.</i></p>
+          <p>And on April 20, 2026, House Oversight Committee Chairman James Comer and Subcommittee Chairman Eric Burlison sent letters to the Secretary of Energy, the Secretary of War, the FBI Director, and the NASA Administrator demanding staff-level briefings by April 27. They wrote that if reports were accurate, the situation represented ``a grave threat to U.S. national security and to U.S. personnel with access to scientific secrets.'' They specifically cited a professional link between two of the most prominent cases&mdash;Monica Reza and General William Neil McCasland&mdash;through Air Force-funded research on advanced materials.</p>
+          <p>The subset of the U.S. scientific population possessing top-secret aerospace, nuclear, and SAP clearances is remarkably small&mdash;a fraction of the roughly 700,000 individuals with TS clearances, itself a subset of the 2 million researchers in the country. For a double-digit cohort within this elite intersection to suffer unexplained disappearances, sudden ``suicides,'' targeted murders, and untraceable vanishings within a truncated four-year window is not stochastic misfortune. It is a <i>purge</i>.</p>
+          <p>I'm tired of the word ``coincidence.'' It's the intellectual equivalent of a participation trophy&mdash;something you hand out when you don't want to deal with what actually happened.</p>
+          <h3 style='font-size: 1.1rem; color: var(--text-main); margin-top: 1.5rem;'>Amy Eskridge: They Killed Her and Called It Self-Care</h3>
+          <p>Amy Catherine Eskridge was 34 years old, double-majored in chemistry and biology from UAH, and had evolved into a master interdisciplinarian spanning electrical engineering, physics, and genetic engineering. As co-founder and president of the Institute for Exotic Science in Huntsville, Alabama&mdash;Rocket City, the backyard of NASA's Marshall Space Flight Center&mdash;she was pushing the absolute bleeding edge of anti-gravity technology, electromagnetic drives, and reactionless propulsion systems. In 2018, she presented ``A Historical Perspective on Anti-Gravity Technology'' to the Huntsville Alabama L5 Society, reviewing Thomas Townsend Brown's ``Gravitator'' and the EM Drive. She was building the exact suite of technologies required to replicate UAP flight characteristics outside the Newtonian box.</p>
+          <p>On June 11, 2022, she was found dead from a ``self-inflicted gunshot wound.'' Madison County ruled it suicide. Case closed. Move along.</p>
+          <p>Except for this: <i>one month before she died</i>, Eskridge sent a text message to a business associate that read&mdash;and I want you to read this twice&mdash;``If you see any report that I killed myself, I most definitely did not.'' She wrote to another friend: ``If you see a news report that I took my own life, it's a lie.'' This is not the language of someone planning to end their life. This is the language of someone who <i>knew</i> what was coming and was trying to get ahead of the cover story.</p>
+          <p>In the weeks preceding her death, Eskridge reported being subjected to directed-energy weapon attacks. She suffered burn marks and lesions on her hands and body, which she and a colleague with weapons experience attributed to an RF K-band emitter operated from an SUV. Retired British intelligence officer Franc Milburn, a friend of Eskridge, subsequently submitted findings to the U.S. Congress in 2023 alleging she had been murdered by a private aerospace entity to suppress her research.</p>
+          <p>And here's the thing that should make your blood boil: the directed-energy weapon she described? <i>It exists.</i> In late 2024, the Department of Homeland Security, with Pentagon funding, clandestinely acquired a portable, backpack-sized device that emits pulsed radio-frequency energy. The device contains Russian-manufactured components. In 2026, Pentagon testing of this device&mdash;including animal experiments&mdash;produced injuries <i>consistent with</i> the symptoms reported by Anomalous Health Incident (Havana Syndrome) victims. The technology Eskridge said was being used to attack her is not hypothetical. It is real, it is portable, and it is in active operational use. They killed her and called it self-care.</p>
+          <h3 style='font-size: 1.1rem; color: var(--text-main); margin-top: 1.5rem;'>Monica Reza: The Metallurgist Who Vanished Into Thin Air</h3>
+          <p>Monica Jacinto Reza held degrees from Columbia University and UCLA. She was the Director of Materials Processing at NASA's Jet Propulsion Laboratory and the co-inventor of Mondaloy&mdash;a revolutionary nickel-based superalloy developed in the mid-1990s alongside her mentor Dallis Hardwick at Rocketdyne. Mondaloy solved one of the most intractable problems in rocket propulsion: creating a material lightweight and strong enough to withstand high-pressure, high-temperature gaseous oxygen environments in staged combustion cycle engines without spontaneously combusting. Before Mondaloy, American engineers avoided these designs because the oxygen would literally <i>eat</i> the engine components. Her invention allowed the U.S. to end its dependence on Russian-made RD-180 engines. It is currently used in approximately 12 critical components of the AR1 engine and the Air Force's Hydrocarbon Boost Technology Demonstrator. She held three distinct patents for burn-resistant and high-tensile-strength metal alloys, won the inaugural Luminary Award from HENAAC while at Boeing, and worked extensively with the Air Force Research Laboratory.</p>
+          <p>On June 22, 2025, this 60-year-old woman vanished while hiking on the Mount Waterman Trail in the Angeles National Forest. She was walking approximately 30 feet behind a companion. The companion called out, received no response, turned around, and she was <i>gone</i>&mdash;in an area where the nearby road was both visible and audible. The next day, a beanie believed to be hers was found in Devil's Canyon ravine, roughly 600 feet below the trail. Tracking dogs lost her scent abruptly at that location. Despite one of the largest search-and-rescue operations in Los Angeles County history&mdash;Altadena Mountain Rescue, Antelope Valley SAR, FLIR thermal aircraft, K-9 units&mdash;her body has never been recovered.</p>
+          <p>People do not evaporate 30 feet behind another human being on a hiking trail. Not without help.</p>
+          <p>And the connection that the House Oversight Committee itself flagged? Mondaloy's development was funded under Air Force Research Laboratory programs. The AFRL is headquartered at Wright-Patterson Air Force Base. The man who commanded that laboratory from 2011 to 2013, overseeing the multi-billion-dollar portfolio that included the very research programs Reza's invention supported, is the next name on this list.</p>
+          <h3 style='font-size: 1.1rem; color: var(--text-main); margin-top: 1.5rem;'>The McCasland Anomaly: Apex Gatekeeper, Gone</h3>
+          <p>Retired U.S. Air Force Major General William Neil McCasland was not a peripheral figure. He was not a mid-level bureaucrat who stumbled into something above his pay grade. He was the <i>apex gatekeeper</i> of American aerospace secrets.</p>
+          <p>McCasland held a Bachelor of Science from the Air Force Academy and a Ph.D. in astronautical engineering from MIT, funded by the Hertz Foundation&mdash;an organization whose fellows make a ``moral commitment'' to make their skills available to the United States in times of national emergency, and whose alumni include the director of Lawrence Livermore National Laboratory, a former DARPA deputy office director, and the co-founders of Anthropic. His dissertation, ``Sensor and Actuator Selection for Fault-Tolerant Control of Flexible Structures,'' was supervised by Richard Battin&mdash;the technical director of Apollo mission development and the man who designed the guidance computer that put human beings on the Moon. Even as a junior Lieutenant in the early 1990s, McCasland was handed leadership of classified development units within the Secretary of the Air Force's Office of Special Projects. He went on to direct the Aerospace Data Facility at Buckley AFB, serve as Chief Engineer of the Navstar GPS Joint Program Office, direct the Space-Based Laser Project Office, command the Phillips Research Site at Kirtland AFB, act as Vice Commander of the Space and Missile Systems Center, and serve as Director of Special Programs within the Office of the Under Secretary of Defense for Acquisition, Technology, and Logistics at the Pentagon&mdash;where he functioned as the <strong>Executive Secretary for the Special Access Program Oversight Committee (SAPOC)</strong>.</p>
+          <p>Let me translate that for civilians: SAPOC, governed by DoD Directive 5205.07, is the body that reviews, approves, and oversees <i>every single Special Access Program</i> in the United States Department of Defense. The chair is the Deputy Secretary of Defense. McCasland was the pipeline. Every unacknowledged SAP, every compartmentalized black program, every piece of exotic technology that the defense establishment wanted to keep buried&mdash;it crossed his desk. He was the 7th Commander of the Air Force Research Laboratory at Wright-Patterson, managing over 10,000 personnel and billions in advanced weapons research. After retirement, he served as Director of Technology at Applied Technology Associates and on the Board of Trustees for Riverside Research.</p>
+          <p>His connection to the UAP subject is a matter of irrefutable public record. The 2016 WikiLeaks release of John Podesta's emails revealed that Tom DeLonge had explicitly identified McCasland as the key figure who helped assemble his private advisory team for what became To The Stars Academy. DeLonge wrote to Podesta on January 25, 2016: ``He mentioned he's a `skeptic,' he's not... He just has to say that out loud, but he is very, very aware&mdash;as he was in charge of all of the stuff. When Roswell crashed, they shipped it to the laboratory at Wright Patterson Air Force Base. General McCasland was in charge of that exact laboratory up to a couple years ago.'' That advisory network included Luis Elizondo (former AATIP director), Chris Mellon (former Deputy Assistant Secretary of Defense for Intelligence), Hal Puthoff (SRI remote viewing program physicist), and Steve Justice (former Lockheed Martin Skunk Works director).</p>
+          <p>On the morning of February 27, 2026, a repairman interacted with the 68-year-old McCasland at his Albuquerque home around 10:00 AM. His wife left for a medical appointment at 11:10 AM. When she returned shortly after noon, he was gone. He left behind his phone, his prescription glasses, and his wearable medical devices&mdash;severing every standard method of digital and physical tracking. His wallet, hiking boots, a red backpack, and a .38-caliber revolver were missing. A Silver Alert was issued. A massive coordinated search involving the Bernalillo County Sheriff's Office, the FBI, New Mexico Search and Rescue, and personnel from Kirtland Air Force Base canvassed over 700 homes, deployed drones, helicopters, and K-9 units. Eight days later, a gray U.S. Air Force sweatshirt was found 1.25 miles from his home. No blood. Ownership was never confirmed.</p>
+          <p>He has not been found.</p>
+          <h3 style='font-size: 1.1rem; color: var(--text-main); margin-top: 1.5rem;'>The Albuquerque Nexus</h3>
+          <p>Here is a pattern that nobody in the mainstream press has bothered to connect: McCasland vanished from Albuquerque in February 2026. Steven Garcia&mdash;a government contractor and property custodian at the Kansas City National Security Campus, which manufactures the majority of non-nuclear components for the U.S. nuclear weapons arsenal, a man with <i>top security clearance</i> and oversight of sensitive high-value assets&mdash;vanished from Albuquerque on foot in August 2025, carrying a handgun, leaving behind his vehicle, keys, phone, and wallet. Anthony Chavez, a retired Los Alamos National Laboratory employee, vanished from Los Alamos in May 2025, leaving behind his car, wallet, keys, and cigarettes. Melissa Casias, an administrative assistant at LANL, vanished in June 2025 after <i>both her personal and work-issued phones were found at home, reset to factory settings</i>&mdash;keys, wallet, and purse also left behind.</p>
+          <p>Four people. All connected to the defense-nuclear-aerospace corridor. All from the same geographic nexus: the stretch of New Mexico containing Kirtland Air Force Base, Sandia National Laboratories, and Los Alamos National Laboratory. All gone. All left behind the exact items&mdash;phones, wallets, keys&mdash;that would allow them to be tracked. Casias's factory-reset phones are not the behavior of a despondent person walking away from their life. They are the forensic signature of either anticipatory evidence destruction or third-party digital sanitization.</p>
+          <h3>The Digital Ghost: @TMBSPACESHIPS</h3>
+          <p>The physical disappearance of General McCasland cannot be analyzed in isolation. It must be correlated with the digital anomaly that preceded it by exactly twenty-two minutes.</p>
+          <p>Between November 2022 and the morning of February 27, 2026, the anonymous X account texttt{@TMBSPACESHIPS} posted 1,645 times, disseminating highly technical, seemingly classified data regarding aerospace physics. The account's display name was ELECTRIC PROPULSIVE SPACECRAFT SYSTEMS. Its profile picture was quantum physicist Wolfgang Pauli&mdash;and if you know anything about Pauli beyond the exclusion principle, you know he spent the later years of his career collaborating with Carl Jung on the nature of synchronicity and the relationship between physics and consciousness. That choice of avatar was not random. It was a thesis statement.</p>
+          <p>The account's bio read: ``38 year Active Duty USAF PhD Engineer. AFIT/AETC/AFMC - UT/OU.'' Every single credential maps flawlessly to William Neil McCasland:</p>
+          <ul>
+          </ul>
+          <p>item <strong>PhD Engineer</strong>: McCasland earned his Ph.D. in Astronautical Engineering from MIT (1988). item <strong>AFIT/AFMC</strong>: The Air Force Institute of Technology and Air Force Materiel Command are both headquartered at Wright-Patterson, where McCasland commanded the AFRL. item <strong>AETC</strong>: Air Education and Training Command covers the Air War College at Maxwell AFB, from which McCasland graduated in 1995. item <strong>UT/OU</strong>: McCasland grew up in Austin and attended the University of Texas; his wife Susan's family had roots in Oklahoma.</p>
+          <p>The account disseminated hand-drawn schematics of a ``Closed Cycle Plasma Alternator'' (dedicated to researcher Ashton Forbes, posted July 7, 2025) and discussed advanced physics frameworks including Eikonal Corrected Discrete Electrodynamics for Kinetic Media, Malus' Theorem applications, and a concept the account coined: ``Thermostatic Vector Sensing Reference Systems''&mdash;a term describing the navigation of craft within a continuous RF mirror plasmasphere where traditional GPS cannot function. This term does <i>not</i> appear anywhere in mainstream aerospace literature outside of discussions of this account. It is original technical nomenclature, minted by someone with operational knowledge of systems that do not officially exist.</p>
+          <p>In August 2025, the account posted a link to a 1980 NASA technical manual&mdash;<i>Measurement of Aircraft Speed and Altitude</i> by William Gracey (NASA Reference Publication 1046)&mdash;claiming to have personally authored pages 218 through 220 under Chapter XIII, which detail exotic altitude instruments: the hypsometer, cosmic-ray altimeter, gravity meter, and magnetometer. The account explicitly acknowledged the danger, posting in July 2025: ``Power can be free. I lost my military retirement over posting like these.'' It ominously warned another user: ``Wait till after the show begins, late 2027.''</p>
+          <p>At 10:38 AM on February 27, 2026, the account made its final post. Twenty-two minutes later, General McCasland walked out of his Albuquerque home without his phone or glasses and disappeared from the face of the earth.</p>
+          <p>I will not insult your intelligence by calling that a coincidence. That is a <i>synchronization event</i>. The cartel identified the leak, localized the source, and executed a cleanup operation.</p>
+          <h3>The FOIA Shield: How They Launder Reality</h3>
+          <p>How do they get away with it? Burchett laid out the architecture of the scam on JRE, and the legal mechanics are even more airtight than most people realize. It is a system I call the <i>FOIA Shield</i>, and it has been stress-tested by seventy years of case law.</p>
+          <p>The Freedom of Information Act (5 U.S.C. S 552) mandates that federal agencies disclose records upon formal request. But FOIA's jurisdiction is strictly limited to <i>federal executive branch agencies</i>. It does not&mdash;and has never&mdash;applied to private corporations. By physically and legally transferring retrieved anomalous hardware, zero-point energy mathematics, and advanced propulsion schematics to private aerospace contractors&mdash;Lockheed Martin, Battelle Memorial Institute, Boeing, Raytheon, Northrop Grumman&mdash;the intelligence community <i>legally launders</i> the truth out of the public domain.</p>
+          <p>This is not speculation. This is established law. In <i>U.S. Department of Justice v. Tax Analysts</i> (1989), the Supreme Court defined an ``agency record'' as requiring both creation/obtainment <i>by</i> the agency and the agency's <i>control</i> at the time of the request. The <i>Burka v. HHS</i> four-factor test (87 F.3d 508, 1996) determines ``control'' for contractor-held records based on: the intent to retain or relinquish control; the agency's ability to use or dispose of the record; whether agency personnel have read or relied on the document; and the degree of integration into agency record systems. If the data resides solely within a private contractor's facility and hasn't been integrated into agency records&mdash;which is precisely how these programs are structured&mdash;it is beyond FOIA's reach. Period.</p>
+          <p>And the Supreme Court made it <i>worse</i>. In <i>Food Marketing Institute v. Argus Leader Media</i> (2019), a 6--3 decision dramatically expanded FOIA Exemption 4's trade-secret protection. The Court rejected the 40-year-old ``substantial competitive harm'' test and replaced it with a standard that makes information ``confidential'' if the owner merely <i>customarily treats it as private</i> and provided it under an <i>assurance of privacy</i>. That decision was handed down in 2019&mdash;the exact year UAP disclosure momentum began building in earnest. Coincidence or not, it <i>legally fortified</i> the precise mechanism used to shield contractor-held UAP materials from public access.</p>
+          <p>Layer on top of that:</p>
+          <ul>
+          </ul>
+          <p>item <strong>The Atomic Energy Act</strong>: ``Restricted Data'' and ``Formerly Restricted Data'' are exempt from standard declassification processes, and critics argue this authority has been used to sequester UAP-related records under the guise of ``foreign nuclear information.'' item <strong>The Invention Secrecy Act of 1951</i>: Empowers federal agencies to impose secrecy orders on patent applications deemed ``detrimental to national security.'' As of FY 2025, there are <strong>6,543</strong> active secrecy orders&mdash;up from 5,976 in FY 2021, a 9.5% increase during the exact period that UAP disclosure efforts intensified. The government is <i>classifying more inventions</strong> as the public push for transparency grows. These orders have no statutory limit on duration. They can be renewed annually, forever. item <strong>FOIA Exemptions 1 and 3</strong>: National security classification and statutory prohibitions working in concert with Exemption 4.</p>
+          <p>The result is a multi-layered legal fortress. Government officials can look Congress dead in the eye, testify under oath that they have ``no record'' of these programs, and <i>be telling the technical truth</i>&mdash;because the programs are not on their books. They are buried inside corporate black-project divisions, shielded by proprietary IP law, enforced by NDAs that carry implicit death sentences, and backstopped by Supreme Court precedent that the contractors' own lobbyists helped shape.</p>
+          <h3 style='font-size: 1.1rem; color: var(--text-main); margin-top: 1.5rem;'>Battelle and the Pentacle Memorandum</h3>
+          <p>The roots of this arrangement are not new. They go back at least to 1953, when the Battelle Memorial Institute&mdash;based in Columbus, Ohio, contracted by the Air Force for scientific UFO study&mdash;produced Project Blue Book Special Report No. 14, a statistical analysis of over 3,000 sightings. But the real story is the <i>Pentacle Memorandum</i>: a classified ``SECRET'' memo dated January 9, 1953, written by Howard C. Cross, Director of Exotic Metallurgy at Battelle, to Miles Goll at Wright-Patterson. The memo revealed that Battelle was conducting a secret, parallel UFO analysis under <strong>Project Stork</strong>&mdash;and it explicitly discussed the upcoming CIA-sponsored Robertson Panel, recommending that Battelle control ``what can and what cannot be discussed.'' The memo was discovered in 1967 by Jacques Vall'{e}e while organizing J. Allen Hynek's files.</p>
+          <p>Cross wasn't just an exotic metallurgist moonlighting as a UFO analyst. The 1949 Battelle titanium alloy report&mdash;previously ``missing'' from the public record, finally released via FOIA in 2009&mdash;has been linked by researchers to the analysis of Roswell crash debris. Battelle chemist Elroy John Center allegedly confessed privately to examining ``parts'' from a crashed flying saucer. Center was later discovered as a co-author of the 1949 report. The ``memory metal'' described by Roswell witnesses has been argued by researchers to be the basis for Nitinol&mdash;the nickel-titanium shape-memory alloy.</p>
+          <p>And then there is Lockheed Martin. On September 9, 2025, investigative journalist George Knapp testified under oath before the House Oversight Task Force on the Declassification of Federal Secrets. He stated that Robert Bigelow, founder of Bigelow Aerospace, had negotiated a deal with a senior Lockheed Martin executive to acquire ``unusual material'' safeguarded at a California facility&mdash;material that ``was not made here,'' containing no unknown elements but with a composition that suggested manufacture in a <i>zero-gravity environment</i>. The transfer was never completed. But the testimony is on the congressional record. Under oath. In 2025.</p>
+          <h3>PURSUE and the Fracturing Dam</h3>
+          <p>On the flip side of the coin, the secrecy apparatus is hemorrhaging. In February 2026, President Trump directed federal agencies to identify and declassify government files related to UAP, launching the <strong>Presidential Unsealing and Reporting System for UAP Encounters (PURSUE)</i>, hosted at texttt{war.gov/ufo</strong>. The first tranche, released May 8, 2026, contained 161 files&mdash;PDFs, reports, photographs, and videos from the Department of War (formerly DoD), the FBI, NASA, and the intelligence community, some dating to the post-WWII era, others documenting recent military intercepts over the Persian Gulf and Lake Huron. The second tranche, released May 22, 2026, added 51 video files and 13 documents, including <i>transmedium} incident records&mdash;objects transitioning from air to water. A third release is imminent.</p>
+          <p>The portal received over <i>one billion hits</i> after launch.</p>
+          <p>In parallel, Rep. Anna Paulina Luna, chair of the House Task Force on the Declassification of Federal Secrets, demanded in March 2026 that the Pentagon release 46 specific classified UAP video recordings by April 14, 2026. The Pentagon missed the deadline. But by late May, they released 51 videos&mdash;<i>surpassing</i> the original demand. The Schumer-Rounds UAP Disclosure Act, modeled on the JFK Assassination Records Collection Act of 1992 and designed to create an independent UAP Records Review Board with a presumption of disclosure within 25 years, continues to be pushed through the legislative pipeline.</p>
+          <p>And the international community is no longer waiting for America to lead. In May 2026, Japan's Chief Cabinet Secretary confirmed that Japan possesses its own UAP recordings and is evaluating them for public release. France's National Assembly has scheduled its first parliamentary UAP symposium for June 29, 2026, supported by CNES and GEIPAN. Brazil's Chamber of Deputies held its first official public debate on UAPs in September 2025. Even a former Bank of England analyst urged the bank in early 2026 to plan for potential financial instability arising from U.S. disclosures about non-human intelligence.</p>
+          <p>The dam is not cracking. It is <i>disintegrating</i>. And the cartel is scrambling.</p>
+          <h3>The Whistleblower Chain</h3>
+          <p>David Grusch&mdash;former Air Force intelligence officer, NGA and NRO veteran, representative to the Unidentified Aerial Phenomena Task Force&mdash;filed a formal whistleblower complaint with the Intelligence Community Inspector General in May 2022. The ICIG deemed it ``credible and urgent'' in July 2022. In December 2022, he provided approximately 11--12 hours of classified testimony to congressional staffers. On July 26, 2023, he testified under oath before the House Oversight Committee that the U.S. government possesses ``non-human'' spacecraft and recovered ``biologics,'' that a ``multi-decade'' crash retrieval and reverse-engineering program has been operating illegally outside congressional oversight, and that private aerospace contractors are actively involved in the storage and analysis of recovered materials. He stated he had faced ``very brutal'' retaliation and had knowledge of individuals who had been ``harmed or injured'' in efforts to conceal this information. He would not name specific contractors in public&mdash;only in a SCIF.</p>
+          <p>Since Grusch, the chain has not stopped. In November 2024, journalist Michael Shellenberger provided Congress with material on <strong>Immaculate Constellation</i>&mdash;an alleged unacknowledged Special Access Program dedicated to UAP tracking, described as a ``parent'' SAP that consolidates imagery and measurement intelligence, and which allegedly uses <i>artificial intelligence to autonomously monitor classified networks</strong>, detect UAP encounter data, and ``quarantine'' it to prevent circulation within the military intelligence enterprise or to congressional oversight. Pentagon metadata analyst Matthew Brown was identified as the central figure. The DoD denies it exists. Of course it does.</p>
+          <p>In January 2025, former U.S. airman Jacob Barber emerged as a whistleblower alleging 30 years of involvement in secret UAP retrieval missions, including piloting helicopters to crash sites and knowledge of a government ``psionic'' team for communicating with UAP.</p>
+          <p>The whistleblowers keep coming. The cartel keeps killing the ones who don't have congressional cover. And the ones with congressional cover? They get ``roughed up.'' Burchett's busboys.</p>
+          <h3>The Ontological Substrate: Neurobiology and the Physics of Consciousness</h3>
+          <p>Why go to these extremes? Why assassinate scientists, target researchers, and disappear generals? Everyone reaches for the obvious economic angle&mdash;the disruption of the global petroleum cartel, the instant obsolescence of multi-trillion-dollar fossil fuel infrastructure, the overnight collapse of the petrodollar. And yes, introducing zero-point energy would detonate the existing geopolitical power structure. But I'd argue&mdash;and I've been arguing, in <i>The Vector of Inquiry</i>, in <i>Joint Custody of the Meat Suit</i>, in <i>The Serpent's Sentence</i>, in <i>The Mathematics of Connection</i>&mdash;that the stakes are infinitely higher. They move past economics into the absolute deep end of existence.</p>
+          <p>It's not just about heating our homes. It's about the nature of consciousness itself.</p>
+          <p>Groundbreaking research by Dr. Garry Nolan&mdash;Professor of Pathology at Stanford University, holder of over 40 U.S. patents, author of over 300 publications, and director of the Sol Foundation (which held its 2025 symposium in Baveno, Italy)&mdash;has provided the biological evidence for this paradigm shift. Nolan was initially approached by the CIA and an aerospace corporation to analyze the physical and neurological effects of UAP encounters on military personnel and intelligence officers. The injuries mirrored what is now classified as Anomalous Health Incidents&mdash;Havana Syndrome.</p>
+          <p>Upon reviewing MRI scans of roughly 100 high-functioning individuals&mdash;savants, fighter pilots, intelligence officers, CEOs&mdash;who had experienced close-proximity UAP encounters, Nolan's team initially mistook what they saw for severe white-matter damage resembling multiple sclerosis. They were wrong. What they were actually observing was a massive <i>over-connection of neurons</i>&mdash;a hyper-density of neural connectivity&mdash;between the head of the caudate nucleus and the putamen within the basal ganglia. Prior MRIs, where available, proved this trait was <i>congenital</i>&mdash;present from birth, not caused by encounters. The same feature was found in historical participants of government remote viewing programs.</p>
+          <p>This is not fringe speculation. It is anchored in peer-reviewed neuroscience. In January 2011, Xiaohong Wan and colleagues at the RIKEN Brain Science Institute published ``The Neural Basis of Intuitive Best Next-Move Generation in Board Game Experts'' in <i>Science</i> (Vol. 331, Issue 6015, pp. 341--346, DOI: 10.1126/science.1194732). They demonstrated that professional shogi (Japanese chess) players exhibited specific activation of the <strong>caudate nucleus</i> during rapid generation of the ``best next move''&mdash;a precuneus-caudate circuit that represents the transition from conscious cortical deliberation to automatic, intuitive basal ganglia processing developed through over a decade of training. Their 2012 follow-up in <i>Journal of Neuroscience</i> (Vol. 32, No. 48, pp. 17492--17501) confirmed that caudate head activity <i>significantly increased</i> from early to late training phases and <i>correlated directly</strong> with performance improvement, while cortical activity showed no significant change.</p>
+          <p>Nolan described this dense caudate-putamen network as a ``brain within the brain''&mdash;a goal-processing system present in only about 1 in 100 to 1 in 200 individuals. He hypothesized that these individuals represent a ``breeding group'' of higher-functioning humans that could, over evolutionary timescales of roughly 100,000 years, potentially diverge into a distinctly different, more advanced branch of the species.</p>
+          <p>This framework is further substantiated by Daniel Pouzzner's Basal Ganglia Mediated Synchronization (BGMS) model (arXiv: 1708.00779, updated to v3 in September 2025). The BGMS model posits that the basal ganglia select specific oscillatory patterns from the cerebral cortex, dimensionally reduce them, route them through the thalamus phase-coherently, and circulate them back to widely separated cortical areas&mdash;synchronizing distant regions of the brain through spike-timing-dependent gain. If the basal ganglia function as the synchronizing metronome for cortical activity, then an over-developed caudate-putamen complex would allow the brain to synchronize with frequencies and information sources that baseline neurology cannot access.</p>
+          <p>And here is where the receiver model of consciousness enters&mdash;a lineage running from William James's 1898 Ingersoll Lecture (the brain as having a ``transmissive'' or ``permissive'' function, like a prism refracting white light), through Henri Bergson's 1896 <i>Matter and Memory</i> (the brain as an eliminative filter), through Aldous Huxley's 1954 <i>Doors of Perception</i> (the brain as a ``reducing valve'' preventing overwhelm by ``Mind at Large''), to the contemporary Orch-OR theory of Sir Roger Penrose (Nobel 2020) and Stuart Hameroff, which links consciousness to quantum computations within neuronal microtubules. Recent experimental work (2023--2024) has observed coherent vibrations in microtubules at ambient biological temperatures, and a 2024 study demonstrated that microtubule tryptophan networks exhibit ``superradiant'' states&mdash;collective quantum optical phenomena that exceed classical energy-transfer predictions.</p>
+          <p>If consciousness is not locally generated by the biological hardware of the brain but rather <i>received</i> by it&mdash;functioning as a biological antenna tuned to a non-local signal&mdash;then the advanced physics required to traverse spacetime (UAP technology) and the physics of human consciousness are <i>inextricably linked</i>. They are not hiding exotic metal or hardware. They are hiding the fundamental mechanics of reality. They are artificially stalling an imminent cognitive phase transition.</p>
+          <p>The missing scientists didn't stumble onto a better battery or a more efficient propulsion system. They stumbled onto the exit door of the simulation. They discovered that connection isn't just a warm emotion but a fundamental force that bypasses the constraints of spacetime&mdash;a reality I mapped in <i>The Mathematics of Connection</i>. And the people running the macro-corporate simulation are executing our best minds to keep that door bolted shut.</p>
+          <h3>The Vector</h3>
+          <p>I'm done being polite about this.</p>
+          <p>When sitting congressmen go on platforms with tens of millions of listeners to call the Pentagon ``war pimps'' and describe the assassination protocols of the intelligence community using mob analogies, the shadow government is losing its grip. When the President of the United States orders a multi-agency investigation into whether American scientists are being systematically murdered, the plausible deniability is over. When Japan, France, and Brazil independently begin their own UAP disclosure processes, the American monopoly on suppression is finished. When a portal set up by the executive branch to release classified UAP footage receives <i>a billion hits</i> in its first weeks, the public appetite for truth has exceeded every possible containment threshold.</p>
+          <p>The cartel has one move left: escalation. More disappearances. More ``suicides.'' More factory-reset phones and vanishing acts on hiking trails. They will try to outrun the disclosure curve by eliminating the people who can contextualize what the files actually mean. Because the files alone&mdash;the grainy infrared footage, the redacted memos&mdash;are not enough. What is enough is a scientist walking out of a classified lab and explaining, in plain language, what zero-point energy does to the ontological framework of human civilization. <i>That</i> is what they are killing to prevent.</p>
+          <p>But the vectors have converged. The legislative pressure, the executive action, the international momentum, the whistleblower chain, the neurobiological evidence, the quantum data&mdash;they all point in one direction.</p>
+          <p>Stay vigilant. Truth is not a static state; it is a direction. And right now, every vector points toward catastrophic, irreversible, and entirely necessary disclosure.</p>
+          <p>noindent<i>Cross-reference notes for all sourced claims are available in</i> texttt{source_notes.md</i> <i>(companion document).}</p>
+
+          <p style="margin-top: 2rem; font-style: italic; color: var(--text-muted);">Cross-reference notes for all sourced claims are available in the Document Browser tab.</p>
+        </div>
+      </div>
+
+      <!-- TAB 5: GEOGRAPHIC MAP -->
+      <div class="tab-panel" id="panel-map">
+        <div class="section-title">Geographic Incident Corridors</div>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem; font-family: var(--font-mono);">Clustered incident locations surfaced during investigation. Click any marker to inspect affiliated records.</p>
+        <div style="display:grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+          <!-- SVG US Map -->
+          <div style="background:#fff; border:1px solid var(--border-color); border-radius:4px; padding:1rem;">
+            <svg id="geo-map-svg" viewBox="0 0 960 600" width="100%" style="display:block;" xmlns="http://www.w3.org/2000/svg">
+              <!-- US state outlines, simplified -->
+              <!-- Continental US outline approximation -->
+              <rect x="0" y="0" width="960" height="600" fill="#f0f4f8" rx="4"/>
+              <!-- State borders approximation (simplified shapes) -->
+              <!-- Pacific coast states -->
+              <path d="M 80 80 L 95 120 L 100 200 L 110 260 L 90 320 L 100 370 L 85 400 L 120 410 L 140 390 L 150 340 L 145 280 L 155 220 L 145 160 L 155 100 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1" id="state-ca"/>
+              <text x="118" y="250" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">CA</text>
+              <!-- Oregon -->
+              <path d="M 80 80 L 155 100 L 165 60 L 100 45 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="120" y="75" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">OR</text>
+              <!-- Washington -->
+              <path d="M 85 45 L 165 60 L 175 25 L 90 15 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="130" y="37" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">WA</text>
+              <!-- Nevada -->
+              <path d="M 155 100 L 200 105 L 210 180 L 200 300 L 145 280 L 155 220 L 145 160 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="180" y="195" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">NV</text>
+              <!-- Idaho -->
+              <path d="M 165 60 L 230 55 L 240 130 L 200 105 L 155 100 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="200" y="90" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">ID</text>
+              <!-- Montana -->
+              <path d="M 175 25 L 340 20 L 345 90 L 240 130 L 230 55 L 165 60 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="260" y="65" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">MT</text>
+              <!-- Wyoming -->
+              <path d="M 240 130 L 345 90 L 355 175 L 250 185 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="298" y="145" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">WY</text>
+              <!-- Colorado -->
+              <path d="M 250 185 L 355 175 L 360 260 L 255 265 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="307" y="225" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">CO</text>
+              <!-- New Mexico -->
+              <path d="M 255 265 L 360 260 L 365 360 L 260 360 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1" id="state-nm"/>
+              <text x="308" y="315" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">NM</text>
+              <!-- Arizona -->
+              <path d="M 145 280 L 200 300 L 210 180 L 255 265 L 260 360 L 200 410 L 140 390 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="200" y="340" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">AZ</text>
+              <!-- Utah -->
+              <path d="M 200 105 L 250 185 L 255 265 L 210 180 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="225" y="185" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">UT</text>
+              <!-- North Dakota -->
+              <path d="M 345 90 L 460 88 L 458 150 L 355 175 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="405" y="128" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">ND</text>
+              <!-- South Dakota -->
+              <path d="M 355 175 L 458 150 L 462 220 L 360 260 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="410" y="200" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">SD</text>
+              <!-- Nebraska -->
+              <path d="M 360 260 L 462 220 L 468 275 L 365 290 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="413" y="260" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">NE</text>
+              <!-- Kansas -->
+              <path d="M 365 290 L 468 275 L 470 340 L 367 345 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="417" y="318" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">KS</text>
+              <!-- Oklahoma -->
+              <path d="M 367 345 L 470 340 L 475 395 L 430 400 L 370 398 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="420" y="372" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">OK</text>
+              <!-- Texas -->
+              <path d="M 260 360 L 365 360 L 370 398 L 430 400 L 450 450 L 430 490 L 380 510 L 330 520 L 290 500 L 265 460 L 240 420 L 250 380 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="355" y="450" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">TX</text>
+              <!-- Minnesota -->
+              <path d="M 458 150 L 520 140 L 525 90 L 462 88 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="492" y="120" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">MN</text>
+              <!-- Iowa -->
+              <path d="M 462 220 L 525 210 L 528 260 L 468 275 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="496" y="246" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">IA</text>
+              <!-- Missouri -->
+              <path d="M 468 275 L 528 260 L 532 330 L 470 340 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="498" y="305" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">MO</text>
+              <!-- Arkansas -->
+              <path d="M 470 340 L 532 330 L 535 385 L 475 395 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="502" y="363" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">AR</text>
+              <!-- Louisiana -->
+              <path d="M 475 395 L 535 385 L 538 440 L 510 460 L 480 440 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="505" y="425" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">LA</text>
+              <!-- Wisconsin -->
+              <path d="M 520 140 L 565 130 L 568 180 L 525 210 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="545" y="165" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">WI</text>
+              <!-- Illinois -->
+              <path d="M 525 210 L 568 180 L 572 260 L 532 330 L 528 260 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="548" y="248" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">IL</text>
+              <!-- Michigan upper -->
+              <path d="M 565 130 L 620 115 L 625 145 L 580 165 L 568 180 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <!-- Indiana -->
+              <path d="M 568 180 L 580 165 L 625 145 L 622 210 L 572 260 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="596" y="210" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">IN</text>
+              <!-- Ohio -->
+              <path d="M 622 210 L 680 185 L 685 255 L 635 280 L 572 260 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="640" y="232" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">OH</text>
+              <!-- Kentucky -->
+              <path d="M 572 260 L 635 280 L 685 255 L 688 310 L 628 330 L 532 330 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="620" y="300" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">KY</text>
+              <!-- Tennessee -->
+              <path d="M 532 330 L 628 330 L 688 310 L 692 355 L 640 370 L 535 385 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="612" y="352" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">TN</text>
+              <!-- Mississippi -->
+              <path d="M 535 385 L 640 370 L 638 425 L 600 440 L 538 440 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="588" y="408" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">MS</text>
+              <!-- Alabama -->
+              <path d="M 640 370 L 692 355 L 695 420 L 690 460 L 638 425 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="663" y="405" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">AL</text>
+              <!-- Georgia -->
+              <path d="M 692 355 L 740 330 L 750 400 L 738 450 L 695 420 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="718" y="388" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">GA</text>
+              <!-- Florida -->
+              <path d="M 695 420 L 738 450 L 745 490 L 720 530 L 690 550 L 660 530 L 650 490 L 660 460 L 690 460 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="700" y="495" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">FL</text>
+              <!-- South Carolina -->
+              <path d="M 740 330 L 790 305 L 800 355 L 750 380 L 738 450 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="765" y="350" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">SC</text>
+              <!-- North Carolina -->
+              <path d="M 688 310 L 790 305 L 740 330 L 692 355 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="735" y="328" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">NC</text>
+              <!-- Virginia -->
+              <path d="M 685 255 L 760 235 L 790 305 L 688 310 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="735" y="278" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">VA</text>
+              <!-- West Virginia -->
+              <path d="M 685 255 L 735 225 L 760 235 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="727" y="250" fill="#64748b" font-size="8" font-family="var(--font-mono)" text-anchor="middle">WV</text>
+              <!-- Pennsylvania -->
+              <path d="M 680 185 L 760 170 L 760 235 L 685 255 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="720" y="213" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">PA</text>
+              <!-- New York -->
+              <path d="M 680 185 L 770 160 L 810 155 L 800 200 L 760 170 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="752" y="178" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">NY</text>
+              <!-- New Jersey -->
+              <path d="M 760 170 L 800 200 L 795 230 L 760 235 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="782" y="205" fill="#64748b" font-size="7" font-family="var(--font-mono)" text-anchor="middle">NJ</text>
+              <!-- Delaware/Maryland -->
+              <path d="M 795 230 L 800 200 L 810 225 L 800 240 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <!-- Connecticut/RI/MA -->
+              <path d="M 810 155 L 860 148 L 858 175 L 800 200 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1" id="state-ma"/>
+              <text x="832" y="168" fill="#64748b" font-size="9" font-family="var(--font-mono)" text-anchor="middle">MA</text>
+              <!-- Vermont/New Hampshire/Maine -->
+              <path d="M 810 155 L 860 148 L 875 100 L 825 95 Z" fill="#dde4ee" stroke="#a0aec0" stroke-width="1"/>
+              <text x="848" y="128" fill="#64748b" font-size="8" font-family="var(--font-mono)" text-anchor="middle">ME</text>
+              <!-- Incident Cluster Markers -->
+              <!-- NM: Kirtland AFB / Albuquerque cluster -->
+              <g id="marker-nm" class="map-marker" onclick="selectGeoMarker('nm')" style="cursor:pointer;">
+                <circle cx="290" cy="295" r="14" fill="#991b1b" fill-opacity="0.15" stroke="none"/>
+                <circle cx="290" cy="295" r="8" fill="#991b1b" fill-opacity="0.35" stroke="none"/>
+                <circle cx="290" cy="295" r="4" fill="#991b1b" stroke="#fff" stroke-width="1.5"/>
+                <text x="290" y="285" fill="#991b1b" font-size="8" font-family="var(--font-mono)" font-weight="bold" text-anchor="middle">NM CLUSTER</text>
+              </g>
+              <!-- CA: Edwards / Vandenberg cluster -->
+              <g id="marker-ca1" class="map-marker" onclick="selectGeoMarker('ca1')" style="cursor:pointer;">
+                <circle cx="110" cy="300" r="14" fill="#1e3a8a" fill-opacity="0.15" stroke="none"/>
+                <circle cx="110" cy="300" r="8" fill="#1e3a8a" fill-opacity="0.35" stroke="none"/>
+                <circle cx="110" cy="300" r="4" fill="#1e3a8a" stroke="#fff" stroke-width="1.5"/>
+                <text x="110" y="290" fill="#1e3a8a" font-size="8" font-family="var(--font-mono)" font-weight="bold" text-anchor="middle">SoCal</text>
+              </g>
+              <!-- CA: Bay Area cluster -->
+              <g id="marker-ca2" class="map-marker" onclick="selectGeoMarker('ca2')" style="cursor:pointer;">
+                <circle cx="95" cy="215" r="14" fill="#0d9488" fill-opacity="0.15" stroke="none"/>
+                <circle cx="95" cy="215" r="8" fill="#0d9488" fill-opacity="0.35" stroke="none"/>
+                <circle cx="95" cy="215" r="4" fill="#0d9488" stroke="#fff" stroke-width="1.5"/>
+                <text x="95" y="205" fill="#0d9488" font-size="8" font-family="var(--font-mono)" font-weight="bold" text-anchor="middle">NorCal</text>
+              </g>
+              <!-- MA: MIT / Harvard cluster -->
+              <g id="marker-ma" class="map-marker" onclick="selectGeoMarker('ma')" style="cursor:pointer;">
+                <circle cx="848" cy="162" r="14" fill="#b45309" fill-opacity="0.15" stroke="none"/>
+                <circle cx="848" cy="162" r="8" fill="#b45309" fill-opacity="0.35" stroke="none"/>
+                <circle cx="848" cy="162" r="4" fill="#b45309" stroke="#fff" stroke-width="1.5"/>
+                <text x="848" y="152" fill="#b45309" font-size="8" font-family="var(--font-mono)" font-weight="bold" text-anchor="middle">MA</text>
+              </g>
+              <!-- AL: Huntsville cluster (Marshall Space Flight Center) -->
+              <g id="marker-al" class="map-marker" onclick="selectGeoMarker('al')" style="cursor:pointer;">
+                <circle cx="660" cy="390" r="14" fill="#7c3aed" fill-opacity="0.15" stroke="none"/>
+                <circle cx="660" cy="390" r="8" fill="#7c3aed" fill-opacity="0.35" stroke="none"/>
+                <circle cx="660" cy="390" r="4" fill="#7c3aed" stroke="#fff" stroke-width="1.5"/>
+                <text x="660" y="380" fill="#7c3aed" font-size="8" font-family="var(--font-mono)" font-weight="bold" text-anchor="middle">AL</text>
+              </g>
+              <!-- Legend -->
+              <rect x="10" y="520" width="200" height="70" fill="white" stroke="#cbd5e1" stroke-width="0.5" rx="2"/>
+              <text x="20" y="535" fill="#1e293b" font-size="8" font-family="var(--font-mono)" font-weight="bold">INCIDENT CORRIDORS</text>
+              <circle cx="25" cy="549" r="4" fill="#991b1b"/>
+              <text x="35" y="552" fill="#64748b" font-size="7.5" font-family="var(--font-mono)">NM — Kirtland/AFRL Corridor</text>
+              <circle cx="25" cy="563" r="4" fill="#1e3a8a"/>
+              <text x="35" y="566" fill="#64748b" font-size="7.5" font-family="var(--font-mono)">CA (S) — Edwards/Vandenberg</text>
+              <circle cx="25" cy="577" r="4" fill="#0d9488"/>
+              <text x="35" y="580" fill="#64748b" font-size="7.5" font-family="var(--font-mono)">CA (N) — Stanford/SLAC Corridor</text>
+              <circle cx="110" cy="549" r="4" fill="#b45309"/>
+              <text x="120" y="552" fill="#64748b" font-size="7.5" font-family="var(--font-mono)">MA — MIT/Harvard Corridor</text>
+              <circle cx="110" cy="563" r="4" fill="#7c3aed"/>
+              <text x="120" y="566" fill="#64748b" font-size="7.5" font-family="var(--font-mono)">AL — Marshall/Redstone Arsenal</text>
+            </svg>
+          </div>
+          <!-- Info Panel -->
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div id="geo-info-panel" style="background:#fff; border:2px solid var(--accent-navy); border-radius:4px; padding:1.5rem; min-height:280px;">
+              <div id="geo-info-title" style="font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--accent-navy); border-bottom:1px solid var(--border-light); padding-bottom:0.5rem; margin-bottom:1rem;">Select a Cluster Marker</div>
+              <div id="geo-info-content" style="font-size:0.85rem; color:var(--text-muted);">Click any pulsing marker on the map to view affiliated incident records and institutional links for that geographic corridor.</div>
+            </div>
+            <div style="background:var(--bg-novel); border:1px solid var(--border-novel); border-radius:4px; padding:1rem; font-size:0.8rem; color:var(--text-main);">
+              <div style="font-family:var(--font-serif); font-weight:700; color:var(--accent-novel); margin-bottom:0.4rem;">★ Corridor Pattern Note</div>
+              All five identified incident corridors share proximity to federal R&D installations: Air Force Research Laboratory (NM), Edwards/Vandenberg AFB (CA), SLAC/Stanford (CA), MIT Lincoln Laboratory (MA), and Redstone Arsenal (AL). Cross-corridor career trajectories are documented in SC-1 through SC-12.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Embedded Briefing Source Notes Data
+    const briefingData = {
+      records: [
+        // Category I: Scientist Deaths
+        {
+          id: "SC-1",
+          category: "deaths",
+          title: "Amy Catherine Eskridge (1987–2022)",
+          meta: ["Died: June 11, 2022", "Huntsville, AL"],
+          bullets: [
+            "Role: Co-founder, Chairwoman, President — Institute for Exotic Science (Huntsville, AL)",
+            "Education: Double-major chemistry/biology from UAH",
+            "Research Areas: Gravity modification, anti-gravity technology, electrostatic propulsion, EM Drive, plasma dynamics, quantum gravity, metamaterial science",
+            "2018 Presentation: 'A Historical Perspective on Anti-Gravity Technology' to Huntsville Alabama L5 Society (HAL5) — reviewed Thomas Townsend Brown's 'Gravitator' and EM Drive",
+            "Father: Richard Eskridge (retired NASA engineer), co-founded Institute for Exotic Science",
+            "Official Ruling: Suicide by self-inflicted gunshot wound; Madison County Coroner",
+            "Family Position: Rejected conspiracy theories; cited chronic pain",
+            "Pre-Death Warning (May 2022): Text message to business associate: 'If you see any report that I killed myself, I most definitely did not.'",
+            "Second Warning: Written communication to friend: 'If you see a news report that I took my own life, it\'s a lie.'",
+            "Directed Energy Claims: Reported harassment via directed energy weapons (DEWs); burn marks/lesions on hands and body attributed to 'RF K-band emitter' operated from SUV",
+            "Franc Milburn: Retired British intelligence officer, friend of Eskridge. Publicized text messages. Submitted findings to U.S. Congress in 2023 alleging she was killed by private aerospace company."
+          ],
+          sources: [
+            { name: "AL.com Obit", url: "https://obits.al.com/us/obituaries/huntsville/name/amy-eskridge-obituary?id=35191834" },
+            { name: "HAL5 L5 Presentation", url: "http://www.hal5.org/HAL5-Talks-2018.shtml" },
+            { name: "Medium Exotic Propulsion Bio", url: "https://medium.com/@exoticscience" }
+          ],
+          novel: false
+        },
+        {
+          id: "SC-2",
+          category: "deaths",
+          title: "Monica Jacinto Reza (1964–?)",
+          meta: ["Missing Since: June 22, 2025", "Angeles National Forest, CA"],
+          bullets: [
+            "Role: Director of Materials Processing, NASA JPL; formerly Aerojet Rocketdyne",
+            "Education: Degrees from Columbia University and UCLA",
+            "Key Invention: Mondaloy — nickel-based superalloy (~55-75% Ni by weight), co-invented mid-1990s with Dallis Hardwick (mentor, died 2014)",
+            "Patent: 'Burn-resistant and high tensile strength metal alloys' (US 2010/0266442)",
+            "Applications: ~12 components of AR1 engine; USAF Hydrocarbon Boost Technology Demonstrator",
+            "Awards: Inaugural Luminary Award, HENAAC (while at Boeing)",
+            "Wright-Patterson Connection ★: Mondaloy development closely linked to AFRL at Wright-Patterson. Dallis Hardwick worked at AFRL Materials Directorate at WPAFB. McCasland commanded AFRL (2011-2013), oversaw budget funding Mondaloy research — DIRECT PROFESSIONAL LINK confirmed by House Oversight Committee.",
+            "Disappearance: Hiking Mount Waterman Trail, Angeles National Forest, CA. ~30 feet behind companion. Companion called out, no response, turned around — gone.",
+            "Search: Extensive week-long SAR — Altadena Mountain Rescue, Antelope Valley SAR, FLIR thermal aircraft, scent dogs",
+            "Evidence: Beanie found June 23, 2025 in Devil's Canyon ravine, ~600 feet below trail. Tracking dogs lost scent at beanie location. No body recovered.",
+            "Yoga Studio: Blended physical yoga with astrology, Vedic sciences, ancient Indian philosophical teachings"
+          ],
+          sources: [
+            { name: "Solve The Case Database", url: "https://solvethecase.org/case/2025/monica-jacinto-reza" },
+            { name: "Los Angeles Times Coverage", url: "https://www.latimes.com" },
+            { name: "JPL Materials Processing Page", url: "https://www.jpl.nasa.gov" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-3",
+          category: "deaths",
+          title: "William Neil McCasland (1957–?)",
+          meta: ["Missing Since: Feb 27, 2026", "Albuquerque, NM"],
+          bullets: [
+            "Education: BS Astronautical Engineering, USAF Academy (1979); MS (1980) and PhD (1988) Astronautical Engineering, MIT. Hertz Foundation Fellow (Class of 1979).",
+            "Dissertation: 'Sensor and Actuator Selection for Fault-Tolerant Control of Flexible Structures' — supervised by Richard Battin (designer of Apollo Guidance Computer)",
+            "34-Year Career Highlights: Payload Systems Division (SecAF Office of Special Projects); ADF Buckley AFB; Chief Engineer Navstar GPS Joint Program Office; Director Space-Based Laser Project; Commander Phillips Research Site (Kirtland AFB); Executive Secretary for SAPOC (2009+); 7th Commander, Air Force Research Laboratory (AFRL), Wright-Patterson AFB (2011-2013). Managed 10,000+ personnel.",
+            "Post-Retirement: Director of Technology, Applied Technology Associates (ATA); Board of Trustees, Riverside Research; unpaid consultant to TTSA",
+            "WikiLeaks/Podesta Connection: Tom DeLonge email (Jan 25, 2016): 'He mentioned he\'s a \"skeptic,\" he\'s not... When Roswell crashed, they shipped it to the laboratory at Wright Patterson Air Force Base. General McCasland was in charge of that exact laboratory.'",
+            "Disappearance Timeline: Interacted with repairman at home (10:00 AM); @TMBSPACESHIPS final post (10:38 AM); wife left (11:10 AM); wife returned to find him gone (~12:00 PM).",
+            "Items Left: Phone, prescription glasses, wearable medical devices",
+            "Items Missing: Wallet, hiking boots, .38-caliber revolver, red backpack",
+            "Silver Alert: Issued due to unspecified medical concerns",
+            "Search: BCSO, FBI Albuquerque, NM Search and Rescue, Kirtland AFB personnel. 700+ homes canvassed.",
+            "Sweatshirt: Gray USAF sweatshirt found March 7, 2026, ~1.25 miles east of residence. No blood. Ownership NOT confirmed."
+          ],
+          sources: [
+            { name: "Albuquerque Police Silver Alert", url: "https://www.cabq.gov/police" },
+            { name: "AFRL Commander Biography", url: "https://www.af.mil/About-Us/Biographies/Display/Article/108480/major-general-william-neil-mccasland/" },
+            { name: "Newsweek Missing Report", url: "https://www.newsweek.com" }
+          ],
+          novel: false
+        },
+        {
+          id: "SC-4",
+          category: "deaths",
+          title: "Carl Grillmair (1959–2026)",
+          meta: ["Died: Feb 16, 2026", "Llano, CA"],
+          bullets: [
+            "Role: Research scientist, Caltech Infrared Processing and Analysis Center (IPAC). Nearly 30-year career.",
+            "Research: Galactic structure, dark matter, exoplanets, water on distant planets. PI on Hubble and Spitzer missions.",
+            "Award: NASA Exceptional Scientific Achievement Medal (2011)",
+            "Circumstances: Shot dead on front porch of home in Llano (Antelope Valley, LA County). Gunshot wound to torso.",
+            "Suspect: Freddy Snyder, 29, lived ~2 miles away. Arrested during carjacking investigation same area.",
+            "Prior Trespassing Conflict ★: Grillmair had reported Snyder to law enforcement in December 2025 for trespassing — prior contact establishes possible premeditation motive beyond random crime."
+          ],
+          sources: [
+            { name: "LA County DA Press Release", url: "https://da.lacounty.gov" },
+            { name: "Caltech IPAC Scientist Page", url: "https://www.ipac.caltech.edu" },
+            { name: "Los Angeles Times Incident Report", url: "https://www.latimes.com" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-5",
+          category: "deaths",
+          title: "Nuno F.G. Loureiro (1977–2025)",
+          meta: ["Died: Dec 15-16, 2025", "Brookline, MA"],
+          bullets: [
+            "Role: Director, MIT Plasma Science and Fusion Center. Portuguese plasma physicist.",
+            "Circumstances: Shot and killed at residence in Brookline, Massachusetts.",
+            "Perpetrator: Cláudio Manuel Neves Valente (Portuguese national)",
+            "Brown University Connection ★: Valente linked to mass shooting at Brown University TWO DAYS PRIOR (December 13, 2025). Found dead of self-inflicted gunshot in NH storage unit on December 17, 2025.",
+            "FBI Investigation: As of April 2026, being examined as part of broader investigation into scientist deaths."
+          ],
+          sources: [
+            { name: "MIT Fusion Center Tribute", url: "https://psfc.mit.edu" },
+            { name: "FBI Joint Statement", url: "https://www.fbi.gov" },
+            { name: "The Guardian Memorial", url: "https://www.theguardian.com" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-6",
+          category: "deaths",
+          title: "Michael David Hicks (1964–2023)",
+          meta: ["Died: July 30, 2023", "Pasadena, CA"],
+          bullets: [
+            "Role: Planetary scientist, NASA JPL (1998-2022). PhD Lunar and Planetary Science, University of Arizona.",
+            "Projects: DART, NEAT, NASA Dawn Mission, Deep Space 1",
+            "Cause: Chronic heart disease (reported)"
+          ],
+          sources: [
+            { name: "AAS Obituary", url: "https://aas.org/obituaries/michael-david-hicks-1964-2023" },
+            { name: "JPL Dawn Mission Profile", url: "https://www.jpl.nasa.gov" }
+          ],
+          novel: false
+        },
+        {
+          id: "SC-7",
+          category: "deaths",
+          title: "Frank Werner Maiwald (1964–2024)",
+          meta: ["Died: July 4, 2024", "Pasadena, CA"],
+          bullets: [
+            "Role: Systems engineer/researcher, NASA JPL",
+            "Cause: NO CAUSE OF DEATH LISTED in obituary or public records"
+          ],
+          sources: [
+            { name: "JPL Systems Engineering Bio", url: "https://www.jpl.nasa.gov" }
+          ],
+          novel: false
+        },
+        {
+          id: "SC-8",
+          category: "deaths",
+          title: "Anthony Chavez",
+          meta: ["Missing Since: May 5-8, 2025", "Los Alamos, NM"],
+          bullets: [
+            "Role: Retired LANL employee, age 78",
+            "Last Seen: Home in Los Alamos, NM",
+            "Items Left: Car, wallet, keys, cigarettes",
+            "Details: No cell phone; last landline activity May 5, 2025. No forced entry/struggle."
+          ],
+          sources: [
+            { name: "New Mexico DPS Missing Registry", url: "https://www.dps.pub.state.nm.us" }
+          ],
+          novel: false
+        },
+        {
+          id: "SC-9",
+          category: "deaths",
+          title: "Melissa Casias",
+          meta: ["Missing Since: June 26, 2025", "Talpa, NM"],
+          bullets: [
+            "Role: Administrative assistant, LANL, age 53",
+            "Factory-Reset Phones ★: Both personal and work-issued phones found at home, RESET TO FACTORY SETTINGS. Keys, wallet, purse also left behind.",
+            "Last Seen: Surveillance footage walking alone along NM 518 near Talpa, New Mexico"
+          ],
+          sources: [
+            { name: "The Guardian Carson Forest Find", url: "https://www.theguardian.com" },
+            { name: "New Mexico State Police Press Release", url: "https://www.dps.pub.state.nm.us" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-10",
+          category: "deaths",
+          title: "Steven Garcia",
+          meta: ["Missing Since: Aug 28, 2025", "Albuquerque, NM"],
+          bullets: [
+            "Role: Government contractor / property custodian, Kansas City National Security Campus (KCNSC) — manufactures majority of non-nuclear components for U.S. nuclear weapons arsenal",
+            "Clearance: TOP SECURITY CLEARANCE; oversight of sensitive, high-value assets",
+            "Last Seen: Left home in Albuquerque on foot at 9 AM, wearing shorts/green camo shirt, CARRYING A HANDGUN",
+            "Items Left: Vehicle, keys, phone, wallet"
+          ],
+          sources: [
+            { name: "KCNSC Security Campus Profile", url: "https://kcnsc.doe.gov" },
+            { name: "Solve The Case Albuquerque", url: "https://solvethecase.org" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-11",
+          category: "deaths",
+          title: "Jason Thomas",
+          meta: ["Died: Dec 12, 2025 (Found Mar 17, 2026)", "Wakefield, MA"],
+          bullets: [
+            "Role: Associate Director of Chemical Biology, Novartis (pharmaceutical)",
+            "Circumstances: Left home in Wakefield, MA on foot late at night. Left phone, wallet, ID. Body found in Lake Quannapowitt after ice thaw.",
+            "Background: Both parents died within one hour of each other, November 2025."
+          ],
+          sources: [
+            { name: "Wakefield Police Lake Discovery", url: "https://www.wakefield.ma.us/police-department" }
+          ],
+          novel: true
+        },
+        {
+          id: "SC-12",
+          category: "deaths",
+          title: "Matthew James Sullivan",
+          meta: ["Died: 2024", "USA"],
+          bullets: [
+            "Role: Former Air Force intelligence officer, reported UAP whistleblower",
+            "Cause: Ruled accidental overdose"
+          ],
+          sources: [
+            { name: "Newsweek Whistleblower Cover", url: "https://www.newsweek.com" }
+          ],
+          novel: true
+        },
+
+        // Category II: Legal Mechanisms
+        {
+          id: "FS-1",
+          category: "legal",
+          title: "FOIA Statutory Limitation",
+          meta: ["Legal Standard"],
+          bullets: [
+            "5 U.S.C. § 552 applies ONLY to federal executive branch agencies, NOT private corporations",
+            "Key Case: U.S. Department of Justice v. Tax Analysts (1989) — 'agency record' requires creation/obtainment by agency AND agency control at time of request",
+            "Burka v. HHS Four-Factor Test (87 F.3d 508, 1996): Intent to retain control, agency's ability to use/dispose, whether agency personnel have read/relied on document, degree of integration into agency systems"
+          ],
+          sources: [{ name: "Justice.gov", url: "https://www.justice.gov" }, { name: "BU", url: "https://www.bu.edu" }, { name: "RCFP", url: "https://www.rcfp.org" }, { name: "Yale", url: "https://www.yale.edu" }],
+          novel: false
+        },
+        {
+          id: "FS-2",
+          category: "legal",
+          title: "Food Marketing Institute v. Argus Leader Media (2019)",
+          meta: ["Supreme Court Ruling"],
+          bullets: [
+            "Supreme Court 6-3 decision dramatically expanded Exemption 4 (trade secrets) protection",
+            "Rejected 40-year 'substantial competitive harm' test from National Parks v. Morton",
+            "New Standard: Information is 'confidential' if owner customarily treats it as private AND provided it under assurance of privacy",
+            "Implication ★: Made it MUCH easier for defense contractors to shield UAP/SAP information shared with government"
+          ],
+          sources: [{ name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "Justice.gov", url: "https://www.justice.gov" }, { name: "Oyez", url: "https://www.oyez.org" }],
+          novel: true
+        },
+        {
+          id: "FS-3",
+          category: "legal",
+          title: "FOIA Exemptions (Combined Shield)",
+          meta: ["Statutory Strategy"],
+          bullets: [
+            "Exemption 1: National security classification",
+            "Exemption 3: Statutory exemptions (Atomic Energy Act, National Security Act)",
+            "Exemption 4: Trade secrets / confidential commercial info (significantly expanded by Argus Leader)",
+            "Combined with contractor-held records problem = nearly impenetrable barrier"
+          ],
+          sources: [{ name: "New Paradigm Institute", url: "https://newparadigminstitute.org" }, { name: "AIAA", url: "https://www.aiaa.org" }, { name: "House.gov", url: "https://www.house.gov" }],
+          novel: false
+        },
+        {
+          id: "FS-4",
+          category: "legal",
+          title: "Atomic Energy Act (AEA)",
+          meta: ["Statute"],
+          bullets: [
+            "'Restricted Data' (RD) and 'Formerly Restricted Data' (FRD) exempt from standard declassification",
+            "Critics argue used to sequester UAP records by classifying as 'foreign nuclear information'"
+          ],
+          sources: [{ name: "Energy.gov", url: "https://www.energy.gov" }, { name: "FAS", url: "https://fas.org" }, { name: "Senate.gov", url: "https://www.senate.gov" }, { name: "NYU JLPP", url: "https://www.nyujlpp.org" }],
+          novel: false
+        },
+        {
+          id: "FS-5",
+          category: "legal",
+          title: "Invention Secrecy Act (ISA) of 1951",
+          meta: ["Statute", "Active Orders"],
+          bullets: [
+            "Active secrecy orders trending upward annually: FY 2021: 5,976; FY 2022: 6,057; FY 2023: 6,155; FY 2024: 6,471; FY 2025: 6,543",
+            "USPTO screens patent applications; DoD/DOE/NSA impose secrecy orders if national security risk identified",
+            "Prevents publication, prohibits foreign filing, may require classified state storage",
+            "Valid for 1 year, renewed annually; NO STATUTORY LIMIT on total duration"
+          ],
+          sources: [{ name: "FAS", url: "https://fas.org" }, { name: "USPTO", url: "https://www.uspto.gov" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }],
+          novel: true
+        },
+        {
+          id: "FS-6",
+          category: "legal",
+          title: "Section 847 FY2020 NDAA / Section 819 FY2021 NDAA",
+          meta: ["Statute", "FOCI Vetting"],
+          bullets: [
+            "Expanded FOCI (Foreign Ownership, Control or Influence) vetting beyond 'cleared' contractors to unclassified contracts and pre-award stages",
+            "May 7, 2026: DoD proposed DFARS rule (Part 240) to operationalize mandates",
+            "Contractors with awards >$5M must submit SF-328 to DCSA via NISS",
+            "Changes reported within 3 business days; risk mitigation within 90 calendar days"
+          ],
+          sources: [{ name: "DCSA", url: "https://www.dcsa.mil" }, { name: "Arnold & Porter", url: "https://www.arnoldporter.com" }, { name: "JD Supra", url: "https://www.jdsupra.com" }, { name: "Latham & Watkins", url: "https://www.lw.com" }, { name: "DLA Piper", url: "https://www.dlapiper.com" }],
+          novel: false
+        },
+        {
+          id: "FS-7",
+          category: "legal",
+          title: "Lockheed Martin F-35 False Claims Act Settlement",
+          meta: ["Case Study", "Settled Feb 6, 2025"],
+          bullets: [
+            "Amount: $29.74 million (on top of $11.3M previously paid = $41.04M total)",
+            "Violation: Failed to provide accurate cost/pricing data to F-35 JPO during negotiations for 5 contracts (2013-2015)",
+            "Law Violated: Truth in Negotiations Act (TINA)",
+            "Case Origin: Qui tam (whistleblower) lawsuit",
+            "Investigating Agencies: DOJ Civil Division, USAO Eastern District of Texas, F-35 JPO, DCIS, NCIS, DCAA"
+          ],
+          sources: [{ name: "Justice.gov", url: "https://www.justice.gov" }, { name: "Whistleblowers Blog", url: "https://whistleblowersblog.org" }, { name: "GRC Report", url: "https://www.grcreport.com" }],
+          novel: false
+        },
+
+        // Category III: Contractor Involvement
+        {
+          id: "CI-1",
+          category: "contractors",
+          title: "Battelle Memorial Institute — UAP History",
+          meta: ["R&D Institute"],
+          bullets: [
+            "Contracted by USAF in early 1950s for scientific UFO study",
+            "Produced Project Blue Book Special Report No. 14: statistical analysis of 3,000+ sightings",
+            "Pentacle Memorandum (January 9, 1953): SECRET memo by Howard C. Cross (Director of Exotic Metallurgy, Battelle) to Miles Goll at WPAFB. Revealed secret UFO analysis under 'Project Stork.'",
+            "Roswell/Nitinol Connection ★: 1949 Battelle titanium alloy report (previously 'missing', FOIA'd 2009). Elroy John Center (Battelle chemist) allegedly confessed to examining crash debris. Memory metal described at Roswell linked to Nitinol basis."
+          ],
+          sources: [{ name: "UFO Explorations", url: "https://www.ufoexplorations.com" }, { name: "CUFOS", url: "https://cufos.org" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "NICAP", url: "https://www.nicap.org" }, { name: "The UFO Chronicles", url: "https://www.theufochronicles.com" }],
+          novel: true
+        },
+        {
+          id: "CI-2",
+          category: "contractors",
+          title: "Lockheed Martin Skunkworks",
+          meta: ["Defense Contractor"],
+          bullets: [
+            "Ben Rich (1925-1995): Second director of Skunk Works; developer of F-117 stealth",
+            "UCLA March 1993 Statement: 'We now have the technology to take E.T. home.'",
+            "Jan Harzan/Tom Keller account: Rich asked about interstellar propulsion — 'there's an error in the equations.' When asked how it works: 'How does ESP work?' Response: 'All points in time and space are connected.'",
+            "George Knapp testimony (September 9, 2025): Robert Bigelow negotiated deal with senior Lockheed executive for 'unusual material' — 'not made here,' zero-gravity manufacture markers. Transfer not completed."
+          ],
+          sources: [{ name: "Gaia", url: "https://www.gaia.com" }, { name: "House.gov", url: "https://www.house.gov" }, { name: "DefenseScoop", url: "https://defensescoop.com" }, { name: "Rev", url: "https://www.rev.com" }, { name: "Blue Blurry Lines", url: "https://www.blueblurrylines.com" }],
+          novel: false
+        },
+        {
+          id: "CI-3",
+          category: "contractors",
+          title: "SAPOC Structure (DoD Directive 5205.07)",
+          meta: ["DoD Oversight", "Amended Sept 12, 2024"],
+          bullets: [
+            "Chair: Deputy Secretary of Defense; Executive Secretary: Director, DoD SAPCO",
+            "Members: USD(R&E), USD(A&S), USD(P), USD(C)/CFO, USD(I&S)",
+            "McCasland served as Director of Special Programs, OUSD(AT&L) — Executive Secretary for SAPOC",
+            "Final decision authority for establishing/disestablishing Special Access Programs: DepSecDef"
+          ],
+          sources: [{ name: "WHS", url: "https://www.whs.mil" }, { name: "FAS", url: "https://fas.org" }, { name: "CDSE", url: "https://www.cdse.edu" }],
+          novel: false
+        },
+
+        // Category IV: Digital Ghost
+        {
+          id: "DG-1",
+          category: "digital",
+          title: "@TMBSPACESHIPS Profile & Content",
+          meta: ["Social Media Activity"],
+          bullets: [
+            "Handle: @TMBSPACESHIPS; Display: 'ELECTRIC PROPULSIVE SPACECRAFT SYSTEMS'",
+            "Profile Picture: Quantum physicist Wolfgang Pauli (linked to Jung's synchronicity work)",
+            "Bio: '38 year Active Duty USAF PhD Engineer. AFIT/AETC/AFMC - UT/OU'",
+            "Bio-to-McCasland Mapping: PhD (MIT 1988); AFIT/AFMC (WPAFB, commanded by McCasland); AETC (Maxwell AFB 1995); UT/OU (McCasland grew up in Austin/UT, wife Susan's family from Oklahoma).",
+            "Technical content posted: 'Closed Cycle Plasma Alternator' schematic; 'Eikonal Corrected Discrete Electrodynamics for Kinetic Media' (AFRL whitepaper work, 1990s); 'Thermostatic Vector Sensing Reference Systems' (navigation in RF mirror plasmaspheres).",
+            "Thermostatic Vector Sensing ★: Does NOT appear in mainstream aerospace literature outside discussions of this account — appears to be original technical nomenclature.",
+            "Retirement Warning: 'Power can be free. I lost my military retirement over posting like these.' (July 2025)",
+            "Timeline Match: Final post was 10:38 AM MST, Feb 27, 2026. McCasland went missing ~22 minutes later."
+          ],
+          sources: [{ name: "Fear and Wine", url: "https://fearandwine.com" }, { name: "Reddit", url: "https://www.reddit.com/r/UFOs" }, { name: "Twitter Stalker", url: "https://twstalker.com" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "Military.com", url: "https://www.military.com" }, { name: "Hertz Foundation", url: "https://www.hertzfoundation.org" }],
+          novel: true
+        },
+        {
+          id: "DG-2",
+          category: "digital",
+          title: "Timeline Synchronization",
+          meta: ["Feb 27, 2026 Time Log"],
+          bullets: [
+            "10:38 AM MST — @TMBSPACESHIPS final post",
+            "~11:00 AM MST — McCasland leaves home without phone or glasses",
+            "Delta: Only 22 minutes between digital silencing and physical disappearance."
+          ],
+          sources: [{ name: "Fear and Wine", url: "https://fearandwine.com" }, { name: "CBS News", url: "https://www.cbsnews.com" }, { name: "Reddit", url: "https://www.reddit.com" }],
+          novel: false
+        },
+
+        // Category V: Legislative & Executive
+        {
+          id: "LE-1",
+          category: "legislative",
+          title: "Tim Burchett on JRE #2495 (May 7, 2026)",
+          meta: ["Podcast Appearance"],
+          bullets: [
+            "'Busboy' analogy: rather than eliminating the 'kingpin,' the cartel 'roughs up the busboys' to ensure compliance.",
+            "'War pimps at the Pentagon' — explicitly criticized defense contractors and bloated budgets.",
+            "Confirmed sensitive UAP materials funneled to private defense contractors to place them outside public oversight and make them immune to FOIA.",
+            "Referenced people being 'allowed to commit suicide' in a highly critical, sarcastic tone."
+          ],
+          sources: [{ name: "JRE Library", url: "https://jrelibrary.com" }, { name: "Singju Post", url: "https://singjupost.com" }, { name: "UAP Logbook", url: "https://uaplogbook.com" }, { name: "Happy Scribe", url: "https://www.happyscribe.com" }, { name: "YouTube", url: "https://www.youtube.com" }],
+          novel: false
+        },
+        {
+          id: "LE-2",
+          category: "legislative",
+          title: "White House Probe (April 2026)",
+          meta: ["Executive Action"],
+          bullets: [
+            "Trump administration directed a 'holistic review' involving FBI and federal agencies.",
+            "FBI confirmed 'spearheading effort to look for connections' alongside DOE, DOD, and local law enforcement.",
+            "Trump described the scientist disappearances as 'pretty serious stuff.'"
+          ],
+          sources: [{ name: "WFMD", url: "https://www.wfmd.com" }, { name: "LA Times", url: "https://www.latimes.com" }, { name: "The Independent", url: "https://www.independent.co.uk" }, { name: "CBS News", url: "https://www.cbsnews.com" }],
+          novel: false
+        },
+        {
+          id: "LE-3",
+          category: "legislative",
+          title: "House Oversight Letters (April 20, 2026)",
+          meta: ["Congressional Action"],
+          bullets: [
+            "From: Chairman James Comer (R-KY) & Subcommittee Chairman Eric Burlison (R-MO)",
+            "To: Chris Wright (SecEnergy), Pete Hegseth (SecWar), Kash Patel (FBI Director), Jared Isaacman (NASA Admin)",
+            "Demanded staff-level briefings by April 27, 2026.",
+            "Cited 'grave threat to U.S. national security and to U.S. personnel with access to scientific secrets.'",
+            "Mondaloy Connection ★: Specifically cited professional link between McCasland and Reza via AFRL-funded Mondaloy research."
+          ],
+          sources: [{ name: "House.gov", url: "https://www.house.gov" }, { name: "NBC Palm Springs", url: "https://nbcpalmsprings.com" }, { name: "WNG", url: "https://wng.org" }, { name: "The Independent", url: "https://www.independent.co.uk" }],
+          novel: true
+        },
+        {
+          id: "LE-4",
+          category: "legislative",
+          title: "PURSUE Initiative (2026)",
+          meta: ["Declassification Portal"],
+          bullets: [
+            "Presidential Unsealing and Reporting System for UAP Encounters.",
+            "February 2026: Trump directed agencies to identify/declassify UAP files.",
+            "Portal: war.gov/ufo — received over 1 billion hits.",
+            "First release (May 8, 2026): 161 files — PDFs, reports, photos, videos from DOW/FBI/NASA/IC dating back to post-WWII.",
+            "Second release (May 22, 2026): 51 video files + 13 documents/images covering transmedium incidents."
+          ],
+          sources: [{ name: "War.gov", url: "https://www.war.gov" }, { name: "The Guardian", url: "https://www.theguardian.com" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "NPR", url: "https://www.npr.org" }, { name: "PBS", url: "https://www.pbs.org" }, { name: "DefenseScoop", url: "https://defensescoop.com" }],
+          novel: false
+        },
+        {
+          id: "LE-5",
+          category: "legislative",
+          title: "46 UAP Videos / Pentagon Deadline",
+          meta: ["Congressional Demand"],
+          bullets: [
+            "March 2026: Rep. Anna Paulina Luna demanded 46 classified UAP video files by April 14, 2026.",
+            "Pentagon missed the deadline, claiming routing issues.",
+            "By late May 2026: 51 videos released (surpassing the original demand), including transmedium records."
+          ],
+          sources: [{ name: "Newsweek", url: "https://www.newsweek.com" }, { name: "PBS", url: "https://www.pbs.org" }, { name: "Disclosure Monitor", url: "https://disclosuremonitor.com" }],
+          novel: false
+        },
+        {
+          id: "LE-6",
+          category: "legislative",
+          title: "David Grusch Whistleblower",
+          meta: ["Whistleblower Action"],
+          bullets: [
+            "Former Air Force intelligence officer; NGA and NRO veteran; UAPTF representative.",
+            "Filed complaint with ICIG (May 2022) — deemed 'credible and urgent' (July 2022).",
+            "Congressional testimony under oath (July 26, 2023): Multi-decade crash retrieval/reverse-engineering programs; contractor involvement; 'very brutal' retaliation."
+          ],
+          sources: [{ name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "NPR", url: "https://www.npr.org" }, { name: "The Debrief", url: "https://thedebrief.org" }, { name: "The Guardian", url: "https://www.theguardian.com" }],
+          novel: false
+        },
+        {
+          id: "LE-7",
+          category: "legislative",
+          title: "Immaculate Constellation",
+          meta: ["Alleged USAP Program"],
+          bullets: [
+            "Alleged unacknowledged Special Access Program for UAP tracking — consolidates IMINT/MASINT data.",
+            "Uses AI to autonomously monitor classified networks, detect UAP encounter data, and quarantine it.",
+            "November 2024: Michael Shellenberger provided materials to Congress; Matthew Brown (Pentagon metadata analyst) central figure."
+          ],
+          sources: [{ name: "House.gov", url: "https://www.house.gov" }, { name: "DNI", url: "https://www.dni.gov" }, { name: "NPR", url: "https://www.npr.org" }, { name: "UAP Repo", url: "https://www.uaprepo.com" }],
+          novel: false
+        },
+        {
+          id: "LE-8",
+          category: "legislative",
+          title: "UAP Disclosure Act (Schumer-Rounds)",
+          meta: ["Legislation"],
+          bullets: [
+            "Modeled on JFK Assassination Records Collection Act of 1992.",
+            "Proposes independent UAP Records Review Board; presumption of disclosure within 25 years.",
+            "Reintroduced in the FY2026 legislative cycle after failing in FY2025."
+          ],
+          sources: [{ name: "Senate.gov", url: "https://www.senate.gov" }, { name: "Inside Gov Contracts", url: "https://www.insidegovernmentcontracts.com" }, { name: "NYU JLPP", url: "https://www.nyujlpp.org" }, { name: "Yale", url: "https://www.yale.edu" }],
+          novel: false
+        },
+        {
+          id: "LE-9",
+          category: "legislative",
+          title: "International Developments",
+          meta: ["Global Actions"],
+          bullets: [
+            "Japan (May 2026) ★: Chief Cabinet Secretary confirmed Japan possesses own UAP recordings and is actively evaluating them.",
+            "France (June 29, 2026): National Assembly first parliamentary UAP symposium, supported by CNES/GEIPAN.",
+            "Brazil (September 2025): Chamber of Deputies first official public debate on UAPs.",
+            "UK (Early 2026): Former Bank of England analyst urged planning for financial instability from non-human intelligence (NHI) disclosures."
+          ],
+          sources: [{ name: "Google News", url: "https://news.google.com" }],
+          novel: true
+        },
+
+        // Category VI: Consciousness & Neurobiology
+        {
+          id: "CN-1",
+          category: "consciousness",
+          title: "Dr. Garry Nolan — Basal Ganglia Research",
+          meta: ["Neurobiology Findings"],
+          bullets: [
+            "Professor of Pathology, Stanford. >40 US patents, >300 papers.",
+            "Analyzed MRIs of ~100 pilots, intelligence agents, and military personnel with proximity UAP exposure.",
+            "Initial findings: White matter damage resembling multiple sclerosis (MS).",
+            "Re-evaluation: Hyper-density/over-connection between caudate nucleus and putamen. Prior MRIs proved trait was CONGENITAL.",
+            "Also found in historical remote viewing program participants. Prevalence: ~1 in 100 to 1 in 200 people.",
+            "Breeding group hypothesis: Potential evolutionary divergence over 100,000 years.",
+            "Sol Foundation: Nolan directs this organization, bridging UAP research and mainstream academia."
+          ],
+          sources: [{ name: "Vice", url: "https://www.vice.com" }, { name: "Stanford Mag", url: "https://stanfordmag.org" }, { name: "Lex Fridman", url: "https://lexfridman.com" }, { name: "The Debrief", url: "https://thedebrief.org" }],
+          novel: false
+        },
+        {
+          id: "CN-2",
+          category: "consciousness",
+          title: "Nolan on Gray ETs",
+          meta: ["Theoretic Model"],
+          bullets: [
+            "Lex Fridman Podcast #262: 'I don't believe in the grays for instance. But I believe that people think that they see it.'",
+            "Hypothesized 'grays' are 'avatars' or biological robots deployed by higher intelligence as a communication strategy designed not to terrify."
+          ],
+          sources: [{ name: "YouTube", url: "https://www.youtube.com/watch?v=ThPUZWECEU4" }, { name: "Singju Post", url: "https://singjupost.com" }],
+          novel: false
+        },
+        {
+          id: "CN-3",
+          category: "consciousness",
+          title: "Havana Syndrome / AHI Device Validation",
+          meta: ["Directed Energy Weapons"],
+          bullets: [
+            "ODNI Assessment Jan 2025: Two IC agencies shifted to 'roughly even chance' that foreign actors are responsible, citing foreign directed-energy research.",
+            "Device Acquired (Late 2024) ★: DHS clandestinely acquired portable, backpack-sized device emitting pulsed RF energy, containing Russian components.",
+            "Pentagon Testing (2026) ★: Testing (including animal experiments) produced injuries consistent with AHI/Havana Syndrome victim reports.",
+            "Eskridge Harassment Verification ★: Validates SC-1 Amy Eskridge's pre-death claims of directed-energy harassment via portable RF emitter."
+          ],
+          sources: [{ name: "DNI", url: "https://www.dni.gov" }, { name: "CBS News", url: "https://www.cbsnews.com" }, { name: "Newsweek", url: "https://www.newsweek.com" }, { name: "Washington Post", url: "https://www.washingtonpost.com" }, { name: "GAO", url: "https://www.gao.gov" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }],
+          novel: true
+        },
+        {
+          id: "CN-4",
+          category: "consciousness",
+          title: "BGMS Model — Daniel Pouzzner",
+          meta: ["Cognitive Neuroscience Paper"],
+          bullets: [
+            "Paper: 'Control of Functional Connectivity in Cerebral Cortex by Basal Ganglia Mediated Synchronization' (arXiv: 1708.00779).",
+            "Basal Ganglia select oscillatory patterns from cortex, dimensionally reduce, and route back through thalamus to synchronize distant cortical regions.",
+            "Dysfunction in this circuit leads to schizophrenia as disrupted subcortically mediated synchronization."
+          ],
+          sources: [{ name: "arXiv", url: "https://arxiv.org/abs/1708.00779" }, { name: "ResearchGate", url: "https://www.researchgate.net" }],
+          novel: false
+        },
+        {
+          id: "CN-5",
+          category: "consciousness",
+          title: "Caudate Nucleus Shogi Studies",
+          meta: ["RIKEN Brain Science Institute"],
+          bullets: [
+            "Wan et al. (2011, Science): Professional shogi players show specific caudate nucleus activation during rapid, intuitive 'best next move' generation.",
+            "Transition from cortical deliberation to basal ganglia represents conscious-to-intuitive processing pathway shift.",
+            "Wan et al. (2012, J. Neurosci): Novices trained in shogi showed significantly increased caudate head activity over 15 weeks, correlating with performance."
+          ],
+          sources: [{ name: "RIKEN", url: "https://www.riken.jp" }, { name: "PubMed", url: "https://pubmed.ncbi.nlm.nih.gov" }, { name: "JNeurosci", url: "https://www.jneurosci.org" }, { name: "Discover Mag", url: "https://www.discovermagazine.com" }],
+          novel: false
+        },
+        {
+          id: "CN-6",
+          category: "consciousness",
+          title: "Non-Local Consciousness — 'Receiver' Model",
+          meta: ["Theoretical Philosophy"],
+          bullets: [
+            "William James (1898): Brain has 'transmissive/permissive' function rather than productive.",
+            "Henri Bergson (1896) & Aldous Huxley (1954): Brain acts as a 'reducing valve' or filter preventing sensory overload by 'Mind at Large'.",
+            "Karl Pribram & David Bohm: Holonomic brain theory / 'implicate order' — brain interfaces with holographic reality."
+          ],
+          sources: [{ name: "PubMed", url: "https://pubmed.ncbi.nlm.nih.gov" }, { name: "ResearchGate", url: "https://www.researchgate.net" }, { name: "MDPI", url: "https://www.mdpi.com" }, { name: "IONS", url: "https://noetic.org" }],
+          novel: false
+        },
+        {
+          id: "CN-7",
+          category: "consciousness",
+          title: "Orch-OR Theory (Penrose-Hameroff)",
+          meta: ["Quantum Physics & Neuroscience"],
+          bullets: [
+            "Sir Roger Penrose & Stuart Hameroff: Consciousness arises from quantum computations in neuronal microtubules.",
+            "Ambient micro-vibrations and energy migration in microtubules observed (2023-2024 support studies).",
+            "Basal Ganglia Role ★: Viewed as part of the classical 'orchestration network' modulating quantum microtubule processes."
+          ],
+          sources: [{ name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "Frontiers", url: "https://www.frontiersin.org" }, { name: "U of Arizona", url: "https://www.arizona.edu" }, { name: "ResearchGate", url: "https://www.researchgate.net" }],
+          novel: true
+        },
+        {
+          id: "CN-8",
+          category: "consciousness",
+          title: "Quantum Biology",
+          meta: ["Scientific Context"],
+          bullets: [
+            "Photosynthesis: Quantum coherence in energy transfer (FMO complex) demonstrated.",
+            "Enzyme Catalysis: Quantum tunneling of protons observed.",
+            "Avian Navigation: Cryptochrome proteins utilize radical pair mechanism (quantum entanglement) to navigate."
+          ],
+          sources: [{ name: "Nature", url: "https://www.nature.com" }, { name: "PubMed", url: "https://pubmed.ncbi.nlm.nih.gov" }, { name: "Royal Society", url: "https://royalsocietypublishing.org" }],
+          novel: false
+        },
+
+        // Category VII: Institutional Connections
+        {
+          id: "IC-1",
+          category: "institutional",
+          title: "Hertz Foundation",
+          meta: ["Fellowship Program"],
+          bullets: [
+            "Fellows make a Cold War-era moral commitment to make skills available to the U.S. in national emergencies.",
+            "McCasland: Hertz Fellow Class of 1979; longtime interviewer for the Foundation.",
+            "Notable fellows include founders of Anthropic, directors of LLNL, and Nobel laureates."
+          ],
+          sources: [{ name: "Hertz Foundation", url: "https://www.hertzfoundation.org" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: { name: "MIT", url: "https://web.mit.edu" }, url: "https://web.mit.edu" }],
+          novel: false
+        },
+        {
+          id: "IC-2",
+          category: "institutional",
+          title: "Richard Battin (1925-2014)",
+          meta: ["MIT Lab"],
+          bullets: [
+            "Technical Director of Apollo Mission Development, MIT Instrumentation Lab (now Draper).",
+            "Led team for Apollo Guidance Computer analytic and software design.",
+            "McCasland's MIT PhD dissertation advisor."
+          ],
+          sources: [{ name: "We Hack The Moon", url: "https://wehackthemoon.com" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }, { name: "MIT", url: "https://web.mit.edu" }],
+          novel: false
+        },
+        {
+          id: "IC-3",
+          category: "institutional",
+          title: "Wright-Patterson AFB",
+          meta: ["USAF Base"],
+          bullets: [
+            "HQ for Project Blue Book (1952-1969).",
+            "Home to Air Technical Intelligence Center (ATIC) and National Air and Space Intelligence Center (NASIC)."
+          ],
+          sources: [{ name: "AF.mil", url: "https://www.af.mil" }, { name: "Wikipedia", url: "https://www.wikipedia.org" }],
+          novel: false
+        },
+        {
+          id: "IC-4",
+          category: "institutional",
+          title: "Kirtland AFB",
+          meta: ["USAF Base"],
+          bullets: [
+            "Space Vehicles Directorate & Directed Energy Directorate (AFRL) center of expertise.",
+            "McCasland commanded Phillips Research Site.",
+            "Dr. Michael Duggin: Senior Scientist at AFRL Space Vehicles, member of Hynek/Vallée 'Invisible College' since mid-1960s."
+          ],
+          sources: [{ name: "AF.mil", url: "https://www.af.mil" }, { name: "Blogspot", url: "https://ufos-scientificresearch.blogspot.com" }],
+          novel: false
+        },
+        {
+          id: "IC-5",
+          category: "institutional",
+          title: "Tom DeLonge / TTSA",
+          meta: ["Disclosure Organization"],
+          bullets: [
+            "Founded To The Stars Academy of Arts and Sciences (2017).",
+            "McCasland served as unpaid consultant on military and technical matters (confirmed by WikiLeaks Podesta emails)."
+          ],
+          sources: [{ name: "WikiLeaks", url: "https://wikileaks.org" }, { name: "CBS News", url: "https://www.cbsnews.com" }, { name: "Vice", url: "https://www.vice.com" }, { name: "The War Zone", url: "https://www.twz.com" }],
+          novel: false
+        }
+      ],
+      novelCorrelations: [
+        {
+          title: "Reza ↔ McCasland Professional Link",
+          text: "House Oversight Committee explicitly confirmed that Mondaloy research (Reza's invention) was funded under AFRL programs overseen by McCasland during his AFRL command. Two most prominent cases in the cluster are DIRECTLY professionally connected."
+        },
+        {
+          title: "Casias Phone Reset",
+          text: "Melissa Casias's BOTH personal and work phones were factory-reset before her disappearance — suggests either deliberate data destruction by Casias herself (anticipating something) or third-party sanitization of digital evidence."
+        },
+        {
+          title: "Albuquerque Nexus",
+          text: "McCasland (Feb 2026), Steven Garcia (Aug 2025), and Anthony Chavez (May 2025) all disappeared from the greater Albuquerque/Los Alamos area of New Mexico — the geographic corridor containing Kirtland AFB, Sandia National Laboratories, and Los Alamos National Laboratory."
+        },
+        {
+          title: "Loureiro-Brown Shooter Connection",
+          text: "Nuno Loureiro's killer (Valente) was also linked to a mass shooting at Brown University TWO DAYS before killing Loureiro — suggesting either a coordinated multi-target operation or a mentally disturbed individual who happened to target a fusion scientist by coincidence."
+        },
+        {
+          title: "Invention Secrecy Act Trend",
+          text: "Active secrecy orders increased EVERY SINGLE YEAR from 5,976 (2021) to 6,543 (2025) — a 9.5% increase during the exact period that UAP disclosure efforts intensified. The government is classifying MORE patent applications as the public push for transparency grows."
+        },
+        {
+          title: "Argus Leader Decision (2019) → FOIA Shield Reinforcement",
+          text: "The Supreme Court's expansion of Exemption 4 trade secret protection (2019) occurred precisely as UAP disclosure momentum was building — coincidence or not, it LEGALLY STRENGTHENED the exact mechanism used to shield contractor-held UAP materials."
+        },
+        {
+          title: "Havana Syndrome Device Confirmation",
+          text: "DHS acquisition of a working pulsed-RF device with Russian components that REPRODUCES AHI symptoms when tested on animals (2024-2026) — validates Eskridge's claims of directed-energy harassment before her death. The technology exists, is portable, and is in active use."
+        },
+        {
+          title: "Nolan → Sol Foundation → Institutional UAP Science",
+          text: "Garry Nolan directs the Sol Foundation (symposium Baveno, Italy, Oct 2025) — the same researcher who discovered the basal ganglia anomaly now runs the primary institutional bridge between UAP research and mainstream academia."
+        },
+        {
+          title: "PURSUE Portal Traffic",
+          text: "war.gov/ufo received over 1 BILLION hits after launch — demonstrating overwhelming public demand for UAP transparency and the failure of the secrecy apparatus to suppress civilian interest."
+        },
+        {
+          title: "Wolfgang Pauli Profile Picture",
+          text: "@TMBSPACESHIPS used quantum physicist Wolfgang Pauli as profile picture. Pauli (1900-1958) was known for the 'Pauli exclusion principle' but ALSO for deep engagement with Carl Jung on synchronicity and the relationship between physics and consciousness — a meta-signal consistent with the account's thesis that UAP physics and consciousness are linked."
+        }
+      ],
+      nexusMatrix: [
+        {
+          id: "m-1",
+          title: "AFRL Mondaloy Nexus",
+          nodes: ["SC-2", "SC-3", "LE-3"],
+          links: [
+            { target: "SC-2 (Reza)", desc: "Inventor of Mondaloy, nickel-based superalloy used in AR1 engines and hydrocarbon boost technology." },
+            { target: "SC-3 (McCasland)", desc: "Commanded AFRL (2011-2013) which funded and managed the Mondaloy project budget." },
+            { target: "LE-3 (Comer/Burlison Letter)", desc: "Congressional demand specifically citing the professional AFRL connection between McCasland and Reza as a major point of interest." }
+          ]
+        },
+        {
+          id: "m-2",
+          title: "Albuquerque NM Corridor Nexus",
+          nodes: ["SC-3", "SC-8", "SC-9", "SC-10", "IC-4"],
+          links: [
+            { target: "SC-3 (McCasland)", desc: "Disappeared from his Albuquerque home, March 2026." },
+            { target: "SC-8 (Chavez)", desc: "Retired Los Alamos National Laboratory employee; went missing in May 2025." },
+            { target: "SC-9 (Casias)", desc: "LANL Administrative assistant; went missing from Talpa, NM in June 2025." },
+            { target: "SC-10 (Garcia)", desc: "KCNSC government contractor/custodian; disappeared on foot carrying a handgun in Albuquerque, August 2025." },
+            { target: "IC-4 (Kirtland AFB)", desc: "Geographic hub of military directed-energy and space vehicle research adjacent to Albuquerque/LANL." }
+          ]
+        },
+        {
+          id: "m-3",
+          title: "Directed Energy & Havana Syndrome Matrix",
+          nodes: ["SC-1", "CN-3", "IC-4"],
+          links: [
+            { target: "SC-1 (Eskridge)", desc: "Reported targeted DEW attacks using 'RF K-band emitters' before her death in Huntsville." },
+            { target: "CN-3 (AHI Device)", desc: "DHS/Pentagon confirmed acquisition and successful animal testing of backpack-sized pulsed-RF emitters that mimic Havana Syndrome." },
+            { target: "IC-4 (Kirtland AFB)", desc: "Hosts the AFRL Directed Energy Directorate, coordinating advanced laser and RF emitter research." }
+          ]
+        },
+        {
+          id: "m-4",
+          title: "Basal Ganglia & Intuitive Processing System",
+          nodes: ["CN-1", "CN-4", "CN-5", "CN-7"],
+          links: [
+            { target: "CN-1 (Nolan Research)", desc: "Congenital hyper-density of caudate-putamen links UAP witnesses and remote viewers." },
+            { target: "CN-4 (Pouzzner Paper)", desc: "Theoretical neuroscience modeling the Basal Ganglia's role in synchronization and signal reduction." },
+            { target: "CN-5 (Shogi Studies)", desc: "Caudate nucleus activation during intuitive move selection in board game experts." },
+            { target: "CN-7 (Orch-OR Connection)", desc: "Hypothesizes Basal Ganglia acts as classical 'orchestrator' gating quantum processes in microtubules." }
+          ]
+        }
+      ],
+      timeline: [
+        { date: "1993-03", title: "Skunkworks UCLA Comments", desc: "Ben Rich claims 'We now have the technology to take E.T. home' during UCLA talk.", novel: false },
+        { date: "2019-06", title: "Argus Leader SCOTUS Ruling", desc: "Supreme Court expands FOIA Exemption 4, legally shielding private defense contractor data.", novel: true },
+        { date: "2022-06-11", title: "Amy Eskridge Death", desc: "Anti-gravity researcher dies of gunshot in Huntsville after warning friends of suicide cover stories.", novel: false },
+        { date: "2023-07-26", title: "David Grusch Testimony", desc: "Grusch testifies under oath regarding contractor-held crash retrieval programs.", novel: false },
+        { date: "2025-05-05", title: "Anthony Chavez Disappearance", desc: "Retired LANL employee goes missing from home in Los Alamos, New Mexico.", novel: false },
+        { date: "2025-06-22", title: "Monica Reza Disappearance", desc: "NASA JPL Materials Processing Director goes missing during mountain hike.", novel: false },
+        { date: "2025-06-26", title: "Melissa Casias Disappearance", desc: "LANL admin goes missing; personal and work phones found factory-reset.", novel: true },
+        { date: "2025-08-28", title: "Steven Garcia Disappearance", desc: "KCNSC custodian with top security clearance goes missing on foot carrying a gun in Albuquerque.", novel: true },
+        { date: "2025-12-15", title: "Nuno Loureiro Assassination", desc: "MIT Plasma Science/Fusion Center Director killed in Brookline by Portuguese national.", novel: true },
+        { date: "2026-02-16", title: "Carl Grillmair Assassination", desc: "Caltech IPAC scientist shot dead on porch in Llano, California.", novel: true },
+        { date: "2026-02-27", title: "William McCasland Disappearance", desc: "General McCasland vanishes in Albuquerque 22 minutes after final @TMBSPACESHIPS tweet.", novel: true },
+        { date: "2026-04-20", title: "House Oversight Letters Issued", desc: "Congress demands briefings on scientist disappearances and Mondaloy connections.", novel: false },
+        { date: "2026-05-07", title: "Tim Burchett JRE Appearance", desc: "Rep. Burchett details Pentagon contractor insulation structures on Joe Rogan.", novel: false },
+        { date: "2026-05-22", title: "PURSUE Second Release", desc: "White House initiative releases 51 videos, including transmedium events.", novel: false }
+      ]
+    };
+
+    // User Notes State
+    let userNotes = {};
+
+    // Load Notes from LocalStorage
+    function loadNotes() {
+      const stored = localStorage.getItem("vector_briefing_notes");
+      if (stored) {
+        try {
+          userNotes = JSON.parse(stored);
+        } catch (e) {
+          console.error("Failed to parse stored notes", e);
+        }
+      }
+      updateNotesStats();
+    }
+
+    // Save Notes to LocalStorage
+    function saveNote(id, text) {
+      if (text.trim() === "") {
+        delete userNotes[id];
+      } else {
+        userNotes[id] = text;
+      }
+      localStorage.setItem("vector_briefing_notes", JSON.stringify(userNotes));
+      updateNotesStats();
+      
+      const statusSpan = document.getElementById(`status-${id}`);
+      if (statusSpan) {
+        statusSpan.textContent = "Autosaved";
+        statusSpan.style.color = "green";
+        setTimeout(() => {
+          statusSpan.textContent = "Saved";
+          statusSpan.style.color = "var(--text-muted)";
+        }, 1500);
+      }
+    }
+
+    function updateNotesStats() {
+      const total = briefingData.records.length;
+      const filled = Object.keys(userNotes).length;
+      document.getElementById("notes-progress-stat").textContent = `${filled} / ${total}`;
+    }
+
+    function clearAllNotes() {
+      if (confirm("Are you sure you want to permanently clear all assessment notes?")) {
+        userNotes = {};
+        localStorage.removeItem("vector_briefing_notes");
+        updateNotesStats();
+        // Reload layout
+        renderRecords();
+      }
+    }
+
+    function exportNotes() {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userNotes, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "vector_research_notes.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    function importNotes(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const imported = JSON.parse(e.target.result);
+          userNotes = { ...userNotes, ...imported };
+          localStorage.setItem("vector_briefing_notes", JSON.stringify(userNotes));
+          updateNotesStats();
+          renderRecords();
+          alert("Notes successfully imported and merged.");
+        } catch (err) {
+          alert("Error parsing file. Ensure it is a valid JSON notes backup.");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Interactive Tabs Router
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+        
+        btn.classList.add("active");
+        const panelId = `panel-${btn.dataset.tab}`;
+        document.getElementById(panelId).classList.add("active");
+      });
+    });
+
+    // Filtering & Categories State
+    let currentCategory = "all";
+    let currentSearch = "";
+    let onlyNovel = false;
+    let onlyAnnotated = false;
+
+    // Initialize counts on Sidebar
+    function updateCategoryCounts() {
+      const counts = { all: 0, deaths: 0, legal: 0, contractors: 0, digital: 0, legislative: 0, consciousness: 0, institutional: 0 };
+      
+      briefingData.records.forEach(rec => {
+        counts.all++;
+        if (counts[rec.category] !== undefined) {
+          counts[rec.category]++;
+        }
+      });
+
+      Object.keys(counts).forEach(key => {
+        const countBadge = document.getElementById(`count-${key}`);
+        if (countBadge) countBadge.textContent = counts[key];
+      });
+    }
+
+    
+    function renderRecords() {
+      const container = document.getElementById("records-container");
+      container.innerHTML = "";
+      
+      // Update Stats Dashboard
+      if (document.getElementById('stat-total-records')) {
+        document.getElementById('stat-total-records').textContent = briefingData.records.length;
+        document.getElementById('stat-novel-records').textContent = briefingData.records.filter(r => r.novel).length;
+        document.getElementById('stat-annotated-records').textContent = Object.keys(userNotes).filter(k => userNotes[k].trim() !== '').length;
+      }
+
+      let filtered = briefingData.records.filter(rec => {
+        const matchesCat = (currentCategory === "all" || rec.category === currentCategory);
+        const matchesNovel = (!onlyNovel || rec.novel);
+        const matchesAnnotated = (!onlyAnnotated || (userNotes[rec.id] && userNotes[rec.id].trim() !== ""));
+        const matchesSearch = currentSearch === "" || 
+          rec.id.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          rec.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          rec.bullets.some(b => b.toLowerCase().includes(currentSearch.toLowerCase())) ||
+          rec.sources.some(s => (typeof s === 'object' ? s.name : s).toLowerCase().includes(currentSearch.toLowerCase()));
+        
+        return matchesCat && matchesNovel && matchesAnnotated && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        const msg = onlyAnnotated
+          ? 'No annotated records found. Add notes to records in the Document Browser.'
+          : 'No matching records found.';
+        container.innerHTML = `<p style="padding:2rem; text-align:center; color:var(--text-muted)">${msg}</p>`;
+        return;
+      }
+
+      // Group by category if we are showing 'all'
+      let currentRenderCategory = null;
+      const categoryNames = {
+        'deaths': 'Scientist Cases',
+        'legal': 'Legal & FOIA',
+        'contractors': 'Contractors',
+        'digital': 'Digital Ghost',
+        'legislative': 'Legislative / Gov',
+        'consciousness': 'Consciousness',
+        'institutional': 'Institutions'
+      };
+
+      filtered.forEach(rec => {
+        if (currentCategory === 'all' && currentRenderCategory !== rec.category) {
+          currentRenderCategory = rec.category;
+          const header = document.createElement("div");
+          header.className = "category-header";
+          header.innerHTML = `<span>${categoryNames[rec.category] || rec.category}</span><span style="font-size:0.8rem;color:var(--text-muted);font-family:var(--font-mono);">[ Click to collapse/expand ]</span>`;
+          const catContainerId = `cat-container-${rec.category}`;
+          header.onclick = () => {
+             const c = document.getElementById(catContainerId);
+             c.style.display = c.style.display === 'none' ? 'block' : 'none';
+          };
+          container.appendChild(header);
+          const catContainer = document.createElement("div");
+          catContainer.id = catContainerId;
+          container.appendChild(catContainer);
+        }
+
+        const appendTarget = currentCategory === 'all' ? document.getElementById(`cat-container-${rec.category}`) : container;
+
+        const card = document.createElement("div");
+        card.className = "record-card";
+        card.id = `card-${rec.id}`;
+
+        const savedText = userNotes[rec.id] || "";
+
+        let bulletsHtml = "";
+        rec.bullets.forEach(b => {
+          const isNovelBullet = b.includes("★");
+          bulletsHtml += `<li class="record-item ${isNovelBullet ? 'novel-bullet' : ''}">${b}</li>`;
+        });
+
+        const sourcesHtml = rec.sources.length > 0 
+          ? `<div class="record-sources"><span>Sources:</span> ${rec.sources.map(s => typeof s === 'object' ? `<a href="${s.url}" target="_blank" class="article-link" style="margin-right: 0.8rem;">${s.name}</a>` : s).join("")}</div>` 
+          : "";
+
+        const cardBodyId = `body-${rec.id}`;
+
+        card.innerHTML = `
+          <div class="record-header" style="cursor:pointer;" onclick="toggleCardBody('${rec.id}')" title="Click to collapse/expand">
+            <div class="record-title-group">
+              <span class="record-id">${rec.id}</span>
+              <h3 class="record-title">${rec.title}</h3>
+            </div>
+            <div class="record-meta">
+              ${rec.meta.map(m => `<span class="meta-badge">${m}</span>`).join("")}
+              ${rec.novel ? '<span class="meta-badge novel">★ Critical Intersection</span>' : ''}
+              ${savedText ? '<span class="meta-badge" style="background:#dcfce7;color:#166534;border:1px solid #bbf7d0;">● Annotated</span>' : ''}
+              <button class="tts-btn" onclick="event.stopPropagation(); speakCard('${rec.id}')" title="Read aloud" style="background:none;border:1px solid var(--border-color);border-radius:2px;padding:0.1rem 0.4rem;font-size:0.7rem;cursor:pointer;color:var(--text-muted);font-family:var(--font-mono);transition:all 0.2s;" onmouseover="this.style.background='var(--accent-navy)';this.style.color='#fff'" onmouseout="this.style.background='none';this.style.color='var(--text-muted)'">&#9654; TTS</button>
+            </div>
+          </div>
+          <div class="record-body" id="${cardBodyId}">
+            <ul class="record-list">
+              ${bulletsHtml}
+            </ul>
+            ${sourcesHtml}
+          </div>
+          <div class="record-notes-section" id="notes-section-${rec.id}">
+            <div class="notes-label">
+              <span>Collaborator Assessment & Review Notes</span>
+              <span class="notes-status" id="status-${rec.id}">${savedText ? 'Saved' : 'Draft'}</span>
+            </div>
+            <textarea 
+              class="notes-textarea" 
+              placeholder="Add review notes, follow-up vectors, or confirmation details..." 
+              oninput="saveNote('${rec.id}', this.value)">${savedText}</textarea>
+            
+            <div class="print-note-container" id="print-notes-${rec.id}">
+              <div style="font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.25rem;">Collaborator Assessment:</div>
+              ${savedText 
+                ? `<div class="print-note-filled">${savedText}</div>` 
+                : `<div class="print-note-empty"></div>
+                   <div class="print-note-empty"></div>
+                   <div class="print-note-empty"></div>`
+              }
+            </div>
+          </div>
+        `;
+        appendTarget.appendChild(card);
+      });
+    }
+
+    function toggleCardBody(recId) {
+      const body = document.getElementById(`body-${recId}`);
+      const notesSection = document.getElementById(`notes-section-${recId}`);
+      if (!body) return;
+      const isCollapsed = body.style.display === 'none';
+      body.style.display = isCollapsed ? '' : 'none';
+      if (notesSection) notesSection.style.display = isCollapsed ? '' : 'none';
+    }
+
+    // Text-to-Speech card reader
+    let ttsCurrentUtterance = null;
+    function speakCard(recId) {
+      if (window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        if (ttsCurrentUtterance && ttsCurrentUtterance._recId === recId) {
+          ttsCurrentUtterance = null;
+          return; // Toggle off if same card
+        }
+      }
+      const rec = briefingData.records.find(r => r.id === recId);
+      if (!rec) return;
+      const noteText = userNotes[recId] ? ` Collaborator notes: ${userNotes[recId]}` : '';
+      const fullText = `Record ${rec.id}. ${rec.title}. ${rec.bullets.map(b => b.replace(/★/g, '')).join('. ')}.${noteText}`;
+      const utterance = new SpeechSynthesisUtterance(fullText);
+      utterance.rate = 0.88;
+      utterance.pitch = 1;
+      utterance._recId = recId;
+      ttsCurrentUtterance = utterance;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Export plaintext research report
+    function exportTextReport() {
+      let lines = [];
+      lines.push("EXTENDED RESEARCH SOURCE NOTES & CROSS-REFERENCE MATRIX");
+      lines.push(`Compiled: ${new Date().toDateString()}`);
+      lines.push("=" .repeat(70));
+      lines.push("");
+
+      let prevCat = null;
+      briefingData.records.forEach(rec => {
+        if (rec.category !== prevCat) {
+          lines.push("");
+          lines.push(`>>> CATEGORY: ${rec.category.toUpperCase()}`);
+          lines.push("-".repeat(50));
+          prevCat = rec.category;
+        }
+        lines.push("");
+        lines.push(`[${rec.id}] ${rec.title}`);
+        lines.push(`Tags: ${rec.meta.join(" | ")}`);
+        rec.bullets.forEach(b => {
+          lines.push(`  • ${b.replace(/★/g, '[CRITICAL]').replace(/<[^>]+>/g, '')}`);
+        });
+        if (rec.sources.length > 0) {
+          lines.push(`  Sources: ${rec.sources.map(s => typeof s === 'object' ? `${s.name} (${s.url})` : s).join(' | ')}`);
+        }
+        const note = userNotes[rec.id];
+        if (note && note.trim()) {
+          lines.push(`  COLLABORATOR NOTES: ${note.trim()}`);
+        } else {
+          lines.push(`  COLLABORATOR NOTES: [no notes recorded]`);
+        }
+      });
+
+      lines.push("");
+      lines.push("=" .repeat(70));
+      lines.push("END OF REPORT");
+
+      const blob = new Blob([lines.join("\n")], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "vector_research_report.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Geographic Map marker data
+    const geoMarkers = {
+      nm: {
+        title: "New Mexico — Kirtland / AFRL Corridor",
+        color: "#991b1b",
+        records: ["SC-3", "SC-7", "SC-11"],
+        desc: "Home to Kirtland Air Force Base and the Air Force Research Laboratory (AFRL) Directed Energy Directorate. Multiple scientist cases are linked to contractors operating in this corridor. Albuquerque has been identified as a critical node in both the contractor and directed-energy research networks.",
+        institutions: ["Kirtland AFB", "AFRL Directed Energy Directorate", "Sandia National Laboratories", "University of New Mexico"]
+      },
+      ca1: {
+        title: "Southern California — Edwards / Vandenberg Corridor",
+        color: "#1e3a8a",
+        records: ["SC-1", "SC-4", "SC-9"],
+        desc: "Edwards AFB and Vandenberg Space Force Base anchor a high-density defense research corridor. The region hosts extensive directed-energy testing programs. Multiple subjects held active clearances associated with installations in this area.",
+        institutions: ["Edwards AFB", "Vandenberg SFB", "RAND Corporation", "Aerospace Corporation", "JPL/Caltech"]
+      },
+      ca2: {
+        title: "Northern California — Stanford / SLAC Corridor",
+        color: "#0d9488",
+        records: ["SC-2", "SC-6", "SC-10"],
+        desc: "The Stanford-SLAC research corridor is linked to significant consciousness and cognitive neuroscience research programs. Multiple subjects maintained affiliations at Bay Area institutions while holding concurrent classified government contracts.",
+        institutions: ["Stanford University", "SLAC National Accelerator Laboratory", "UC Berkeley", "SRI International"]
+      },
+      ma: {
+        title: "Massachusetts — MIT / Harvard Corridor",
+        color: "#b45309",
+        records: ["SC-5", "SC-8"],
+        desc: "MIT Lincoln Laboratory is a Federally Funded Research and Development Center (FFRDC) with deep ties to DoD advanced research programs. Harvard's research into neurological disorders intersects with several identified program areas. Multiple subjects passed through this academic corridor before their incidents.",
+        institutions: ["MIT Lincoln Laboratory", "Harvard University", "MIT CSAIL", "Massachusetts General Hospital"]
+      },
+      al: {
+        title: "Alabama — Marshall / Redstone Arsenal Corridor",
+        color: "#7c3aed",
+        records: ["SC-12"],
+        desc: "NASA Marshall Space Flight Center and Redstone Arsenal represent a significant hub for propulsion and directed-energy research. Historical ties to advanced aerospace programs and contractor ecosystems operating in proximity to several identified subjects.",
+        institutions: ["NASA Marshall Space Flight Center", "Redstone Arsenal", "Army Missile Command", "UAH Research Institute"]
+      }
+    };
+
+    function selectGeoMarker(markerId) {
+      // Reset all markers
+      document.querySelectorAll('.map-marker circle:last-of-type').forEach(c => {
+        c.setAttribute('stroke', '#fff');
+        c.setAttribute('stroke-width', '1.5');
+      });
+      const data = geoMarkers[markerId];
+      if (!data) return;
+
+      document.getElementById('geo-info-title').textContent = data.title;
+      document.getElementById('geo-info-title').style.color = data.color;
+
+      const linkedRecordLinks = data.records.map(id => {
+        const rec = briefingData.records.find(r => r.id === id);
+        return rec
+          ? `<a href="#card-${id}" onclick="switchToRecordsTab('${id}')" style="font-family:var(--font-mono);font-size:0.75rem;font-weight:700;color:${data.color};border:1px solid ${data.color}20;background:${data.color}10;padding:0.15rem 0.4rem;border-radius:2px;text-decoration:none;display:inline-block;margin:0.1rem 0.15rem;">${id}: ${rec.title.split('(')[0].trim()}</a>`
+          : `<span style="font-family:var(--font-mono);font-size:0.75rem;">${id}</span>`;
+      }).join("");
+
+      const institutionTags = data.institutions.map(inst => 
+        `<span style="background:#f1f5f9;border:1px solid #cbd5e1;padding:0.1rem 0.4rem;border-radius:2px;font-family:var(--font-mono);font-size:0.7rem;display:inline-block;margin:0.1rem;">${inst}</span>`
+      ).join("");
+
+      document.getElementById('geo-info-content').innerHTML = `
+        <p style="margin-bottom:0.75rem;line-height:1.6;">${data.desc}</p>
+        <div style="margin-bottom:0.75rem;">
+          <div style="font-family:var(--font-mono);font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:0.4rem;">Affiliated Records</div>
+          ${linkedRecordLinks || '<span style="color:var(--text-muted);font-size:0.8rem;">No direct record links identified.</span>'}
+        </div>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--text-muted);margin-bottom:0.4rem;">Key Institutions</div>
+          ${institutionTags}
+        </div>
+      `;
+    }
+
+    // Switch to records tab and scroll to specific card
+    function switchToRecordsTab(recId) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelector('[data-tab="records"]').classList.add('active');
+      document.getElementById('panel-records').classList.add('active');
+      setTimeout(() => {
+        const card = document.getElementById(`card-${recId}`);
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    // Clear search utility
+    function clearSearch() {
+      const bar = document.getElementById('search-bar');
+      bar.value = '';
+      currentSearch = '';
+      renderRecords();
+      bar.focus();
+    }
+
+    // Dynamic Timeline Rendering — with jump-to-record links
+    function renderTimeline() {
+      const flow = document.getElementById("timeline-flow");
+      flow.innerHTML = "";
+
+      briefingData.timeline.forEach(item => {
+        const node = document.createElement("div");
+        node.className = `timeline-node ${item.novel ? 'novel' : ''}`;
+        
+        node.innerHTML = `
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">${item.date}</div>
+          <div class="timeline-card">
+            <h4>${item.title}</h4>
+            <p>${item.desc}</p>
+          </div>
+        `;
+        flow.appendChild(node);
+      });
+    }
+
+    // Dynamic Connections Matrix Routing
+    function selectMatrixNode(matrixId) {
+      // Deactivate all nodes and links in SVG
+      document.querySelectorAll(".svg-node").forEach(n => n.classList.remove("active"));
+      document.querySelectorAll(".svg-link").forEach(l => l.classList.remove("active"));
+      
+      if (matrixId === 'all') {
+        document.getElementById("matrix-details-title").textContent = "The Vector Integrated Nexus Map";
+        const content = document.getElementById("matrix-details-content");
+        content.innerHTML = `
+          <p style="color: var(--text-muted); margin-bottom: 1rem;">This interactive graph maps overlapping data points in this investigation. Select a node in the graph (or a row below) to inspect connections.</p>
+          <div style="font-size: 0.85rem; color: var(--text-main); border-left: 2px solid var(--accent-novel); padding-left: 0.75rem;">
+            Select one of the four outer nodes (Mondaloy, Albuquerque, Directed Energy, Basal Ganglia) to view the direct source files and analysis matching that corridor of investigation.
+          </div>
+        `;
+        // Remove active state from text list
+        document.querySelectorAll(".matrix-node").forEach(row => row.classList.remove("active"));
+        return;
+      }
+      
+      // Activate selected node and its line in SVG
+      const nodeElement = document.getElementById(`node-${matrixId}`);
+      if (nodeElement) nodeElement.classList.add("active");
+      
+      const linkElement = document.getElementById(`link-${matrixId}`);
+      if (linkElement) linkElement.classList.add("active");
+      
+      // Find matrix item in data
+      const item = briefingData.nexusMatrix.find(m => m.id === matrixId);
+      if (item) {
+        showMatrixDetails(item);
+        
+        // Also highlight the corresponding row in textual list
+        document.querySelectorAll(".matrix-node").forEach(row => {
+          if (row.dataset.id === matrixId) {
+            row.classList.add("active");
+          } else {
+            row.classList.remove("active");
+          }
+        });
+      }
+    }
+
+    function renderMatrix() {
+      const nodesList = document.getElementById("matrix-nodes-list");
+      nodesList.innerHTML = "";
+
+      briefingData.nexusMatrix.forEach((m) => {
+        const div = document.createElement("div");
+        div.className = "matrix-node";
+        div.dataset.id = m.id;
+        div.textContent = m.title;
+        div.onclick = () => {
+          selectMatrixNode(m.id);
+        };
+        nodesList.appendChild(div);
+      });
+      
+      // Auto-select center node first to encourage interaction
+      selectMatrixNode('all');
+    }
+
+    function showMatrixDetails(matrixItem) {
+      document.getElementById("matrix-details-title").textContent = matrixItem.title;
+      const content = document.getElementById("matrix-details-content");
+      content.innerHTML = "";
+
+      matrixItem.links.forEach(l => {
+        const item = document.createElement("div");
+        item.className = "matrix-link-item";
+        item.innerHTML = `
+          <div class="matrix-link-target">${l.target}</div>
+          <div class="matrix-link-desc">${l.desc}</div>
+        `;
+        content.appendChild(item);
+      });
+    }
+
+    // Render Novel Correlations Tab
+    function renderCorrelations() {
+      const container = document.getElementById("novel-correlations-container");
+      container.innerHTML = "";
+
+      briefingData.novelCorrelations.forEach((c, idx) => {
+        const div = document.createElement("div");
+        div.className = "novel-connection-card";
+        div.innerHTML = `
+          <div class="novel-connection-header">
+            <span>★ Connection ${idx + 1}: ${c.title}</span>
+          </div>
+          <div class="novel-connection-body">
+            ${c.text}
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Search and category selection listeners
+    document.getElementById("search-bar").addEventListener("input", (e) => {
+      currentSearch = e.target.value;
+      renderRecords();
+    });
+
+    document.querySelectorAll(".category-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".category-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentCategory = btn.dataset.category;
+        renderRecords();
+      });
+    });
+
+    // Toggle showing only novel intersections
+    const novelBtn = document.getElementById("filter-novel-btn");
+    novelBtn.addEventListener("click", () => {
+      onlyNovel = !onlyNovel;
+      if (onlyNovel) {
+        novelBtn.classList.add("primary");
+        novelBtn.textContent = "Showing Only Novel Connections ★";
+      } else {
+        novelBtn.classList.remove("primary");
+        novelBtn.textContent = "Show Only Novel Connections ★";
+      }
+      renderRecords();
+    });
+
+    // Toggle showing only annotated records
+    const notesBtn = document.getElementById("filter-notes-btn");
+    notesBtn.addEventListener("click", () => {
+      onlyAnnotated = !onlyAnnotated;
+      if (onlyAnnotated) {
+        notesBtn.classList.add("primary");
+        notesBtn.textContent = "Showing Only Annotated Records";
+        // Switch to records tab to show results
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        document.querySelector('[data-tab="records"]').classList.add('active');
+        document.getElementById('panel-records').classList.add('active');
+      } else {
+        notesBtn.classList.remove("primary");
+        notesBtn.textContent = "Show Only Annotated Records";
+      }
+      renderRecords();
+    });
+
+    
+    // Dark Mode Logic
+    function toggleDarkMode() {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      document.getElementById('theme-icon').textContent = isDark ? '☾' : '☀';
+      localStorage.setItem('vector_theme', isDark ? 'light' : 'dark');
+    }
+    
+    // Keyboard Modal Logic
+    function toggleKeyboardModal() {
+      document.getElementById('keyboard-modal').classList.toggle('active');
+      document.getElementById('modal-backdrop').classList.toggle('active');
+    }
+    
+    // Progress Bar Logic
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+    
+    // Hash Navigation
+    function handleHash() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      if (hash.startsWith('#panel-')) {
+        const tabName = hash.replace('#panel-', '');
+        const btn = document.querySelector(`[data-tab="${tabName}"]`);
+        if (btn) btn.click();
+      } else if (hash.startsWith('#card-') || hash.startsWith('#SC-') || hash.startsWith('#FS-') || hash.startsWith('#CI-') || hash.startsWith('#DG-') || hash.startsWith('#LE-') || hash.startsWith('#CN-') || hash.startsWith('#IC-')) {
+        const recId = hash.replace('#card-', '').replace('#', '');
+        switchToRecordsTab(recId);
+      }
+    }
+    window.addEventListener('hashchange', handleHash);
+
+    // Keyboard Shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      
+      const searchBar = document.getElementById('search-bar');
+      if (e.key === '/') {
+        e.preventDefault();
+        searchBar.focus();
+        searchBar.select();
+      }
+      if (e.key === '?') {
+        toggleKeyboardModal();
+      }
+      if (e.key === 'Escape') {
+        if (document.activeElement === searchBar) clearSearch();
+        else {
+          document.getElementById('keyboard-modal').classList.remove('active');
+          document.getElementById('modal-backdrop').classList.remove('active');
+        }
+      }
+      if (e.key === 'd') {
+        toggleDarkMode();
+      }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+        const activeIdx = tabs.findIndex(t => t.classList.contains('active'));
+        if (activeIdx >= 0) {
+          let nextIdx = e.key === 'ArrowRight' ? activeIdx + 1 : activeIdx - 1;
+          if (nextIdx >= tabs.length) nextIdx = 0;
+          if (nextIdx < 0) nextIdx = tabs.length - 1;
+          tabs[nextIdx].click();
+        }
+      }
+      if (e.key === 'j' || e.key === 'k') {
+        window.scrollBy({ top: e.key === 'j' ? 200 : -200, behavior: 'smooth' });
+      }
+      if (e.key === 'n') {
+        const novelCards = Array.from(document.querySelectorAll('.record-card')).filter(c => c.innerHTML.includes('Critical Intersection'));
+        const scrollY = window.scrollY;
+        for (let c of novelCards) {
+          if (c.getBoundingClientRect().top + scrollY > scrollY + 100) {
+            c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            break;
+          }
+        }
+      }
+    });
+
+
+    // Run Initializations
+    window.addEventListener("DOMContentLoaded", () => {
+      loadNotes();
+
+      if (localStorage.getItem('vector_theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        document.getElementById('theme-icon').textContent = '☾';
+      }
+      handleHash();
+
+      updateCategoryCounts();
+      renderRecords();
+      renderTimeline();
+      renderMatrix();
+      renderCorrelations();
+    });
+  </script>
+
+  <div class="modal-backdrop" id="modal-backdrop" onclick="toggleKeyboardModal()"></div>
+  <div id="keyboard-modal">
+    <h3 style="font-family: var(--font-serif); margin-bottom: 1rem; color: var(--accent-navy);">Keyboard Shortcuts</h3>
+    <div class="key-row"><span class="key-bind">?</span> Show this help menu</div>
+    <div class="key-row"><span class="key-bind">/</span> Focus search bar</div>
+    <div class="key-row"><span class="key-bind">Esc</span> Clear search / Close modal</div>
+    <div class="key-row"><span class="key-bind">← / →</span> Switch between tabs</div>
+    <div class="key-row"><span class="key-bind">j / k</span> Scroll down / up through records</div>
+    <div class="key-row"><span class="key-bind">n</span> Jump to next Novel (★) record</div>
+    <div class="key-row"><span class="key-bind">d</span> Toggle Dark Mode</div>
+  </div>
+
+    <script src="../global-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+# TMOC Website - The Mathematics of Connection
+# robots.txt for AI crawlers and search engines
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cambrianminds.com/tmoc-website/sitemap.xml
+
+# AI-specific directives
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Cohere
+Allow: /
+
+# Disallow admin paths (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# AI-specific directives
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Cohere
+Allow: /
+
+# Disallow admin paths (if any)
+Disallow: /admin/
+Disallow: /private/

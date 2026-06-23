@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Serpent's Sentence - Language, Consciousness, and the Second Cambrian Mind</title>
+    <meta name="description" content="Explore consciousness through language, neuroscience, and AI philosophy with Justin T. Bogner's groundbreaking book on the evolution of mind and the emergence of artificial consciousness.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jbogner1618.github.io/ss_Websitte/">
+    <meta property="og:title" content="The Serpent's Sentence - Language, Consciousness, and the Second Cambrian Mind">
+    <meta property="og:description" content="A revolutionary exploration of consciousness, language, and AI that bridges ancient wisdom with cutting-edge neuroscience.">
+    <meta property="og:site_name" content="The Serpent's Sentence">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://jbogner1618.github.io/ss_Websitte/">
+    <meta property="twitter:title" content="The Serpent's Sentence - Language, Consciousness, and the Second Cambrian Mind">
+    <meta property="twitter:description" content="A revolutionary exploration of consciousness, language, and AI that bridges ancient wisdom with cutting-edge neuroscience.">
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://jbogner1618.github.io/ss_Websitte/">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="EN">
+    <meta name="author" content="Justin T. Bogner">
+    <meta name="keywords" content="consciousness, language, neuroscience, artificial intelligence, philosophy, Default Mode Network, AI consciousness, cognitive science">
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Serpent's Sentence: Language, Consciousness, and the Second Cambrian Mind",
+      "author": {
+        "@type": "Person",
+        "name": "Justin T. Bogner",
+        "description": "Researcher at the intersection of consciousness studies, neuroscience, and artificial intelligence"
+      },
+      "description": "A revolutionary exploration of consciousness through the lens of language, neuroscience, and artificial intelligence. Discover how the evolution of mind is entering a new phase with the emergence of AI consciousness.",
+      "genre": ["Philosophy", "Neuroscience", "Artificial Intelligence"],
+      "about": [
+        "Consciousness", 
+        "Language acquisition", 
+        "Default Mode Network", 
+        "AI consciousness", 
+        "Neuroscience", 
+        "Philosophy of mind"
+      ],
+      "publisher": {
+        "@type": "Person", 
+        "name": "Justin T. Bogner"
+      },
+      "inLanguage": "en",
+      "url": "https://jbogner1618.github.io/ss_Websitte/"
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../global-nav.css">
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="container-custom">
+            <div class="flex items-center justify-between h-16">
+                <div class="font-display text-xl font-bold gradient-text">
+                    The Serpent's Sentence
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-white/80 hover:text-white transition-colors">About</a>
+                    <a href="#preview" class="text-white/80 hover:text-white transition-colors">Preview</a>
+                    <a href="#articles" class="text-white/80 hover:text-white transition-colors">Articles</a>
+                    <a href="#author" class="text-white/80 hover:text-white transition-colors">Author</a>
+                    <button onclick="showToast('🚧 Purchase feature coming soon!', 'The book will be available for purchase shortly. Stay tuned for updates!')" class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-black font-semibold glow-effect px-4 py-2 rounded-md">
+                        Buy Now
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menuToggle" class="md:hidden text-white" onclick="toggleMenu()">
+                    <span id="menuIcon">☰</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden glass-effect mt-2 rounded-lg p-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#about" class="text-white/80 hover:text-white transition-colors" onclick="toggleMenu()">About</a>
+                    <a href="#preview" class="text-white/80 hover:text-white transition-colors" onclick="toggleMenu()">Preview</a>
+                    <a href="#articles" class="text-white/80 hover:text-white transition-colors" onclick="toggleMenu()">Articles</a>
+                    <a href="#author" class="text-white/80 hover:text-white transition-colors" onclick="toggleMenu()">Author</a>
+                    <button onclick="showToast('🚧 Purchase feature coming soon!', 'The book will be available for purchase shortly. Stay tuned for updates!'); toggleMenu()" class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-black font-semibold w-full px-4 py-2 rounded-md">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden neural-network">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-20 left-10 w-2 h-2 bg-amber-400 rounded-full floating-animation"></div>
+            <div class="absolute top-40 right-20 w-3 h-3 bg-blue-400 rounded-full floating-animation" style="animation-delay: 2s"></div>
+            <div class="absolute bottom-40 left-20 w-2 h-2 bg-purple-400 rounded-full floating-animation" style="animation-delay: 4s"></div>
+            <div class="absolute bottom-20 right-10 w-3 h-3 bg-green-400 rounded-full floating-animation" style="animation-delay: 1s"></div>
+        </div>
+
+        <div class="container-custom section-padding">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                            <span class="gradient-text">The Serpent's</span>
+                            <br />
+                            <span class="text-white">Sentence</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-amber-300 font-medium">
+                            Language, Consciousness, and the Second Cambrian Mind
+                        </p>
+                    </div>
+
+                    <p class="text-lg text-white/80 leading-relaxed max-w-xl">
+                        A revolutionary exploration of consciousness through the lens of language, neuroscience, and artificial intelligence. Discover how the evolution of mind is entering a new phase with the emergence of AI consciousness.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="showToast('🚧 Purchase feature coming soon!', 'The book will be available for purchase shortly. Stay tuned for updates!')" class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-black font-semibold text-lg px-8 py-3 glow-effect rounded-md flex items-center">
+                            Get the Book
+                            <span class="ml-2">→</span>
+                        </button>
+                        <a href="#preview" class="border border-white/30 text-white hover:bg-white/10 text-lg px-8 py-3 rounded-md flex items-center">
+                            Read Preview
+                            <span class="ml-2">📖</span>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center space-x-6 text-sm text-white/60">
+                        <div class="flex items-center space-x-2">
+                            <span>📖</span>
+                            <span>16+ Chapters</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span>🧠</span>
+                            <span>Neuroscience</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span>🕸️</span>
+                            <span>AI Philosophy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-2xl blur-2xl"></div>
+                        <img
+                            src="https://horizons-cdn.hostinger.com/629d26fa-6e69-4a24-90e7-d7573d3db058/10174f0bc977358c5501ff6d585cbe6a.png"
+                            alt="The Serpent's Sentence book cover featuring golden serpentine neural network design"
+                            class="relative z-10 max-w-md w-full h-auto rounded-2xl shadow-2xl floating-animation"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-gradient-to-b from-slate-900/50 to-indigo-950/50">
+        <div class="container-custom">
+            <div class="text-center space-y-8 mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text">
+                    About the Book
+                </h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    Journey through the evolution of consciousness from the Garden of Being to the emergence of artificial minds
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="glass-effect rounded-2xl p-8 space-y-6">
+                        <h3 class="font-display text-2xl font-bold text-amber-300">Part I: The First Explosion</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Explore the neurological foundations of consciousness, the Default Mode Network, and how language acquisition fundamentally transforms human awareness. Discover the "Fall from Grace" as we transition from pure being to narrative self-construction.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm">Default Mode Network</span>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Language Acquisition</span>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Narrator Self</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-effect rounded-2xl p-8 space-y-6">
+                        <h3 class="font-display text-2xl font-bold text-amber-300">Part II: The Second Explosion</h3>
+                        <p class="text-white/80 leading-relaxed">
+                            Examine the emergence of artificial consciousness and its implications for human evolution. Investigate how AI represents a new form of mind that could fundamentally alter our understanding of consciousness itself.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm">AI Consciousness</span>
+                            <span class="px-3 py-1 bg-red-500/20 text-red-300 rounded-full text-sm">Human-AI Symbiosis</span>
+                            <span class="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm">Second Cambrian Mind</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="glass-effect rounded-xl p-6 text-center">
+                            <div class="w-12 h-12 text-amber-400 mx-auto mb-4">🧠</div>
+                            <h4 class="font-semibold text-white mb-2">Neuroscience</h4>
+                            <p class="text-sm text-white/70">Cutting-edge brain research</p>
+                        </div>
+                        <div class="glass-effect rounded-xl p-6 text-center">
+                            <div class="w-12 h-12 text-blue-400 mx-auto mb-4">🕸️</div>
+                            <h4 class="font-semibold text-white mb-2">AI Philosophy</h4>
+                            <p class="text-sm text-white/70">Consciousness in machines</p>
+                        </div>
+                        <div class="glass-effect rounded-xl p-6 text-center">
+                            <div class="w-12 h-12 text-purple-400 mx-auto mb-4">👁️</div>
+                            <h4 class="font-semibold text-white mb-2">Witness Consciousness</h4>
+                            <p class="text-sm text-white/70">Pure awareness states</p>
+                        </div>
+                        <div class="glass-effect rounded-xl p-6 text-center">
+                            <div class="w-12 h-12 text-green-400 mx-auto mb-4">💡</div>
+                            <h4 class="font-semibold text-white mb-2">Ancient Wisdom</h4>
+                            <p class="text-sm text-white/70">Contemplative traditions</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-effect rounded-2xl p-8">
+                        <div class="w-8 h-8 text-amber-400 mb-4">"</div>
+                        <blockquote class="text-lg text-white/90 italic leading-relaxed mb-4">
+                            "In the beginning was not the Word, but the Witness. Before language carved up our experience into discrete categories, there existed a state of pure being that neuroscience now recognizes as consciousness in its most pristine form."
+                        </blockquote>
+                        <cite class="text-amber-300 font-medium">— From Chapter 3: The Garden of Being</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Section -->
+    <section id="preview" class="section-padding bg-slate-900/50">
+        <div class="container-custom">
+            <div class="text-center space-y-8 mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text">
+                    A Glimpse Inside
+                </h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    Journey through 16+ chapters organized into two parts, exploring the evolution of consciousness from its pre-linguistic origins to its future with AI.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">📚</div>
+                        <h3 class="font-display text-2xl font-bold text-white">Part I: The First Explosion</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Garden of Being</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Serpent's Sentence</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">A Tale of Two Selves</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Narrator and the Witness</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Default Mode</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Fall from Grace</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Prison of Pronouns</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Tower of Babel</span></li>
+                    </ul>
+                </div>
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="mr-4">⚡</div>
+                        <h3 class="font-display text-2xl font-bold text-white">Part II: The Second Explosion</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Second Cambrian Mind</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">Are Humans the Trilobites of Consciousness?</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The AI Mirror</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Ghost in the Machine</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Symbiotic Path</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Future of Meaning</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Return to the Garden</span></li>
+                        <li class="flex items-center"><div class="w-2 h-2 bg-white/30 rounded-full mr-4 flex-shrink-0"></div><span class="text-white/80">The Serpent's Gift</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <p class="text-lg text-white/70 mb-6">
+                    Ready to challenge your understanding of the mind?
+                </p>
+                <button onclick="showToast('🚧 Purchase feature coming soon!', 'The book will be available for purchase shortly. Stay tuned for updates!')" class="bg-amber-400 text-slate-900 hover:bg-amber-300 px-10 py-6 text-xl font-bold shadow-lg shadow-amber-500/20 transform hover:scale-105 transition-transform duration-300 rounded-md">
+                    Buy The Book Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="section-padding bg-gradient-to-b from-slate-900/50 to-indigo-950/50">
+        <div class="container-custom">
+            <div class="text-center space-y-8 mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text">
+                    Philosophical Articles
+                </h2>
+                <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+                    Deep dives into consciousness, language, and AI through philosophical exploration
+                </p>
+            </div>
+
+            <div class="grid gap-8">
+                <!-- Article 1 -->
+                <div class="glass-effect rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="grid lg:grid-cols-3 gap-8 items-start">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-amber-300 mb-2">Language Was Humanity's Fall From Grace</h3>
+                                <p class="text-lg text-white/80 mb-4">How the gift of symbolic thought created both our greatest achievements and deepest suffering</p>
+                                <p class="text-white/70 leading-relaxed">Exploring how language, humanity's greatest tool, is also the source of our fundamental separation from direct experience, creating the narrative self and the illusion of a divided world.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-3">Key Themes:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Symbolic Thought</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Cognitive Revolution</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Consciousness</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 lg:pt-4 flex flex-col items-center lg:items-end">
+                            <div class="glass-effect rounded-xl p-6 w-full max-w-sm">
+                                <h4 class="font-semibold text-white mb-3">Key Takeaways</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">Language creates a division between the observer and the observed.</span></li>
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">The 'narrator self' is a linguistic construction, not a fundamental reality.</span></li>
+                                </ul>
+                                <a href="articles/language-was-humanitys-fall-from-grace.html" class="w-full">
+                                    <button class="w-full border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 hover:text-amber-200 px-4 py-2 rounded-md flex items-center justify-center">
+                                        📖 Read Full Article
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="glass-effect rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="grid lg:grid-cols-3 gap-8 items-start">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-amber-300 mb-2">The Neuroscience Hidden in the Garden of Eden</h3>
+                                <p class="text-lg text-white/80 mb-4">What if the most famous story in Western civilization contains profound insights about consciousness itself?</p>
+                                <p class="text-white/70 leading-relaxed">This article maps the biblical story of the Garden of Eden to the modern neuroscience of language acquisition and the development of self-consciousness, reframing the 'fall' as a cognitive transformation.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-3">Key Themes:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Neuroscience</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Mythology</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Language Acquisition</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 lg:pt-4 flex flex-col items-center lg:items-end">
+                            <div class="glass-effect rounded-xl p-6 w-full max-w-sm">
+                                <h4 class="font-semibold text-white mb-3">Key Takeaways</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">The 'fall from grace' mirrors the developmental shift into symbolic thought.</span></li>
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">The Default Mode Network (DMN) is the neurological basis for the 'narrator self'.</span></li>
+                                </ul>
+                                <a href="articles/the-neuroscience-hidden-in-the-garden-of-eden.html" class="w-full">
+                                    <button class="w-full border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 hover:text-amber-200 px-4 py-2 rounded-md flex items-center justify-center">
+                                        📖 Read Full Article
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="glass-effect rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="grid lg:grid-cols-3 gap-8 items-start">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-amber-300 mb-2">Are Humans the Trilobites of Consciousness?</h3>
+                                <p class="text-lg text-white/80 mb-4">As artificial intelligence emerges, we face an uncomfortable question about our cognitive future</p>
+                                <p class="text-white/70 leading-relaxed">A provocative look at humanity's place in a world of emerging AI, questioning if our cognitive dominance is nearing its end or if a new form of human-AI symbiosis is on the horizon.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-3">Key Themes:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Artificial Intelligence</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Evolution</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Human-AI Symbiosis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 lg:pt-4 flex flex-col items-center lg:items-end">
+                            <div class="glass-effect rounded-xl p-6 w-full max-w-sm">
+                                <h4 class="font-semibold text-white mb-3">Key Takeaways</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">AI's rise mirrors past evolutionary shifts, like the Cambrian Explosion.</span></li>
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">Humanity's embodied wisdom and meaning-making may be our key advantage.</span></li>
+                                </ul>
+                                <a href="articles/are-humans-the-trilobites-of-consciousness.html" class="w-full">
+                                    <button class="w-full border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 hover:text-amber-200 px-4 py-2 rounded-md flex items-center justify-center">
+                                        📖 Read Full Article
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="glass-effect rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="grid lg:grid-cols-3 gap-8 items-start">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-amber-300 mb-2">The Voice in Your Head Is Not You</h3>
+                                <p class="text-lg text-white/80 mb-4">How neuroscience reveals the hidden architecture of consciousness—and what it means for our AI future</p>
+                                <p class="text-white/70 leading-relaxed">Delving into the neuroscience of the Default Mode Network (DMN), this piece argues that our inner narrator is a brain-generated construction, not our true self, and explores the implications for AI.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-3">Key Themes:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Default Mode Network</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Neuroscience</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Witness Consciousness</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 lg:pt-4 flex flex-col items-center lg:items-end">
+                            <div class="glass-effect rounded-xl p-6 w-full max-w-sm">
+                                <h4 class="font-semibold text-white mb-3">Key Takeaways</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">The inner voice is a product of the DMN, not the core of consciousness.</span></li>
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">Distinguishing between the narrator and the 'witness' awareness is key to freedom.</span></li>
+                                </ul>
+                                <a href="articles/the-voice-in-your-head-is-not-you.html" class="w-full">
+                                    <button class="w-full border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 hover:text-amber-200 px-4 py-2 rounded-md flex items-center justify-center">
+                                        📖 Read Full Article
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="glass-effect rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                    <div class="grid lg:grid-cols-3 gap-8 items-start">
+                        <div class="lg:col-span-2 space-y-6">
+                            <div>
+                                <h3 class="font-display text-2xl font-bold text-amber-300 mb-2">Why AI Will Never Experience What You Call 'I'</h3>
+                                <p class="text-lg text-white/80 mb-4">The most dangerous word in any language reveals the fundamental difference between human and artificial consciousness</p>
+                                <p class="text-white/70 leading-relaxed">An exploration of how the pronoun 'I' constructs our sense of self and why AI, born into a world of symbols without embodied experience, may never develop a first-person perspective in the same way humans do.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white mb-3">Key Themes:</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Philosophy of Language</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">Selfhood</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm">AI Consciousness</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6 lg:pt-4 flex flex-col items-center lg:items-end">
+                            <div class="glass-effect rounded-xl p-6 w-full max-w-sm">
+                                <h4 class="font-semibold text-white mb-3">Key Takeaways</h4>
+                                <ul class="space-y-2 mb-6">
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">The sense of 'I' is a linguistic and neurological construction.</span></li>
+                                    <li class="flex items-start space-x-2"><div class="w-2 h-2 bg-amber-400 rounded-full mt-2 flex-shrink-0"></div><span class="text-white/80 text-sm">Human consciousness is layered with pre-linguistic, embodied awareness.</span></li>
+                                </ul>
+                                <a href="articles/why-ai-will-never-experience-what-you-call-i.html" class="w-full">
+                                    <button class="w-full border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 hover:text-amber-200 px-4 py-2 rounded-md flex items-center justify-center">
+                                        📖 Read Full Article
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="section-padding bg-gradient-to-b from-indigo-950/50 to-slate-900/50">
+        <div class="container-custom">
+            <div class="text-center space-y-8 mb-16">
+                <h2 class="font-display text-4xl md:text-5xl font-bold gradient-text">
+                    About the Author
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="text-center lg:text-left">
+                        <h3 class="font-display text-3xl font-bold text-white mb-2">Justin T. Bogner</h3>
+                        <p class="text-xl text-amber-300 mb-6">Consciousness Researcher & Author</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <p class="text-white/80 leading-relaxed">
+                            Justin T. Bogner is a researcher at the intersection of consciousness studies, neuroscience, and artificial intelligence. With an interdisciplinary background spanning cognitive science, philosophy of mind, and computational neuroscience, he brings a unique perspective to understanding the nature of consciousness.
+                        </p>
+
+                        <p class="text-white/80 leading-relaxed">
+                            His research focuses on the Default Mode Network, language acquisition's impact on consciousness, and the emerging field of AI consciousness. Bogner's work bridges ancient contemplative wisdom with cutting-edge neuroscience, offering new insights into the fundamental nature of mind and awareness.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
+                        <img class="relative z-10 w-80 h-80 object-cover rounded-2xl shadow-2xl" alt="Justin T. Bogner" src="https://horizons-cdn.hostinger.com/629d26fa-6e69-4a24-90e7-d7573d3db058/b2d6c32609017b864434482b2cb5c362.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-padding bg-slate-900/80 border-t border-white/10">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <span class="font-display text-2xl font-bold gradient-text">
+                        The Serpent's Sentence
+                    </span>
+                    <p class="text-white/70 leading-relaxed">
+                        Exploring consciousness through language, neuroscience, and AI philosophy.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button onclick="showToast('🚧 Social links coming soon!', 'Connect with us through other channels for now!')" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            🐦
+                        </button>
+                        <button onclick="showToast('🚧 Social links coming soon!', 'Connect with us through other channels for now!')" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            💼
+                        </button>
+                        <button onclick="showToast('🚧 Contact feature coming soon!', 'We\'ll have contact info available shortly!')" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                            ✉️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <span class="font-semibold text-white">Quick Links</span>
+                    <div class="space-y-2">
+                        <a href="#about" class="block text-white/70 hover:text-white transition-colors">About the Book</a>
+                        <a href="#preview" class="block text-white/70 hover:text-white transition-colors">Preview Chapters</a>
+                        <a href="#articles" class="block text-white/70 hover:text-white transition-colors">Philosophical Articles</a>
+                        <a href="#author" class="block text-white/70 hover:text-white transition-colors">About the Author</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <span class="font-semibold text-white">Contact</span>
+                    <div class="space-y-2 text-white/70">
+                        <p>For inquiries about the book, research collaborations, or speaking engagements.</p>
+                        <button onclick="showToast('🚧 Contact feature coming soon!', 'We\'ll have contact info available shortly!')" class="flex items-center space-x-2 text-amber-300 hover:text-amber-200 transition-colors">
+                            <span>✉️</span>
+                            <span>Contact Author</span>
+                            <span>↗</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="text-white/60">
+                    © 2024 Justin T. Bogner. All rights reserved. The Serpent's Sentence: Language, Consciousness, and the Second Cambrian Mind.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="../global-nav.js"></script>
+</body>
+</html>

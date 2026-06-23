@@ -1,0 +1,10 @@
+# Resonance Architecture Framework
+
+This page presents the Resonance Architecture hypothesis: a structured proposal that ancient megalithic cultures may have systematically employed vibroacoustic phenomena—including vibration-assisted friction modulation, piezoelectric excitation of quartz-bearing stone, and tribological self-organisation—to achieve precision stoneworking capabilities. 
+
+Authored by Justin Bogner, December 2025 / Revised April 2026.
+
+## Structure
+- The Mystery: Details 5 architectural anomalies (Transport, Petrie drill cores, Polygonal joints, Boss placement, Acoustic resonance).
+- Physical Foundations: Explains friction modulation, piezoelectric excitation, ultrasonic abrasion, and tribological self-organisation.
+- The Validation: Outlines predictions and falsification criteria for the hypothesis.

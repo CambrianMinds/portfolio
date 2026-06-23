@@ -1,0 +1,187 @@
+/* Custom styles for The Serpent's Sentence */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #fbbf24, #fde047, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-padding {
+    padding: 5rem 1rem;
+}
+
+.container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.floating-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.glow-effect {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.3);
+}
+
+.neural-network {
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%);
+}
+
+/* Toast styles */
+#toastContainer {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toast {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-width: 250px;
+    max-width: 350px;
+    animation: slideIn 0.3s ease-out;
+}
+
+.toast-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.toast-title {
+    font-weight: 600;
+    color: #fde047;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.toast-description {
+    font-size: 0.875rem;
+    color: #d1d5e7;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Article page styles */
+.prose-custom h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    background: linear-gradient(to right, #fbbf24, #fde047, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.prose-custom h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    border-left: 4px solid #fbbf24;
+    padding-left: 1rem;
+}
+
+.prose-custom h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    color: #93c5fd;
+}
+
+.prose-custom p {
+    line-height: 1.7;
+    font-size: 1.125rem;
+    margin: 1.5rem 0;
+}
+
+.prose-custom blockquote {
+    border-left: 4px solid #60a5fa;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.prose-custom hr {
+    margin: 3rem 0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.prose-custom li {
+    margin: 0.75rem 0;
+}
+
+.prose-custom a {
+    color: #fbbf24;
+    text-decoration: none;
+}
+
+.prose-custom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 3rem 1rem;
+    }
+    
+    .prose-custom h1 {
+        font-size: 2rem;
+    }
+    
+    .prose-custom h2 {
+        font-size: 1.75rem;
+    }
+}
