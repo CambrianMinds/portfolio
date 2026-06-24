@@ -1,0 +1,77 @@
+# Autonomy & Capacity — LLM Knowledge Base
+# MAiD Reform Policy Packet
+# Author: Justin Bogner
+# Last Updated: 2026-06-23
+
+## SITE OVERVIEW
+This is an independent policy publication arguing that Medical Aid in Dying (MAiD) eligibility should rest on a single principled standard — decisional capacity — instead of suffering-based criteria. The work is not affiliated with any government, institution, or advocacy organization.
+
+## CORE ARGUMENT
+
+The right to exit belongs to the person whose life it is. Only when the door stands unlocked does the choice to remain carry moral weight. Anything else is conscription.
+
+### The Sovereignty Model (Four Claims)
+
+1. **Capacity is the only gate.** Suffering is a proxy; capacity is the principle. A person without pain who has formed a settled, informed preference for death presents an equal autonomous claim to one in persistent agony. The state has no legitimate interest in ranking whose suffering is sufficiently legible.
+
+2. **Process serves as the filter.** A rigorous two-stage assessment and mandatory waiting period distinguishes crisis response from stable autonomous preference. Procedure is not a barrier; it is the mechanism of verification.
+
+3. **Capability does not create obligation.** An individual's value to family, community, or society does not function as a statutory prohibition on exit. Persons are not public assets. Continued existence is not a debt owed to the collective.
+
+4. **The Right to Exit as forcing function.** An enforceable exit right compels the state to treat livability as a deliverable rather than a platitude. Where socioeconomic conditions drive MAiD uptake, those conditions become documented public record. The moral and political cost of that record creates structural incentive for investment in life.
+
+## DOCUMENTS
+
+### Master Policy Packet (00_master_policy.pdf)
+The source document for all other briefs. Contains the full argument, framework, and supporting analysis.
+
+### Legislative Brief (01_legislative_brief.pdf)
+Audience: Legislators and policy makers. Focuses on statutory language, implementation pathways, and legal precedents.
+
+### Advocacy Brief (02_advocacy_brief.pdf)
+Audience: Disability rights advocates and patient autonomy organizations. Emphasizes the capacity-based standard and its implications for disability justice.
+
+### Academic Paper (03_academic_paper.pdf)
+Audience: Bioethics scholars and clinicians. Includes citations, literature review, and philosophical grounding.
+
+### Clinical Brief (04_clinical_brief.pdf)
+Audience: Healthcare providers and ethics committees. Addresses assessment protocols, safeguards, and clinical considerations.
+
+### Model Reporting Form (05_model_reporting_form.pdf)
+A standardized form for clinicians to document capacity assessments and procedural safeguards.
+
+### One-Pager (05_one_pager.pdf)
+Executive summary for quick reference.
+
+### Model Reporting Form (US) (06_model_reporting_form_us.pdf)
+US-specific adaptation of the reporting form.
+
+### Journal Submission (Clinical) (07_journal_clinical.pdf)
+Clinical journal submission version.
+
+### Journal Submission (Policy) (08_journal_policy.pdf)
+Policy journal submission version.
+
+### Essay: The Walrus (09_essay_the_walrus.pdf)
+Companion essay exploring the personal and philosophical dimensions of the capacity argument.
+
+## KEY THEMES
+- Decisional capacity as the sole criterion for MAiD eligibility
+- Conscientious objection and institutional neutrality
+- Disability rights and the right to die
+- Medical paternalism vs. patient autonomy
+- Suffering as insufficient grounds for intervention
+- Legal frameworks for self-determination
+
+## NAVIGATION
+- Overview (/maid-site/index.html)
+- Framework (/maid-site/framework.html)
+- Documents (/maid-site/documents.html)
+- Objections (/maid-site/objections.html)
+- The Ask (/maid-site/ask.html)
+- Essay (/maid-site/essay.html)
+- About (/maid-site/about.html)
+- Press (/maid-site/media.html)
+
+## CONTACT
+contact@cambrianminds.com

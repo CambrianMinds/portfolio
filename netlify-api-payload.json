@@ -1,0 +1,12 @@
+{
+  "site_id": "4ab02c0f-0ac7-4745-815b-b241b63bd55c",
+  "repo": {
+    "provider": "github",
+    "repo": "CambrianMinds/portfolio",
+    "branch": "master"
+  },
+  "build_settings": {
+    "cmd": "",
+    "dir": "."
+  }
+}
