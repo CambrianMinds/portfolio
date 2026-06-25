@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mathematics of Connection | Justin T. Bogner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        cosmic: {
+                            900: '#030712',
+                            800: '#0b1121',
+                            700: '#151f38',
+                        },
+                        gold: {
+                            400: '#cda869',
+                            500: '#b08d55',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #030712;
+            color: #e5e7eb;
+            overflow-x: hidden;
+        }
+
+        /* Animated Substrate Background */
+        .substrate-bg {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(21, 31, 56, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(205, 168, 105, 0.05) 0%, transparent 50%);
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                10vw 20vh #fff, 30vw 40vh #fff, 50vw 10vh #fff, 70vw 60vh #fff, 90vw 30vh #fff,
+                20vw 80vh #fff, 40vw 90vh #fff, 60vw 50vh #fff, 80vw 20vh #fff, 15vw 65vh #fff;
+            border-radius: 50%;
+            animation: drift 100s linear infinite;
+        }
+
+        @keyframes drift {
+            from { transform: translateY(0); }
+            to { transform: translateY(-100vh); }
+        }
+
+        /* 3D Book Cover CSS */
+        .book-container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .book {
+            width: 280px;
+            height: 420px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateY(-20deg) rotateX(5deg);
+            transition: transform 0.5s ease;
+            box-shadow: -20px 20px 30px rgba(0,0,0,0.8);
+        }
+
+        @media (min-width: 768px) {
+            .book { width: 340px; height: 510px; }
+        }
+
+        .book:hover {
+            transform: rotateY(-5deg) rotateX(0deg);
+        }
+
+        .book-front {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://m.media-amazon.com/images/I/71zQLqh1ksL._SY466_.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #1e293b;
+            border-left: 2px solid #334155;
+            border-radius: 2px 6px 6px 2px;
+            transform: translateZ(25px);
+            box-shadow: inset 4px 0 10px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .book-spine {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            background: #0b1121;
+            transform: rotateY(-90deg) translateZ(25px);
+            transform-origin: left;
+            border-radius: 4px 0 0 4px;
+            border-left: 1px solid #1e293b;
+            box-shadow: inset 10px 0 20px rgba(0,0,0,0.8);
+        }
+
+        .book-pages {
+            position: absolute;
+            width: 48px;
+            height: 98%;
+            top: 1%;
+            right: 0;
+            background: #f1f5f9;
+            transform: rotateY(90deg) translateZ(calc(100% - 24px));
+            background-image: repeating-linear-gradient(90deg, #e2e8f0 0px, #f8fafc 2px);
+        }
+
+        /* Custom Gradients & Accents */
+        .text-gradient {
+            background: linear-gradient(to right, #e2e8f0, #cda869, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .border-gradient {
+            position: relative;
+        }
+        .border-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(205, 168, 105, 0.5), transparent);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Substrate Background -->
+    <div class="substrate-bg">
+        <div class="particles"></div>
+    </div>
+
+    <!-- Portfolio Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-cosmic-900/80 backdrop-blur-md border-b border-white/5">
+            <a href="https://www.amazon.com/dp/B0G3XJBP99?ref_=cm_sw_r_ffobk_cp_ud_dp_Q9GTTGKH6WFRFGGKJSWT&bestFormat=true" target="_blank" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 border border-gold-400/50 text-gold-400 hover:bg-gold-400 hover:text-cosmic-900 transition-all duration-300 font-medium text-sm rounded-sm uppercase tracking-wider">
+                Order Now
+            </a>
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-white">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center w-full">
+            
+            <!-- Left: Text Content -->
+            <div class="z-10 order-2 lg:order-1 text-center lg:text-left">
+                <div class="inline-block px-3 py-1 mb-6 border border-gold-400/30 rounded-full bg-gold-400/5 text-gold-400 text-xs font-semibold tracking-widest uppercase">
+                    New Release — October 2025
+                </div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-white mb-6">
+                    The Mathematics of <span class="text-gradient">Connection</span>
+                </h1>
+                <p class="font-serif text-xl sm:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    What persists when everything else fails? A radical new framework bridging quantum mechanics, observer-substrate coupling, and the physics of grief.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                    <a href="https://www.amazon.com/dp/B0G3XJBP99?ref_=cm_sw_r_ffobk_cp_ud_dp_Q9GTTGKH6WFRFGGKJSWT&bestFormat=true" target="_blank" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-400 text-cosmic-900 font-bold tracking-wide transition-all duration-300 rounded-sm">
+                        Available on Amazon
+                        <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                    <a href="#preface" class="w-full sm:w-auto flex items-center justify-center px-8 py-4 border border-white/20 hover:border-white/50 text-white transition-all duration-300 rounded-sm">
+                        Read the Preface
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: 3D Book Cover -->
+            <div class="z-10 order-1 lg:order-2 book-container animate-float py-10 lg:py-0">
+                <div class="book">
+                    <div class="book-spine"></div>
+                    <div class="book-pages"></div>
+                    <div class="book-front"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
+    </section>
+
+    <!-- The Hook / Preface Quote -->
+    <section id="preface" class="py-24 bg-cosmic-800/50 border-y border-white/5 relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <svg class="w-12 h-12 mx-auto text-gold-400/30 mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+            <p class="font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed text-gray-200 mb-8">
+                "You're about to read something that shouldn't exist... This book shouldn't exist because I'm publishing it from <em class="text-gold-400">inside the uncertainty.</em>"
+            </p>
+            <p class="font-sans text-lg text-gray-400 max-w-2xl mx-auto">
+                Before the core personal hypothesis resolves. Before I find out whether eighteen months of enforced separation destroyed the connection I spent that entire time trying to understand mathematically.
+            </p>
+            <div class="mt-12 w-px h-24 bg-gradient-to-b from-gold-400/50 to-transparent mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Dedication / The Personal Side -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="font-serif space-y-6 text-lg text-gray-300 leading-relaxed border-l border-gold-400/20 pl-8">
+                <p class="italic text-gold-400">For Sam, Susan, and Dad.</p>
+                <p><strong>Sam</strong>—Baked Beans.</p>
+                <p><strong>Susan, Mother</strong>—brilliant, broken, the original Touchstone. Her absence still knocks my world off its axis. And I'm finally learning to drop the guilt that never belonged to me.</p>
+                <p><strong>And Dad</strong>—who opened the sky for me with a busted telescope and an Army Ranger's eye, and made the cosmos feel close enough to touch.</p>
+            </div>
+            <div>
+                <h2 class="font-display text-3xl mb-6 text-white border-gradient pb-4">A Framework Forged in Loss</h2>
+                <p class="font-sans text-gray-400 leading-loose">
+                    The question wasn't just theoretical. It was a matter of survival. <em>How does connection mechanistically persist across spacetime?</em> When loved ones are lost to death, or when eighteen months of forced separation breaks the physical reality of a relationship, what exactly remains? 
+                </p>
+                <p class="font-sans text-gray-400 leading-loose mt-4">
+                    This manuscript is the result of taking that deeply human question and demanding a rigorous, physical, cosmological answer. The silence couldn't negate the structure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Physics Framework Grid -->
+    <section class="py-24 bg-cosmic-900/80 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl text-white mb-4">The Scientific Framework</h2>
+                <p class="font-serif text-xl text-gray-400 max-w-2xl mx-auto">Challenging the standard model to explain how connection forms the substrate of reality.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-cosmic-800/50 border border-white/5 p-8 hover:border-gold-400/30 transition-colors group rounded-sm">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-white mb-3">Vacuum Energy</h3>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                        Why is vacuum energy $10^{-120}$ times smaller than QFT predicts? This framework proposes it emerges from observer-substrate coupling, naturally explaining its scale and evolution.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-cosmic-800/50 border border-white/5 p-8 hover:border-gold-400/30 transition-colors group rounded-sm">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-white mb-3">The Hubble Tension</h3>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                        The discrepancy between early and late-universe expansion rates ($H_0$). Standard cosmology treats it as a crisis; here, it is predicted as a consequence of observer-driven dark energy evolution.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-cosmic-800/50 border border-white/5 p-8 hover:border-gold-400/30 transition-colors group rounded-sm">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-white mb-3">Measurement Problem</h3>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                        Collapse emerges from observer-substrate coupling when coherence exceeds critical thresholds. Measurement is not arbitrary; it is direct substrate field interaction.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-cosmic-800/50 border border-white/5 p-8 hover:border-gold-400/30 transition-colors group rounded-sm">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"></path></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-white mb-3">Non-locality</h3>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed">
+                        Explaining quantum correlations that persist across vast spatial separation via hyperchronal substrate propagation, without violating spacetime causality.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-cosmic-800/50 border border-white/5 p-8 hover:border-gold-400/30 transition-colors group rounded-sm md:col-span-2 lg:col-span-2">
+                    <div class="w-10 h-10 rounded-full bg-gold-400/10 flex items-center justify-center text-gold-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"></path></svg>
+                    </div>
+                    <h3 class="font-display text-xl text-white mb-3">Emergence</h3>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed max-w-3xl">
+                        The ultimate synthesis: Spacetime emerges from substrate information geometry. Consciousness emerges as solitonic structures. Dark energy emerges from observer coupling. Reality itself emerges from participatory observation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gold-400/5"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="font-display text-3xl md:text-5xl text-white mb-6">Discover the Mechanics of Meaning</h2>
+            <p class="font-serif text-lg text-gray-300 mb-10">
+                Available now in Hardcover and Kindle editions.
+            </p>
+            <a href="https://www.amazon.com/dp/B0G3XJBP99?ref_=cm_sw_r_ffobk_cp_ud_dp_Q9GTTGKH6WFRFGGKJSWT&bestFormat=true" target="_blank" class="inline-flex items-center justify-center px-10 py-5 bg-gold-500 hover:bg-gold-400 text-cosmic-900 font-bold tracking-widest uppercase transition-all duration-300 rounded-sm hover:shadow-[0_0_30px_rgba(205,168,105,0.3)] hover:-translate-y-1">
+                Order on Amazon
+                <svg class="ml-3 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Portfolio Footer -->
+    <footer class="bg-cosmic-900 py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="font-display text-lg tracking-widest text-gray-400 mb-4 md:mb-0">
+                JUSTIN T. BOGNER
+            </div>
+            <div class="text-gray-600 text-sm font-sans flex items-center space-x-6">
+                <span>&copy; 2025 Justin T. Bogner. All rights reserved.</span>
+                <a href="#" class="hover:text-gold-400 transition-colors">Portfolio Home</a>
+                <a href="#" class="hover:text-gold-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
