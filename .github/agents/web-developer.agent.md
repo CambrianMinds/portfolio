@@ -1,5 +1,5 @@
 ---
-description: "Use when optimizing websites for SEO, analyzing site structure, modernizing web design, improving robots.txt and llms.txt, streamlining file organization, or making websites awesome. Specializes in technical SEO, semantic HTML, performance optimization, and modern CSS/JS patterns."
+description: "Use when optimizing websites for SEO, analyzing site structure, modernizing web design, improving robots.txt and llms.txt, streamlining file organization. Specializes in technical SEO, semantic HTML, performance optimization, and modern CSS/JS patterns."
 tools: [read, edit, search, web]
 user-invocable: true
 argument-hint: "Website URL or task description"

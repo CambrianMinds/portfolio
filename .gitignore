@@ -1,0 +1,28 @@
+# Firecrawl research outputs
+.firecrawl/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Build outputs
+*.log
+*.cache
+
+# IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+*.tmp
+*.bak

@@ -1,0 +1,131 @@
+{
+  "project": "Justin Bogner Portfolio",
+  "canonical_url": "https://cambrianminds.com/",
+  "contact": "contact@cambrianminds.com",
+  "last_updated": "2026-06-26",
+  "recent_changes": [
+    "Created README.md",
+    "Enhanced .gitignore",
+    "Fixed og-image references to use favicon.svg",
+    "Added mobile breakpoints to ra-site/styles.css",
+    "Optimized maria-page/index.html for mobile"
+  ],
+  "structure": {
+    "root": "base-site/",
+    "subdirectories": [
+      "maid-site/",
+      "manual-site/",
+      "maria-page/",
+      "mathematics-site/",
+      "ra-site/",
+      "the-disappeared-site/",
+      "tss-site/",
+      "we-kidnapped-the-president-page/"
+    ]
+  },
+  "projects": [
+    {
+      "name": "The Mathematics of Connection",
+      "path": "mathematics-site/",
+      "domain": ["Physics", "Memoir", "Consciousness Studies"],
+      "description": "A 17-chapter book proposing consciousness as fundamental substrate field beneath spacetime",
+      "files": {
+        "html": ["index.html"],
+        "css": [],
+        "js": [],
+        "other": ["sitemap.xml"]
+      }
+    },
+    {
+      "name": "Owner's Manual for the Meat Suit",
+      "path": "manual-site/",
+      "domain": ["Philosophy", "Self-Help", "Consciousness Studies"],
+      "description": "Philosophical guide to being human in a world that treats consciousness like a problem to solve",
+      "files": {
+        "html": ["index.html"],
+        "tex": ["manual.tex"],
+        "pdf": ["manual.pdf"],
+        "other": ["sitemap.xml"]
+      }
+    },
+    {
+      "name": "The Serpent's Sentence",
+      "path": "tss-site/",
+      "domain": ["Philosophy", "Neuroscience", "AI"],
+      "description": "Book and essays on language, consciousness, and the 'second Cambrian mind'",
+      "files": {
+        "html": ["index.html", "articles/are-humans-the-trilobites-of-consciousness.html", "articles/language-was-humanitys-fall-from-grace.html", "articles/the-neuroscience-hidden-in-the-garden-of-eden.html", "articles/the-voice-in-your-head-is-not-you.html", "articles/why-ai-will-never-experience-what-you-call-i.html"],
+        "css": ["styles.css"],
+        "js": ["scripts.js"],
+        "other": ["sitemap.xml"]
+      }
+    },
+    {
+      "name": "Resonance Architecture",
+      "path": "ra-site/",
+      "domain": ["Archaeology", "Applied Physics"],
+      "description": "Vibroacoustic hypothesis for ancient megalithic precision stoneworking",
+      "files": {
+        "html": ["index.html"],
+        "css": ["styles.css"],
+        "js": ["script.js"],
+        "assets": ["assets/great_pyramid.jpg", "assets/petrie.jpg", "assets/piezo.jpg", "assets/quartz.jpg", "assets/sacsayhuaman.jpg"],
+        "pdf": ["resonance_architecture_framework.pdf"],
+        "other": ["sitemap.xml"]
+      }
+    },
+    {
+      "name": "Notable Disappearances",
+      "path": "the-disappeared-site/",
+      "domain": ["Investigative Research", "UAP"],
+      "description": "Investigative dossier on scientist disappearances and legal obfuscation",
+      "files": {
+        "html": ["briefing.html"],
+        "tex": ["research_report.tex", "the_vector_episode_2.tex"],
+        "bib": ["references.bib"],
+        "pdf": ["research_report.pdf", "the_vector_episode_2.pdf"],
+        "md": ["source_notes.md"],
+        "other": ["research.txt", "research_report.run.xml"]
+      }
+    },
+    {
+      "name": "MAiD Reform Policy",
+      "path": "maid-site/",
+      "domain": ["Bioethics", "Health Policy"],
+      "description": "Nine-document policy packet for capacity-based Medical Aid in Dying reform",
+      "files": {
+        "html": ["index.html", "about.html", "ask.html", "clinical_brief.html", "documents.html", "essay.html", "form.html", "framework.html", "legal_foundations.html", "media.html", "objections.html"],
+        "css": ["style.css"],
+        "js": ["nav.js"],
+        "tex": ["00_master_policy.tex", "01_legislative_brief.tex", "02_advocacy_brief.tex", "03_academic_paper.tex", "04_clinical_brief.tex", "05_model_reporting_form.tex", "05_one_pager.tex", "06_model_reporting_form_us.tex", "07_journal_clinical.tex", "08_journal_policy.tex", "09_essay_the_walrus.tex", "autonomy_exit_essay.tex", "campaign.sty", "model_bill_canada.tex", "model_bill_us.tex"],
+        "pdf": ["00_master_policy.pdf", "01_legislative_brief.pdf", "02_advocacy_brief.pdf", "03_academic_paper.pdf", "04_clinical_brief.pdf", "05_model_reporting_form.pdf", "05_one_pager.pdf", "06_model_reporting_form_us.pdf", "07_journal_clinical.pdf", "08_journal_policy.pdf", "09_essay_the_walrus.pdf", "autonomy_exit_essay.pdf", "model_bill_canada.pdf", "model_bill_us.pdf"],
+        "other": ["sitemap.xml", "vercel.json"]
+      }
+    },
+    {
+      "name": "We Kidnapped the President",
+      "path": "we-kidnapped-the-president-page/",
+      "domain": ["Constitutional Law", "Civic Policy"],
+      "description": "Constitutional analysis of unauthorized executive military operations",
+      "files": {
+        "html": ["index.html"]
+      }
+    },
+    {
+      "name": "Maria",
+      "path": "maria-page/",
+      "domain": ["Fiction", "Children's Fable"],
+      "description": "A fable about a museum, a mongoose, and the politics of who gets the spotlight",
+      "files": {
+        "html": ["index.html"],
+        "md": ["maria.md"],
+        "pdf": ["maria.pdf"]
+      }
+    }
+  ],
+  "shared_assets": {
+    "css": ["global-nav.css", "styles.css"],
+    "js": ["global-nav.js", "hub.js"],
+    "other": ["favicon.svg", "robots.txt", "sitemap.xml", "llms.txt"]
+  }
+}
